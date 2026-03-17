@@ -1,0 +1,146 @@
+/* Property of Solomon Kin LLC - Patent Pending */
+
+:root {
+    --gold: #d4af37;
+    --midnight: #0a0a0b;
+    --velvet: #1a1a1d;
+    --text-gray: #b0b0b0;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--midnight);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.gold-text { color: var(--gold); }
+
+/* Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--glass);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 10%;
+    background: radial-gradient(circle at center, #1e1e2d 0%, var(--midnight) 70%);
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 10%;
+}
+
+.service-card {
+    background: var(--velvet);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid var(--glass);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card.featured {
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.price {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin: 20px 0;
+}
+
+/* Buttons */
+.btn-gold {
+    background: var(--gold);
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-member {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer Section */
+footer {
+    background: #050505;
+    padding: 60px 10% 20px;
+    margin-top: 100px;
+    border-top: 1px solid var(--glass);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 { color: var(--gold); margin-bottom: 20px; }
+.footer-col a { display: block; color: var(--text-gray); text-decoration: none; margin-bottom: 10px; font-size: 0.85rem; }
+
+.footer-divider { border: 0; border-top: 1px solid var(--glass); margin-bottom: 30px; }
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Modal Styling */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+.modal-content { background: var(--velvet); margin: 10% auto; padding: 40px; border: 1px solid var(--gold); width: 400px; border-radius: 10px; }
+input { width: 100%; padding: 10px; margin: 10px 0; background: #000; border: 1px solid #333; color: white; }
