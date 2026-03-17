@@ -144,3 +144,96 @@ footer {
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
 .modal-content { background: var(--velvet); margin: 10% auto; padding: 40px; border: 1px solid var(--gold); width: 400px; border-radius: 10px; }
 input { width: 100%; padding: 10px; margin: 10px 0; background: #000; border: 1px solid #333; color: white; }
+
+/* Certificate Design */
+.bond-builder-section { padding: 80px 10%; background: #0f0f11; }
+.builder-container { display: flex; gap: 50px; align-items: flex-start; }
+.form-side { flex: 1; }
+.preview-side { flex: 1; perspective: 1000px; }
+
+.certificate-paper {
+    background: #fffdf5; /* Off-white parchment */
+    color: #1a1a1a;
+    padding: 30px;
+    border-radius: 2px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    text-align: center;
+    border: 15px solid #1a1a1a;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.cert-border { border: 2px solid var(--gold); padding: 20px; height: 100%; }
+.cert-header { font-size: 0.7rem; letter-spacing: 3px; font-weight: bold; margin-bottom: 20px; color: #444; }
+.cert-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 20px; }
+.cert-body h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 5px 0; color: #000; }
+.identity-label { font-size: 0.8rem; font-style: italic; color: #666; margin-top: -5px; }
+.and-symbol { font-size: 1.5rem; color: var(--gold); margin: 10px 0; }
+.cert-clause { font-size: 0.7rem; margin-top: 30px; padding: 0 40px; color: #555; }
+
+.cert-footer { margin-top: 40px; display: flex; justify-content: space-between; align-items: center; }
+.seal { width: 50px; height: 50px; border: 2px solid var(--gold); border-radius: 50%; line-height: 50px; font-weight: bold; color: var(--gold); }
+.serial { font-size: 0.6rem; font-family: monospace; color: #999; }
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+    .builder-container { flex-direction: column; }
+}
+/* Property of Solomon Kin LLC - Patent Pending */
+
+/* Existing styles... */
+
+/* Watermark Overlay (Hidden by Default) */
+.specimen-overlay {
+    display: none; /* Crucial: Hides it on the website itself */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(212, 175, 55, 0.15); /* Very light gold */
+    letter-spacing: 15px;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none; /* Allows clicks to pass through */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Download Button Specific Styling */
+.download-preview-btn {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+/* Printing Media Query: The Magic happens here */
+@media print {
+    /* Hide everything on the website... */
+    body * { visibility: hidden; }
+
+    /* ...Except the certificate area */
+    #bond-print-area, #bond-print-area * { visibility: visible; }
+
+    /* Force the certificate to be the main element */
+    #bond-print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        border: none;
+    }
+
+    /* Force the SPECIMEN watermark to appear *only* in the print/PDF view */
+    .specimen-overlay {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* Keep the certificate aesthetic in the print */
+    .certificate-paper {
+        border: 15px solid #1a1a1a !important;
+        background: #fffdf5 !important;
+        box-shadow: none !important; /* Remove screen shadow */
+    }
+}
