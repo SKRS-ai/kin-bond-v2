@@ -2,85 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Registry Support | Solomon Kin Bond Co.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Concierge | Solomon Kin LLC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-container { max-width: 1000px; margin: 120px auto; padding: 0 5%; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; }
+        .contact-info h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .contact-method { margin-bottom: 30px; }
+        .contact-method h4 { color: var(--gold); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 5px; }
+        .contact-method p { font-size: 1.1rem; color: var(--text-main); }
+        
+        .contact-form { background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 20px; border: 1px solid var(--glass); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.75rem; color: var(--text-gray); margin-bottom: 8px; }
+        .form-group input, .form-group textarea, .form-group select { 
+            width: 100%; background: #000; border: 1px solid #333; color: white; padding: 12px; border-radius: 5px; font-family: inherit;
+        }
+        .form-group textarea { height: 120px; resize: none; }
+        
+        .office-hours { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--glass); font-size: 0.8rem; color: #555; }
+    </style>
 </head>
 <body class="dashboard-bg">
 
     <nav class="top-nav">
-        <div class="logo">SK <span class="gold-text">SUPPORT</span></div>
+        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
         <div class="nav-links">
             <a href="index.html">Marketplace</a>
-            <a href="dashboard.html">My Vault</a>
+            <a href="governance.html">Governance</a>
         </div>
     </nav>
 
-    <div class="contact-wrapper">
-        <header class="contact-header">
-            <h1>Inquiry & <span class="gold-text">Dispute Resolution</span></h1>
-            <p>Our specialists are available to assist with your Bond standing and IP Shield inquiries.</p>
-        </header>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>The <span class="gold-text-italic">Concierge.</span></h2>
+            <p style="color: var(--text-gray); margin-bottom: 40px;">Direct access to the Solomon Kin Records Office and Vexilla Enterprise support.</p>
+            
+            <div class="contact-method">
+                <h4>General Enquiries</h4>
+                <p>office@solomonkin.com</p>
+            </div>
 
-        <section class="contact-container">
-            <form id="contact-form" class="sk-form">
-                <div class="input-row">
-                    <div class="field">
-                        <label>Member Name</label>
-                        <input type="text" placeholder="Your Registered Name" required>
-                    </div>
-                    <div class="field">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="Email associated with Bond" required>
-                    </div>
+            <div class="contact-method">
+                <h4>Legal & IP Shield</h4>
+                <p>records@solomonkin.com</p>
+            </div>
+
+            <div class="contact-method">
+                <h4>Corporate Mobile</h4>
+                <p>817-839-3217</p>
+            </div>
+
+            <div class="office-hours">
+                EST Deployment Hours: 09:00 — 18:00 <br>
+                Solomon Kin LLC | Vexilla Enterprise Hierarchy
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form action="#">
+                <div class="form-group">
+                    <label>Full Name / Organization</label>
+                    <input type="text" placeholder="Nehemiah Brown" required>
                 </div>
-
-                <div class="field">
-                    <label>Inquiry Category</label>
-                    <select id="support-category" required>
-                        <option value="" disabled selected>Select a Category...</option>
-                        <option value="technical">Technical: QR Code/Link Issues</option>
-                        <option value="billing">Billing: Payment/Renewal Inquiry</option>
-                        <option value="dispute">Identity Dispute: Unauthorized Bond Filing</option>
-                        <option value="dissolution">Dissolution: Help with Bond Termination</option>
-                        <option value="ip-shield">Legal: IP Shield & Copyright Inquiry</option>
-                        <option value="other">Other High-Priority Inquiry</option>
+                
+                <div class="form-group">
+                    <label>Inquiry Department</label>
+                    <select>
+                        <option>General Support</option>
+                        <option>IP Shield Verification Issue</option>
+                        <option>Corporate Partnership</option>
+                        <option>Vexilla Foundation / Grants</option>
+                        <option>Media Inquiry</option>
                     </select>
                 </div>
 
-                <div class="field">
-                    <label>Bond Reference ID (Optional)</label>
-                    <input type="text" placeholder="SK-BOND-XXXX-2026">
+                <div class="form-group">
+                    <label>Message / Case Details</label>
+                    <textarea placeholder="How can the Office assist you today?"></textarea>
                 </div>
 
-                <div class="field">
-                    <label>Message</label>
-                    <textarea rows="6" placeholder="Describe your situation in detail..."></textarea>
-                </div>
-
-                <button type="submit" class="btn-gold-lg full-width">Transmit to Support Archive</button>
+                <button type="submit" class="btn-gold full-width">Transmit Message</button>
             </form>
-
-            <aside class="contact-sidebar">
-                <div class="sidebar-info-box">
-                    <h4>Direct Archive Line</h4>
-                    <p>support@kinrecords.com</p>
-                </div>
-                <div class="sidebar-info-box">
-                    <h4>Response Time</h4>
-                    <p>Priority Categories (Disputes) are typically addressed within 4–6 hours.</p>
-                </div>
-                <div class="sidebar-info-box">
-                    <h4>Mailing Address</h4>
-                    <p>Solomon Kin LLC<br>Digital Registry Division<br>Philadelphia, PA 19104</p>
-                </div>
-            </aside>
-        </section>
+            <p style="text-align: center; font-size: 0.6rem; color: #444; margin-top: 20px;">
+                SECURE END-TO-END ENCRYPTED COMMUNICATION
+            </p>
+        </div>
     </div>
 
-    <footer>
-        <p class="disclaimer">
-            All correspondence is logged and encrypted under the Solomon Kin LLC IP Shield (2026). Unauthorized disclosure of support logs is strictly prohibited.
-        </p>
+    <footer class="main-footer">
+        <p style="text-align: center; color: #444; font-size: 0.7rem;">&copy; 2026 Solomon Kin LLC. All Rights Reserved.</p>
     </footer>
 
 </body>

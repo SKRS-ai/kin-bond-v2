@@ -2,77 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Formal Bond Dissolution | Solomon Kin Records</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retire Bond | Solomon Kin Records</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .dissolve-hero {
+            padding: 100px 6% 40px;
+            text-align: center;
+            background: linear-gradient(to bottom, #1a0a0a 0%, #050505 100%);
+        }
+        .status-badge-retired {
+            border: 1px solid #cc3333;
+            color: #cc3333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .dissolve-container {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 0 5%;
+        }
+        .sig-panel {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(204, 51, 51, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .sig-panel:hover { border-color: #cc3333; }
+        .sig-input {
+            width: 100%;
+            background: #000;
+            border: 1px solid #333;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+        .dissolve-footer {
+            grid-column: span 2;
+            text-align: center;
+            border-top: 1px solid var(--glass);
+            padding-top: 40px;
+        }
+        .btn-retire {
+            background: #cc3333;
+            color: white;
+            padding: 20px 60px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .btn-retire.active { opacity: 1; pointer-events: auto; box-shadow: 0 0 20px rgba(204, 51, 51, 0.4); }
+    </style>
 </head>
 <body class="dashboard-bg">
 
-    <div class="dissolve-wrapper">
-        <header class="dissolve-header">
-            <div class="sk-seal-gray">SK</div>
-            <h1>Request for <span class="gold-text">Ledger Retirement</span></h1>
-            <p>Formal Dissolution of Bond ID: <span id="bond-ref">#SK-8821-BOND</span></p>
-        </header>
-
-        <section class="dissolve-notice">
-            <p><strong>IMPORTANT:</strong> Dissolving this bond will permanently update your public verification status to <span class="status-retired">DISSOLVED</span>. This action is irreversible once the Ledger is updated. A record of this dissolution will be held in the Solomon Kin Archive for 7 years.</p>
-        </section>
-
-        <div class="signature-grid">
-            <div class="sig-box">
-                <label>Partner One Signature</label>
-                <input type="text" id="sig-p1" placeholder="Type Full Legal Name" onkeyup="checkSignatures()">
-                <p class="sig-note">I, [Partner One], hereby request the retirement of this intimate bond.</p>
-            </div>
-
-            <div class="sig-box">
-                <label>Partner Two Signature</label>
-                <input type="text" id="sig-p2" placeholder="Type Full Legal Name" onkeyup="checkSignatures()">
-                <p class="sig-note">I, [Partner Two], hereby concur with the retirement of this intimate bond.</p>
-            </div>
+    <nav class="top-nav">
+        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html">Return to Vault</a>
         </div>
+    </nav>
 
-        <div class="dissolve-action-box">
-            <div class="fee-display">Dissolution Filing Fee: <strong>$14.99</strong></div>
-            <button id="dissolve-btn" class="btn-danger-lg disabled" disabled onclick="processDissolution()">
-                Authorize Final Ledger Update
-            </button>
-            <p class="legal-tiny">By clicking above, you authorize the Solomon Kin LLC IP Shield to break the digital seal of this partnership.</p>
-        </div>
-
-        <div class="back-link">
-            <a href="dashboard.html">Cancel and Return to Vault</a>
-        </div>
-    </div>
-
-    <footer>
-        <p class="disclaimer">
-            NOTICE: Solomon Kin LLC does not provide legal counseling. This dissolution pertains only to the digital status within the Kin Records ecosystem and does not satisfy state-level legal requirements.
+    <header class="dissolve-hero">
+        <span class="status-badge-retired">Ledger Retirement</span>
+        <h1 style="margin-top: 20px;">Formal <span style="color: #cc3333;">Dissolution</span></h1>
+        <p style="max-width: 600px; margin: 20px auto; color: var(--text-gray);">
+            By proceeding, you are requesting the permanent retirement of Bond ID: <b id="bond-id-display">SK-BOND-XXXX</b>. This action will update the public pulse to "DISSOLVED" on the Solomon Kin Ledger.
         </p>
-    </footer>
+    </header>
+
+    <section class="dissolve-container">
+        <div class="sig-panel">
+            <h4 style="color: #cc3333;">Partner One Authorisation</h4>
+            <p style="font-size: 0.8rem; color: #666;">I hereby certify the conclusion of this intimate engagement.</p>
+            <input type="text" id="sig1" class="sig-input" placeholder="Type Full Name" onkeyup="validateRetirement()">
+        </div>
+
+        <div class="sig-panel">
+            <h4 style="color: #cc3333;">Partner Two Authorisation</h4>
+            <p style="font-size: 0.8rem; color: #666;">I concur with the permanent archival of this union.</p>
+            <input type="text" id="sig2" class="sig-input" placeholder="Type Full Name" onkeyup="validateRetirement()">
+        </div>
+
+        <div class="dissolve-footer">
+            <p style="margin-bottom: 20px; font-size: 0.9rem;">Filing Fee: <b>$14.99 USD</b></p>
+            <button id="retire-btn" class="btn-retire" onclick="location.href='https://checkout.stripe.com/...' ">
+                Authorize Ledger Retirement
+            </button>
+            <p style="margin-top: 20px; font-size: 0.7rem; color: #444;">
+                This action is irreversible. Archives are held for 7 years post-dissolution for legal record integrity.
+            </p>
+        </div>
+    </section>
 
     <script>
-        function checkSignatures() {
-            const s1 = document.getElementById('sig-p1').value;
-            const s2 = document.getElementById('sig-p2').value;
-            const btn = document.getElementById('dissolve-btn');
+        function validateRetirement() {
+            const s1 = document.getElementById('sig1').value;
+            const s2 = document.getElementById('sig2').value;
+            const btn = document.getElementById('retire-btn');
             
-            // Logic: Button only activates if both names are typed
             if(s1.length > 5 && s2.length > 5) {
-                btn.classList.remove('disabled');
-                btn.disabled = false;
+                btn.classList.add('active');
             } else {
-                btn.classList.add('disabled');
-                btn.disabled = true;
-            }
-        }
-
-        function processDissolution() {
-            if(confirm("Are you certain you wish to retire this bond? This will finalize the $14.99 filing fee.")) {
-                // Redirect to payment or success page
-                window.location.href = "success-dissolve.html";
+                btn.classList.remove('active');
             }
         }
     </script>
+
 </body>
 </html>

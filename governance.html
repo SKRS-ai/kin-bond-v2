@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Governance | Solomon Kin LLC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gov-container { max-width: 1100px; margin: 120px auto; padding: 0 5%; }
+        .hierarchy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .corp-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid var(--gold);
+            padding: 30px;
+            border-radius: 0 15px 15px 0;
+        }
+        .corp-card h3 { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 15px; }
+        .entity-list { list-style: none; font-size: 0.9rem; color: var(--text-gray); }
+        .entity-list li { margin-bottom: 8px; padding-left: 15px; position: relative; }
+        .entity-list li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+        
+        .blueprint-section {
+            background: #000;
+            border: 1px solid var(--glass);
+            padding: 50px;
+            border-radius: 20px;
+            margin-top: 80px;
+        }
+        .stat-line { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--glass); font-size: 0.8rem; }
+    </style>
+</head>
+<body class="dashboard-bg">
+
+    <nav class="top-nav">
+        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
+        <div class="nav-links">
+            <a href="index.html">Marketplace</a>
+            <a href="dashboard.html">The Vault</a>
+        </div>
+    </nav>
+
+    <div class="gov-container">
+        <header style="text-align: center; margin-bottom: 80px;">
+            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">Institutional Protocol</span>
+            <h1 style="font-size: 3rem; margin-top: 10px;">Corporate <span class="gold-text-italic">Hierarchy.</span></h1>
+            <p style="color: var(--text-gray); max-width: 700px; margin: 20px auto;">The Vexilla Enterprise network manages the intersection of digital intimacy, environmental verification, and autonomous technology.</p>
+        </header>
+
+        <div class="hierarchy-grid">
+            <div class="corp-card">
+                <h3>SOLOMON KIN RECORDS</h3>
+                <ul class="entity-list">
+                    <li>Digital Relationship Registry</li>
+                    <li>IP Shield Verification (Grade A)</li>
+                    <li>The Unity Bond Ledger</li>
+                </ul>
+            </div>
+
+            <div class="corp-card">
+                <h3>VEXILLA ENV. SYSTEMS</h3>
+                <ul class="entity-list">
+                    <li>Clean Blue Green Corp.</li>
+                    <li>IBINGOD Trade, Inc.</li>
+                    <li>Industrial Verification Packages</li>
+                </ul>
+            </div>
+
+            <div class="corp-card">
+                <h3>KIN SENSE LABS</h3>
+                <ul class="entity-list">
+                    <li>KinOS Operating Environment</li>
+                    <li>AutoPilotUI Software</li>
+                    <li>Global Citizen Joe Media Group</li>
+                </ul>
+            </div>
+
+            <div class="corp-card">
+                <h3>VEXILLA FOUNDATION</h3>
+                <ul class="entity-list">
+                    <li>Non-Profit Grant Management</li>
+                    <li>Community Technology Labs</li>
+                    <li>Legacy Archival Services</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="blueprint-section">
+            <h2 style="margin-bottom: 30px;">Operational <span class="gold-text">Verification</span></h2>
+            <div class="stat-line"><span>Parent Organization:</span> <span>Solomon Kin LLC</span></div>
+            <div class="stat-line"><span>Principal:</span> <span>Nehemiah Brown</span></div>
+            <div class="stat-line"><span>Encryption Protocol:</span> <span>Vexilla AITS (Proprietary)</span></div>
+            <div class="stat-line"><span>Current Fiscal Year:</span> <span>2026</span></div>
+            <div class="stat-line"><span>Status:</span> <span style="color: #00ff64;">ACTIVE & COMPLIANT</span></div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p style="text-align: center; color: #444; font-size: 0.7rem;">PROPERTY OF SOLOMON KIN LLC. UNAUTHORIZED REPLICATION OF HIERARCHY IS PROHIBITED.</p>
+    </footer>
+
+</body>
+</html>

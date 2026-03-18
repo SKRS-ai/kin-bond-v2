@@ -2,65 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Vault | Solomon Kin Bond Co.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vault | Solomon Kin Records</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .vault-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        .vault-sidebar {
+            background: rgba(255, 255, 255, 0.02);
+            border-right: 1px solid var(--glass);
+            padding: 40px 20px;
+        }
+        .vault-main { padding: 40px 6%; }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: var(--velvet);
+            border: 1px solid var(--glass);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .bond-list-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .bond-list-item:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.02); }
+        .pulse-indicator {
+            width: 12px;
+            height: 12px;
+            background: #00ff64;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 0 10px #00ff64;
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        .sidebar-link {
+            display: block;
+            padding: 15px;
+            color: var(--text-gray);
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .sidebar-link.active { background: var(--gold); color: black; font-weight: bold; }
+    </style>
 </head>
 <body class="dashboard-bg">
 
     <nav class="top-nav">
-        <div class="logo">SK <span class="gold-text">VAULT</span></div>
+        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
         <div class="nav-links">
-            <span class="user-welcome">Welcome, <strong id="user-display">@Member</strong></span>
-            <a href="index.html">Marketplace</a>
-            <a href="#" class="logout-link">Logout</a>
+            <span style="font-size: 0.8rem; color: var(--gold);">SECURE VAULT ACCESS</span>
+            <a href="index.html" class="btn-outline-sm">Logout</a>
         </div>
     </nav>
 
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <div class="sidebar-item active">My Bonds</div>
-            <div class="sidebar-item">Active Partners</div>
-            <div class="sidebar-item">Payment Methods</div>
-            <div class="sidebar-item">Account Settings</div>
+    <div class="vault-container">
+        <aside class="vault-sidebar">
+            <a href="#" class="sidebar-link active">Active Bonds</a>
+            <a href="account-settings.html" class="sidebar-link">Identity Settings</a>
+            <a href="support.html" class="sidebar-link">IP Shield Support</a>
+            <hr style="border: 0; border-top: 1px solid var(--glass); margin: 20px 0;">
+            <a href="dissolve.html" class="sidebar-link" style="color: #cc3333;">Retire a Bond</a>
         </aside>
 
-        <main class="vault-content">
-            <header class="vault-header">
-                <h2>Your Relationship <span class="gold-text">Ledger</span></h2>
-                <p>Manage your verified digital assets and active intimate contracts.</p>
+        <main class="vault-main">
+            <header style="margin-bottom: 40px;">
+                <h1>The <span class="gold-text">Private Vault</span></h1>
+                <p style="color: var(--text-gray);">Managing 1 Active Archival Record</p>
             </header>
 
-            <div class="bond-status-grid">
-                <div class="status-card pending">
-                    <div class="card-icon">!</div>
-                    <h3>Pending Verification</h3>
-                    <p>You have a draft bond with <strong>[Partner Name]</strong>.</p>
-                    <button class="btn-gold-sm" onclick="location.href='index.html#verify'">Complete Purchase</button>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div style="font-size: 0.7rem; color: var(--gold); text-transform: uppercase;">Ledger Standing</div>
+                    <div style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">Verified</div>
                 </div>
+                <div class="stat-card">
+                    <div style="font-size: 0.7rem; color: var(--gold); text-transform: uppercase;">IP Shield Level</div>
+                    <div style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">Grade A</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 0.7rem; color: var(--gold); text-transform: uppercase;">Renewal Due</div>
+                    <div style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">364 Days</div>
+                </div>
+            </div>
 
-                <div class="status-card verified">
-                    <div class="card-icon">✔</div>
-                    <h3>Active Bond #8821</h3>
-                    <p>Verified Intimacy with <strong>@PartnerUsername</strong></p>
-                    <div class="date-tag">Issued: March 2026</div>
-                    <button class="btn-outline-sm">View Official Certificate</button>
+            <h3 style="margin-bottom: 20px;">Your Records</h3>
+            
+            <div class="bond-list-item">
+                <div class="bond-info">
+                    <div style="display: flex; align-items: center;">
+                        <span class="pulse-indicator"></span>
+                        <h4 id="vault-bond-id">SK-BOND-XJ92-2026</h4>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--text-gray); margin-top: 5px;">
+                        Created: March 18, 2026 | Partners: Nehemiah & [Partner Name]
+                    </p>
                 </div>
+                <div class="bond-actions">
+                    <button class="btn-outline-sm" onclick="alert('Downloading High-Res Archive...')">Download Certificate</button>
+                    <button class="btn-gold-sm" style="margin-left: 10px;" onclick="location.href='verify.html'">View Pulse Link</button>
+                </div>
+            </div>
 
-                <div class="status-card upgrade">
-                    <div class="card-icon">+</div>
-                    <h3>Add New Bond</h3>
-                    <p>Establish a new intimate record in the Solomon Kin Archive.</p>
-                    <button class="btn-outline-sm" onclick="location.href='index.html#services'">Browse Services</button>
-                </div>
+            <div style="text-align: center; border: 2px dashed var(--glass); padding: 40px; border-radius: 15px; margin-top: 40px;">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 20px;">Ready to archive another connection?</p>
+                <a href="index.html#verify" class="btn-outline-sm">+ Initialize New Bond</a>
             </div>
         </main>
     </div>
-
-    <footer class="mini-footer">
-        <p class="disclaimer">
-            All Bonds are encrypted and protected under the Solomon Kin LLC Intellectual Property Shield (2026).
-        </p>
-    </footer>
 
 </body>
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Funding Ledger | Vexilla Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .grant-container { max-width: 1200px; margin: 120px auto; padding: 0 5%; }
+        .grant-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .grant-table th {
+            text-align: left;
+            padding: 20px;
+            background: var(--gold);
+            color: black;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .grant-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--glass);
+            font-size: 0.9rem;
+        }
+        .grant-table tr:hover { background: rgba(212, 175, 55, 0.05); }
+        .amount-tag { color: var(--gold); font-weight: bold; font-family: monospace; }
+        .status-pill {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            background: rgba(255,255,255,0.1);
+        }
+        .urgent { border: 1px solid #cc3333; color: #cc3333; }
+    </style>
+</head>
+<body class="dashboard-bg">
+
+    <nav class="top-nav">
+        <div class="logo">VEXILLA <span class="gold-text">FOUNDATION</span></div>
+        <div class="nav-links">
+            <a href="governance.html">Corporate Hierarchy</a>
+            <a href="index.html">Marketplace</a>
+        </div>
+    </nav>
+
+    <div class="grant-container">
+        <header style="margin-bottom: 60px;">
+            <h1 class="gold-text-italic">Funding & Grant Ledger</h1>
+            <p style="color: var(--text-gray); max-width: 800px; margin-top: 20px;">
+                The Vexilla Foundation identifies critical gaps in digital privacy, environmental verification, and community technology. Below is the active ledger of 2026 funding requirements for our non-profit divisions.
+            </p>
+        </header>
+
+        <table class="grant-table">
+            <thead>
+                <tr>
+                    <th>Project / Organization Name</th>
+                    <th>Sector</th>
+                    <th>Funding Needed</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>KinOS Open Source Lab</td><td>Technology</td><td class="amount-tag">$250,000</td><td><span class="status-pill urgent">Open</span></td></tr>
+                <tr><td>Clean Blue Green Community Audit</td><td>Environment</td><td class="amount-tag">$125,000</td><td><span class="status-pill">Pending</span></td></tr>
+                <tr><td>The Identity Protection Fund</td><td>Privacy</td><td class="amount-tag">$500,000</td><td><span class="status-pill urgent">High Priority</span></td></tr>
+                <tr><td>Vexilla Youth Tech Grant</td><td>Education</td><td class="amount-tag">$75,000</td><td><span class="status-pill">Active</span></td></tr>
+                <tr><td>Global Citizen Joe Media Grant</td><td>Media</td><td class="amount-tag">$180,000</td><td><span class="status-pill">Open</span></td></tr>
+                
+                <tr><td>Autonomous UI Accessibility Project</td><td>Software</td><td class="amount-tag">$95,000</td><td><span class="status-pill">Open</span></td></tr>
+                <tr><td>Industrial Verification Scholarship</td><td>Government</td><td class="amount-tag">$60,000</td><td><span class="status-pill">Pending</span></td></tr>
+                <tr><td>The Intimacy Rights Legal Fund</td><td>Legal</td><td class="amount-tag">$300,000</td><td><span class="status-pill urgent">Urgent</span></td></tr>
+                <tr><td>Digital Archival Preservation</td><td>History</td><td class="amount-tag">$110,000</td><td><span class="status-pill">Active</span></td></tr>
+                <tr><td>Sub-Saharan Connectivity Initiative</td><td>Infrastructure</td><td class="amount-tag">$1,200,000</td><td><span class="status-pill">Strategic</span></td></tr>
+
+                <tr><td>KinSense Health Data Privacy</td><td>Healthcare</td><td class="amount-tag">$450,000</td><td><span class="status-pill">Open</span></td></tr>
+                <tr><td>Rural Windmill Tech Grant</td><td>Renewables</td><td class="amount-tag">$85,000</td><td><span class="status-pill">Open</span></td></tr>
+                <tr><td>Small Business Digital Bond Grant</td><td>Economy</td><td class="amount-tag">$200,000</td><td><span class="status-pill">Active</span></td></tr>
+                <tr><td>Global Ledger Transparency Project</td><td>Blockchain</td><td class="amount-tag">$350,000</td><td><span class="status-pill">Pending</span></td></tr>
+                <tr><td>Vexilla Crisis Response Media</td><td>Public Safety</td><td class="amount-tag">$140,000</td><td><span class="status-pill">Open</span></td></tr>
+
+                <tr><td>Project 16-25: Multi-Sector Micro-Grants</td><td>Various</td><td class="amount-tag">$650,000</td><td><span class="status-pill">Ongoing</span></td></tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 60px; text-align: center; border-top: 1px solid var(--glass); padding-top: 40px;">
+            <h3>Submit a Grant Proposal</h3>
+            <p style="color: var(--text-gray); margin: 15px 0;">Are you an organization looking to partner with Solomon Kin LLC?</p>
+            <button class="btn-gold" onclick="location.href='contact.html'">Contact Foundation Office</button>
+        </div>
+    </div>
+
+</body>
+</html>

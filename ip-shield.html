@@ -1,24 +1,115 @@
-<main class="legal-content-page">
-    <section class="shield-hero">
-        <div class="shield-icon-large">🛡️</div>
-        <h1>The Solomon Kin <span class="gold-text">IP Shield</span></h1>
-        <p>Advanced Cryptographic Protection for Private Partnerships.</p>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Shield Protocol | Solomon Kin LLC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shield-container { max-width: 900px; margin: 120px auto; padding: 0 5%; }
+        .protocol-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .protocol-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--gold);
+        }
+        .protocol-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .data-point {
+            background: #000;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--glass);
+        }
+        .data-point h4 { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 10px; }
+        .encryption-visual {
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: #444;
+            line-height: 1.2;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="dashboard-bg">
 
-    <div class="info-grid">
-        <div class="info-card">
-            <h3>Immutable Hashing</h3>
-            <p>Every Bond is processed through a proprietary SHA-256 variant. Once sealed, the details of your partnership cannot be altered by third parties or external hacks. The hash serves as your "Digital DNA."</p>
+    <nav class="top-nav">
+        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
+        <div class="nav-links">
+            <a href="index.html">Marketplace</a>
+            <a href="governance.html">Governance</a>
         </div>
-        <div class="info-card">
-            <h3>Zero-Knowledge Proofs</h3>
-            <p>While we verify the *existence* of your bond via a public URL, the specific intimate details and custom vows are encrypted. Only the two bonded parties hold the decryption keys within their private Vault.</p>
+    </nav>
+
+    <div class="shield-container">
+        <header style="margin-bottom: 60px;">
+            <span class="gold-text" style="letter-spacing: 3px; font-size: 0.8rem;">SECURITY CLASSIFICATION: GRADE A</span>
+            <h1 style="margin-top: 10px;">The <span class="gold-text-italic">IP Shield</span> Protocol.</h1>
+            <p style="color: var(--text-gray); margin-top: 20px;">
+                Traditional records are public and rigid. The Solomon Kin IP Shield (v2.0) is a proprietary archival framework designed to protect the sovereign intimacy of our members.
+            </p>
+        </header>
+
+        <div class="protocol-card">
+            <h3>01. Sovereign Data Archival</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">
+                Unlike state-issued marriage licenses, Solomon Kin records are held in a private, encrypted ledger. We do not sell data to third-party advertisers or share "Relationship Status" metrics with social networks.
+            </p>
+            <div class="protocol-grid">
+                <div class="data-point">
+                    <h4>Hashing</h4>
+                    <p style="font-size: 0.75rem;">SHA-256 Unique Bond Identifiers</p>
+                </div>
+                <div class="data-point">
+                    <h4>Access</h4>
+                    <p style="font-size: 0.75rem;">Dual-Key Member Authorization</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="protocol-card">
+            <h3>02. The "Pulse" Verification</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">
+                The Public Pulse is a one-way verification link. It confirms the "Active" status of a bond without exposing sensitive underlying metadata or personal addresses.
+            </p>
+        </div>
+
+        <div class="protocol-card">
+            <h3>03. Legal Neutrality</h3>
+            <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">
+                The IP Shield operates as a private contract record. It is designed to stand outside of bureaucratic overreach, providing a 2026-standard for autonomous relationship management.
+            </p>
+        </div>
+
+        <div class="encryption-visual">
+            [SYS_LOG]: INITIALIZING SHIELD... <br>
+            [STATUS]: ENCRYPTING VEXILLA_HIERARCHY_DATA... <br>
+            [HASH]: 8821-XJ-SOLOMON-KIN-2026-SUCCESS <br>
+            [IP_SHIELD]: ACTIVE.
+        </div>
+
+        <div style="margin-top: 60px; text-align: center;">
+            <p style="font-size: 0.8rem; color: #444;">Questions regarding your privacy rights under the IP Shield? <br>
+            Contact the Office of Records: <a href="contact.html" class="gold-text">records@solomonkin.com</a></p>
         </div>
     </div>
 
-    <section class="patent-notice">
-        <h4>PATENT PENDING NOTICE (2026)</h4>
-        <p>The "Relationship Bond" business process, including the Dual-Signature Digital Seal and the Universal Identity Matrix, is the sole property of Solomon Kin LLC. Any unauthorized replication of this verification method is a violation of the SK-IP Shield protections.The Solomon Kin IP Shield (2026)
-All bonds issued are protected by a proprietary hashing algorithm. This ensures that the digital certificate cannot be forged, duplicated, or altered once sealed. We use the Kin-Chain Ledger to timestamp every "Active Engagement" declaration, providing a definitive timeline of your relationship's history.</p>
-    </section>
-</main>
+</body>
+</html>
