@@ -3,225 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Relationship Bond Co. | Solomon Kin Records</title>
+    <title>Solomon Kin Bond Co. | Intimate Verification Registry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="top-nav">
-        <div class="logo">SOLOMON KIN <span class="gold-text">BOND CO.</span></div>
+        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Premium Services</a>
-            <a href="#verify">Verify Bond</a>
-            <a href="#support">Support</a>
-            <button class="btn-member" onclick="toggleModal('register-modal')">Join Free</button>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#services">Services</a>
+            <a href="support.html">Support</a>
+            <a href="#" class="btn-member" onclick="toggleModal('register-modal')">Join Free</a>
         </div>
     </nav>
 
-    <main>
-        <header class="hero">
-            <h1>Elevate Your <span class="gold-text">Intimacy</span></h1>
-            <p>Private Digital Relationship Certification for the Modern Couple.</p>
-            <div class="cta-group">
-                <button class="btn-gold" onclick="scrollToSection('services')">View Paid Services</button>
-                <button class="btn-outline" onclick="toggleModal('register-modal')">Create Free Account</button>
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Love is a Record. <br><span class="gold-text-italic">Make it Official.</span></h1>
+            <p>The premier digital registry for active intimate engagements. Secured by the Solomon Kin IP Shield (2026).</p>
+            <div class="hero-btns">
+                <a href="#verify" class="btn-gold">Craft Your Bond</a>
+                <a href="#services" class="btn-outline">View Tiers</a>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <section id="services" class="services-grid">
-            <div class="service-card">
+    <section id="verify" class="bond-builder-section">
+        <div class="builder-container">
+            <div class="form-side">
+                <h2>Generate Your <span class="gold-text">Specimen</span></h2>
+                <p>Visualize your partnership on the ledger before archival.</p>
+                
+                <div class="input-row">
+                    <div class="field">
+                        <label>Partner One Name</label>
+                        <input type="text" id="p1-name" placeholder="Full Name" onkeyup="updateBond()">
+                    </div>
+                    <div class="field">
+                        <label>Identity</label>
+                        <select id="p1-type" onchange="updateBond()">
+                            <option value="Man">Man (He/Him)</option>
+                            <option value="Woman">Woman (She/Her)</option>
+                            <option value="Non-Binary">Non-Binary (They/Them)</option>
+                            <option value="Partner">Partner (Switch/Fluid)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="field">
+                        <label>Partner Two Name</label>
+                        <input type="text" id="p2-name" placeholder="Full Name" onkeyup="updateBond()">
+                    </div>
+                    <div class="field">
+                        <label>Identity</label>
+                        <select id="p2-type" onchange="updateBond()">
+                            <option value="Man">Man (He/Him)</option>
+                            <option value="Woman">Woman (She/Her)</option>
+                            <option value="Non-Binary">Non-Binary (They/Them)</option>
+                            <option value="Partner">Partner (Switch/Fluid)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button class="btn-gold full-width" onclick="location.href='buy-unity.html'">Seal & Archive This Bond</button>
+                <button class="btn-outline-sm full-width" style="margin-top:10px" onclick="printWatermarkedBond()">📥 Download Watermarked Preview</button>
+            </div>
+
+            <div class="preview-side">
+                <div class="certificate-wrapper" id="bond-print-area">
+                    <div class="specimen-overlay">SPECIMEN</div>
+                    <div class="certificate-paper" id="bond-cert">
+                        <div class="cert-border">
+                            <div class="cert-header">SOLOMON KIN RECORDS</div>
+                            <div class="cert-title">CERTIFICATE OF INTIMATE BOND</div>
+                            <div class="cert-body">
+                                <p>Formal verification of active intimate partnership between</p>
+                                <h3 id="view-p1">[Partner One]</h3>
+                                <p class="identity-label" id="view-t1">(Identity: Pending)</p>
+                                <div class="and-symbol">&</div>
+                                <h3 id="view-p2">[Partner Two]</h3>
+                                <p class="identity-label" id="view-t2">(Identity: Pending)</p>
+                            </div>
+                            <div class="cert-footer">
+                                <div class="seal">SK</div>
+                                <div class="serial">VERIFICATION ID: <span id="serial-num">PENDING-GEN-2026</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2 class="section-title">Registry <span class="gold-text">Services</span></h2>
+        <div class="service-grid">
+            <div class="service-card highlight">
                 <h3>The Unity Bond</h3>
                 <p>Digital certification of active intimate engagement. Includes dual-signature archival.</p>
-                <span class="price">$29.99</span>
-                <button class="btn-buy">Purchase Now</button>
+                <div class="price">$29.99</div>
+                <button class="btn-gold-sm" onclick="location.href='buy-unity.html'">Purchase Now</button>
+                <span class="tag">Most Popular</span>
             </div>
-            <div class="service-card featured">
-                <div class="badge">Most Popular</div>
+
+            <div class="service-card">
                 <h3>Lifetime Archive</h3>
-                <p>Permanent record in the Solomon Kin Ledger with unique URL verification.</p>
-                <span class="price">$49.99</span>
-                <button class="btn-buy gold">Purchase Now</button>
+                <p>Permanent record in the Solomon Kin Ledger with a unique URL verification.</p>
+                <div class="price">$49.99</div>
+                <button class="btn-outline-sm" onclick="location.href='buy-lifetime.html'">Purchase Now</button>
             </div>
+
             <div class="service-card">
                 <h3>Vow Renewal</h3>
                 <p>Update your bond with new terms, pronouns, or refreshed vows.</p>
-                <span class="price">$19.99</span>
-                <button class="btn-buy">Purchase Now</button>
+                <div class="price">$19.99</div>
+                <button class="btn-outline-sm" onclick="location.href='manage.html'">Purchase Now</button>
             </div>
-        </section>
-    </main>
-
-    <div id="register-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="toggleModal('register-modal')">&times;</span>
-            <h2>Member Registration</h2>
-            <p>Registration is free. Payment is only required for Bond Issuance.</p>
-            <form id="reg-form">
-                <input type="text" placeholder="Choose Username" required>
-                <input type="email" placeholder="Email Address" required>
-                <p class="form-note">Payment details can be added during checkout.</p>
-                <button type="submit" class="btn-gold">Create Account</button>
-            </form>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <div class="footer-links">
-            <div class="footer-col">
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">SK <span class="gold-text">RECORDS</span></div>
+                <p>The definitive ledger for modern intimacy.</p>
+            </div>
+            <div class="footer-column">
                 <h4>Navigation</h4>
-                <a href="#home">Dashboard</a>
+                <a href="dashboard.html">Dashboard</a>
                 <a href="#services">Services</a>
-                <a href="#account">My Account</a>
+                <a href="account-settings.html">My Account</a>
             </div>
-            <div class="footer-col">
+            <div class="footer-column">
                 <h4>Legal</h4>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">IP Shield Info</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="tos.html">Terms of Service</a>
+                <a href="ip-shield.html">IP Shield Info</a>
             </div>
-            <div class="footer-col">
+            <div class="footer-column">
                 <h4>Support</h4>
-                <a href="#">Contact Us</a>
-                <a href="#">FAQ</a>
-                <a href="#">Verification Help</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="support.html">FAQ</a>
+                <a href="support.html#verify">Verification Help</a>
             </div>
         </div>
-        
-        <hr class="footer-divider">
-
-        <p class="disclaimer">
-            <strong>LEGAL DISCLAIMER:</strong> The Relationship Bond is a private digital contract issued by <strong>Solomon Kin LLC</strong>. It is a certification of active intimate engagement and personal vow-keeping. While it carries the weight of a private agreement under the Solomon Kin Records Archive, it is not a state-issued marriage license. All Bonds are encrypted, timestamped, and protected under the <strong>Solomon Kin LLC Intellectual Property Shield (2026)</strong>.
-        </p>
-        <p class="copyright">© 2026 Solomon Kin LLC. All Rights Reserved.</p>
-		<section id="verify" class="bond-builder-section">
-    <div class="builder-container">
-        <div class="form-side">
-            <h2>Craft Your <span class="gold-text">Unity Bond</span></h2>
-            <p>Customize your digital certificate below. Visualizing your commitment is the first step toward permanent archival.</p>
-            
-            <div class="input-row">
-                <div class="field">
-                    <label>Partner One Name</label>
-                    <input type="text" id="p1-name" placeholder="Full Name" onkeyup="updateBond()">
-                </div>
-                <div class="field">
-                    <label>Identity/Pronouns</label>
-                    <select id="p1-type" onchange="updateBond()">
-                        <option value="Man">Man (He/Him)</option>
-                        <option value="Woman">Woman (She/Her)</option>
-                        <option value="Non-Binary">Non-Binary (They/Them)</option>
-                        <option value="Trans-Man">Trans-Man</option>
-                        <option value="Trans-Woman">Trans-Woman</option>
-                        <option value="Partner">Partner (Switch/Fluid)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="input-row">
-                <div class="field">
-                    <label>Partner Two Name</label>
-                    <input type="text" id="p2-name" placeholder="Full Name" onkeyup="updateBond()">
-                </div>
-                <div class="field">
-                    <label>Identity/Pronouns</label>
-                    <select id="p2-type" onchange="updateBond()">
-                        <option value="Man">Man (He/Him)</option>
-                        <option value="Woman">Woman (She/Her)</option>
-                        <option value="Non-Binary">Non-Binary (They/Them)</option>
-                        <option value="Trans-Man">Trans-Man</option>
-                        <option value="Trans-Woman">Trans-Woman</option>
-                        <option value="Partner">Partner (Switch/Fluid)</option>
-                    </select>
-                </div>
-            </div>
-            
-            <button class="btn-gold full-width" onclick="toggleModal('register-modal')">Seal & Archive This Bond</button>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Solomon Kin LLC. All Rights Reserved. Protected by the SK-IP Shield Protocol.</p>
         </div>
-
-        <div class="preview-side">
-    <div class="certificate-wrapper" id="bond-print-area">
-        <div class="specimen-overlay">SPECIMEN - FOR PREVIEW ONLY</div>
-
-        <div class="certificate-paper" id="bond-cert">
-            <div class="cert-border">
-                <div class="cert-header">SOLOMON KIN RECORDS</div>
-                <div class="cert-title">CERTIFICATE OF INTIMATE BOND</div>
-                
-                <div class="cert-body">
-                    <p>This document serves as formal verification of an active intimate partnership between</p>
-                    <h3 id="view-p1">[Partner One]</h3>
-                    <p class="identity-label" id="view-t1">(Identity: Pending)</p>
-                    <div class="and-symbol">&</div>
-                    <h3 id="view-p2">[Partner Two]</h3>
-                    <p class="identity-label" id="view-t2">(Identity: Pending)</p>
-                </div>
-
-                <div class="cert-clause">
-                    "Under the Solomon Kin LLC IP Shield (2026), these parties are recognized as a singular 
-                    private unit engaged in mutual physical and emotional devotion." The Solomon Kin IP Shield (2026)
-All bonds issued are protected by a proprietary hashing algorithm. This ensures that the digital certificate cannot be forged, 
-duplicated, or altered once sealed. We use the Kin-Chain Ledger to timestamp every "Active Engagement" declaration, providing 
-a definitive timeline of your relationship's history.
-                </div>
-
-                <div class="cert-footer">
-                    <div class="seal">SK</div>
-                    <div class="serial">VERIFICATION ID: <span id="serial-num">PENDING-GEN-2026</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="btn-outline full-width download-preview-btn" onclick="printWatermarkedBond()">
-        📥 Download (Watermarked) Preview for Kin Pages
-    </button>
-</div>
-    </div>
-</section>
     </footer>
 
+    <script src="app.js"></script>
     <script>
-       /* Property of Solomon Kin LLC - Patent Pending */
+        function updateBond() {
+            const p1 = document.getElementById('p1-name').value || "[Partner One]";
+            const p2 = document.getElementById('p2-name').value || "[Partner Two]";
+            const t1 = document.getElementById('p1-type').value;
+            const t2 = document.getElementById('p2-type').value;
 
-// 1. Existing function to update the live preview (keep this)
-function updateBond() {
-    // Get values from inputs
-    const p1 = document.getElementById('p1-name').value || "[Partner One]";
-    const p2 = document.getElementById('p2-name').value || "[Partner Two]";
-    const t1 = document.getElementById('p1-type').value;
-    const t2 = document.getElementById('p2-type').value;
+            document.getElementById('view-p1').innerText = p1;
+            document.getElementById('view-p2').innerText = p2;
+            document.getElementById('view-t1').innerText = `(Identity: ${t1})`;
+            document.getElementById('view-t2').innerText = `(Identity: ${t2})`;
 
-    // Update Preview Text
-    document.getElementById('view-p1').innerText = p1;
-    document.getElementById('view-p2').innerText = p2;
-    document.getElementById('view-t1').innerText = `(Identity: ${t1})`;
-    document.getElementById('view-t2').innerText = `(Identity: ${t2})`;
+            if(p1 !== "[Partner One]" && p2 !== "[Partner Two]") {
+                const hash = btoa(p1 + p2).substring(0, 8).toUpperCase();
+                document.getElementById('serial-num').innerText = `SK-BOND-${hash}-2026`;
+            }
+        }
 
-    // Generate a pseudo-serial number based on names
-    if(p1 !== "[Partner One]" && p2 !== "[Partner Two]") {
-        const hash = btoa(p1 + p2).substring(0, 8).toUpperCase();
-        document.getElementById('serial-num').innerText = `SK-BOND-${hash}-2026`;
-    }
-}
-
-// 2. New function to trigger the "Save as PDF" (or print) function
-function printWatermarkedBond() {
-    const p1 = document.getElementById('p1-name').value;
-    const p2 = document.getElementById('p2-name').value;
-
-    if (!p1 || !p2) {
-        alert("Please enter both partners' names before downloading the preview.");
-        return;
-    }
-
-    // Opens the browser's native print dialog. The CSS @media print rules
-    // will hide the rest of the site and force the SPECIMEN watermark.
-    window.print();
-}
-
-// Initialize on load
-updateBond();
+        function printWatermarkedBond() {
+            window.print();
+        }
     </script>
 </body>
 </html>
