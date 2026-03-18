@@ -76,3 +76,5 @@ II. EQUAL ACCESS: > Solomon Kin LLC does not discriminate on the basis of race, 
 
 III. THE UNITY PLEDGE: > By utilizing this marketplace, users agree to uphold a standard of mutual respect. Solomon Kin LLC reserves the right to revoke any Bond issued under pretenses of hate speech or discriminatory intent.
 LEGAL DISCLAIMER: The Relationship Bond is a private digital contract issued by Solomon Kin LLC. It is a certification of active intimate engagement and personal vow-keeping. While it carries the weight of a private agreement under the Solomon Kin Records Archive, it is not a state-issued marriage license. All Bonds are encrypted, timestamped, and protected under the Solomon Kin LLC Intellectual Property Shield (2026).
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/de86ebc9-20c7-461d-b925-b09a4439fab8/deploy-status)](https://app.netlify.com/projects/therelationshipbond/deploys)
