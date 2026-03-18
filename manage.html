@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Bond | Solomon Kin Records</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-bg">
+
+    <div class="manage-container">
+        <header class="manage-header">
+            <span class="gold-text">SOLOMON KIN LLC</span>
+            <h1>Bond Lifecycle Management</h1>
+            <p>Current Status: <span class="status-active">ACTIVE - VERIFIED</span></p>
+        </header>
+
+        <div class="management-grid">
+            <div class="manage-card">
+                <div class="icon">⏳</div>
+                <h3>Extend Validation</h3>
+                <p>Your current bond expires in <strong>32 Days</strong>. Renew now to maintain your standing in the Kin Records Archive.</p>
+                <button class="btn-gold-sm">Renew for 1 Year ($19.99)</button>
+            </div>
+
+            <div class="manage-card">
+                <div class="icon">✏️</div>
+                <h3>Amend Identities</h3>
+                <p>Changed your pronouns or preferred names? Update your digital certificate across the entire SK network.</p>
+                <button class="btn-outline-sm">File Amendment ($9.99)</button>
+            </div>
+
+            <div class="manage-card danger">
+                <div class="icon">💔</div>
+                <h3>Dissolve Bond</h3>
+                <p>Formally end this digital record. Both parties must confirm. This will move the record to the 'Expired' archive.</p>
+                <button class="btn-danger" onclick="confirmDissolution()">Initiate Dissolution ($14.99)</button>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="dashboard.html">← Return to Member Vault</a>
+        </div>
+    </div>
+
+    <footer class="mini-footer">
+        <p class="disclaimer">
+            DISSOLUTION NOTICE: Once a bond is dissolved, the Verification ID is permanently retired. Solomon Kin LLC maintains a history of all dissolved records for archival integrity under the 2026 IP Shield.
+        </p>
+    </footer>
+
+</body>
+</html>

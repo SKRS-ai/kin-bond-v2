@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Vault | Solomon Kin Bond Co.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-bg">
+
+    <nav class="top-nav">
+        <div class="logo">SK <span class="gold-text">VAULT</span></div>
+        <div class="nav-links">
+            <span class="user-welcome">Welcome, <strong id="user-display">@Member</strong></span>
+            <a href="index.html">Marketplace</a>
+            <a href="#" class="logout-link">Logout</a>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-item active">My Bonds</div>
+            <div class="sidebar-item">Active Partners</div>
+            <div class="sidebar-item">Payment Methods</div>
+            <div class="sidebar-item">Account Settings</div>
+        </aside>
+
+        <main class="vault-content">
+            <header class="vault-header">
+                <h2>Your Relationship <span class="gold-text">Ledger</span></h2>
+                <p>Manage your verified digital assets and active intimate contracts.</p>
+            </header>
+
+            <div class="bond-status-grid">
+                <div class="status-card pending">
+                    <div class="card-icon">!</div>
+                    <h3>Pending Verification</h3>
+                    <p>You have a draft bond with <strong>[Partner Name]</strong>.</p>
+                    <button class="btn-gold-sm" onclick="location.href='index.html#verify'">Complete Purchase</button>
+                </div>
+
+                <div class="status-card verified">
+                    <div class="card-icon">✔</div>
+                    <h3>Active Bond #8821</h3>
+                    <p>Verified Intimacy with <strong>@PartnerUsername</strong></p>
+                    <div class="date-tag">Issued: March 2026</div>
+                    <button class="btn-outline-sm">View Official Certificate</button>
+                </div>
+
+                <div class="status-card upgrade">
+                    <div class="card-icon">+</div>
+                    <h3>Add New Bond</h3>
+                    <p>Establish a new intimate record in the Solomon Kin Archive.</p>
+                    <button class="btn-outline-sm" onclick="location.href='index.html#services'">Browse Services</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="mini-footer">
+        <p class="disclaimer">
+            All Bonds are encrypted and protected under the Solomon Kin LLC Intellectual Property Shield (2026).
+        </p>
+    </footer>
+
+</body>
+</html>
