@@ -7,68 +7,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dashboard-bg">
 
     <nav class="top-nav">
         <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
         <div class="nav-links">
-            <a href="proclamation.html">The Envoy's Letter</a>
+            <a href="proclamation.html">The Proclamation</a>
             <a href="governance.html">Governance</a>
             <a href="impact.html">Our Impact</a>
-            <a href="dashboard.html" class="btn-outline-sm" style="margin-left: 15px;">Login</a>
-            <a href="support.html" class="btn-gold-sm" style="margin-left: 10px;">Get Started</a>
+            <a href="dashboard.html" class="btn-outline-sm">Login</a>
+            <a href="support.html" class="btn-gold-sm">Secure My Bond</a>
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" style="margin-top: 100px;">
         <div class="hero-content">
-            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.7rem; text-transform: uppercase;">Est. 2026 | Vexilla Hierarchy</span>
-            <h1>Sovereign <span class="gold-text-italic">Togetherness.</span></h1>
-            <p>An encrypted, professional record of your intimate connection. Move your legacy off social media and into the Solomon Kin Ledger.</p>
-            <div class="hero-btns">
-                <a href="support.html" class="btn-gold-lg">Secure Your Bond</a>
-                <a href="proclamation.html" class="btn-outline">Read the Proclamation</a>
+            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.7rem; text-transform: uppercase;">A Vexilla Enterprise Subsidiary</span>
+            <h1>Sovereign <span class="gold-text-italic">Legacies.</span></h1>
+            <p>Don't just say you're together—record it. Secure your connection in the private, encrypted Solomon Kin Ledger today.</p>
+            <div class="hero-btns" style="margin-top: 30px; display: flex; gap: 20px; justify-content: center;">
+                <a href="support.html" class="btn-gold-lg">Purchase Your Bond</a>
+                <a href="proclamation.html" class="btn-outline">Read the Envoy's Letter</a>
             </div>
         </div>
     </header>
 
-    <section class="trust-bar" style="background: #000; padding: 25px; border-bottom: 1px solid var(--glass); text-align: center;">
-        <div style="display: flex; justify-content: center; gap: 40px; opacity: 0.6; font-size: 0.7rem; letter-spacing: 2px;">
-            <span>🛡️ IP SHIELD PROTECTED</span>
-            <span>⚖️ VEXILLA GOVERNANCE</span>
-            <span>📞 817-839-3217</span>
-            <span>🔒 SHA-256 ENCRYPTED</span>
-        </div>
-    </section>
-
-    <section class="services-section" id="services">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h2 style="font-size: 2.5rem;">Archival <span class="gold-text">Tiers</span></h2>
-            <p style="color: var(--text-gray);">Select your level of record-keeping permanence.</p>
+    <section class="services-section" id="purchase">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 2.5rem;">The <span class="gold-text">Archival Tiers</span></h2>
+            <p style="color: var(--text-gray);">Guiding you toward permanent digital evolution.</p>
         </div>
 
         <div class="service-grid">
+            
             <div class="service-card">
                 <h3>The Unity Bond</h3>
-                <div class="price">$29.99<span style="font-size: 0.9rem; color: #555;">/year</span></div>
-                <p style="font-size: 0.8rem; margin: 20px 0; color: #888;">Professional annual verification with IP Shield data protection.</p>
-                <a href="support.html" class="btn-gold full-width">Initialize Archive</a>
+                <div class="price">$29.99<span style="font-size: 0.9rem; color: #555;">/yr</span></div>
+                <ul class="entity-list">
+                    <li>Digital Archival Certificate</li>
+                    <li>Active Public Pulse Link</li>
+                    <li>IP Shield Data Privacy</li>
+                </ul>
+                <a href="support.html?product=unity-bond" class="btn-gold full-width">Initialize Archive</a>
             </div>
 
             <div class="service-card highlight">
-                <div class="tag" style="background: white; color: black; font-weight: 900;">PERPETUAL</div>
+                <div class="tag" style="background:white; color:black; font-weight:900; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 20px; display: inline-block;">PERPETUAL</div>
                 <h3>Lifetime Archive</h3>
                 <div class="price">$49.99<span style="font-size: 0.9rem; color: #555;">/once</span></div>
-                <p style="font-size: 0.8rem; margin: 20px 0; color: #bbb;">Zero renewal fees. Gold-seal certificate. Eternal ledger status.</p>
-                <a href="support.html" class="btn-gold full-width">Secure Forever</a>
+                <ul class="entity-list">
+                    <li>Perpetual Ledger Entry</li>
+                    <li>Premium Gold-Seal Certificate</li>
+                    <li>Zero Renewal Fees Forever</li>
+                </ul>
+                <a href="support.html?product=lifetime" class="btn-gold full-width">Secure Forever</a>
             </div>
 
-            <div class="service-card">
-                <h3>Vexilla Heirloom</h3>
-                <div class="price">Contact Us</div>
-                <p style="font-size: 0.8rem; margin: 20px 0; color: #888;">Physical embossed records and corporate-level archival verification.</p>
-                <a href="contact.html" class="btn-outline full-width">Inquire for Custom</a>
-            </div>
         </div>
     </section>
 
@@ -76,36 +70,34 @@
         <div class="footer-grid">
             <div class="footer-column">
                 <div class="logo" style="margin-bottom: 20px;">SOLOMON <span class="gold-text">KIN</span></div>
-                <p style="font-size: 0.75rem; color: #666;">A Division of Solomon Kin LLC. Managing the digital evolution of human connection through secure, private records.</p>
+                <p>Protected by the Vexilla AITS Protocol. Managed by the Office of the Social Relationship Envoy.</p>
             </div>
             
             <div class="footer-column">
-                <h4>Registry Services</h4>
-                <a href="dashboard.html">Access My Vault</a>
-                <a href="verify.html">Public Pulse Verification</a>
-                <a href="dissolve.html">Dissolution Request</a>
-                <a href="billing.html">Manage Billing</a>
+                <h4>Vault Access</h4>
+                <a href="dashboard.html">Login to Vault</a>
+                <a href="verify.html">Verify a Bond</a>
+                <a href="billing.html">Manage Payments</a>
             </div>
 
             <div class="footer-column">
-                <h4>Corporate Impact</h4>
-                <a href="governance.html">Enterprise Hierarchy</a>
-                <a href="grants.html">Funding Ledger</a>
-                <a href="impact.html">Social Change Ledger</a>
+                <h4>Vexilla Impact</h4>
+                <a href="governance.html">Corporate Hierarchy</a>
+                <a href="grants.html">Grant Ledger</a>
+                <a href="impact.html">Social Change</a>
                 <a href="media.html">Global Citizen Joe</a>
             </div>
 
             <div class="footer-column">
-                <h4>Legal & Support</h4>
-                <a href="ip-shield.html">IP Shield Privacy</a>
-                <a href="terms.html">Terms of Covenant</a>
+                <h4>The Office</h4>
+                <a href="ip-shield.html">Privacy Shield</a>
+                <a href="terms.html">Covenant Terms</a>
                 <a href="contact.html">Contact Concierge</a>
-                <p style="margin-top: 15px; color: var(--gold); font-size: 0.7rem;">📞 817-839-3217</p>
+                <p style="color: var(--gold); margin-top: 15px;">817-839-3217</p>
             </div>
         </div>
-        
         <div class="footer-bottom">
-            &copy; 2026 Solomon Kin LLC. | <span class="gold-text">Certified Sovereign Record</span>
+            &copy; 2026 Solomon Kin LLC. | <span class="gold-text-italic">Nehemiah Brown, Elected Envoy</span>
         </div>
     </footer>
 
