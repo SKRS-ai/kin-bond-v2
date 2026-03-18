@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Settings | Solomon Kin Bond Co.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-bg">
+
+    <nav class="top-nav">
+        <div class="logo">SK <span class="gold-text">SETTINGS</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html">Back to Vault</a>
+            <button class="btn-outline-sm">Sign Out</button>
+        </div>
+    </nav>
+
+    <div class="settings-wrapper">
+        <aside class="settings-nav">
+            <a href="#profile" class="active">Profile Info</a>
+            <a href="#billing">Payment Methods</a>
+            <a href="#security">Security & IP Shield</a>
+            <a href="#notifications">Notification Prefs</a>
+        </aside>
+
+        <main class="settings-content">
+            <section id="profile" class="settings-section">
+                <h2>Member <span class="gold-text">Identity</span></h2>
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" value="SolomonUser2026" readonly>
+                    <p class="input-hint">Usernames are locked once a Bond is issued for Ledger integrity.</p>
+                </div>
+                <div class="field">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="member@email.com">
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
+            <section id="billing" class="settings-section">
+                <h2>Payment <span class="gold-text">Vault</span></h2>
+                <div class="card-display">
+                    <div class="card-info">
+                        <span class="card-type">VISA</span>
+                        <span class="card-digits">•••• •••• •••• 4421</span>
+                    </div>
+                    <button class="btn-text">Update Card</button>
+                </div>
+                <p class="billing-note">Your card is only charged upon active purchase of a Bond or Renewal.</p>
+            </section>
+
+            <hr class="section-divider">
+
+            <section id="security" class="settings-section">
+                <h2>Vault <span class="gold-text">Security</span></h2>
+                <div class="toggle-row">
+                    <span>Two-Factor Authentication (2FA)</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span>Private Ledger Mode (Hide names on scan)</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

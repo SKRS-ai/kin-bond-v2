@@ -1,0 +1,23 @@
+<main class="intake-container">
+    <h2>Initiating: <span class="gold-text">The Unity Bond</span></h2>
+    <p class="step-indicator">Step 1 of 2: Intimate Partnership Details</p>
+    
+    <form class="intake-form" action="https://checkout.stripe.com/..." method="POST">
+        <section class="form-block">
+            <h3>Partner Identities</h3>
+            <input type="text" name="p1_legal" placeholder="Partner 1 Legal/Chosen Name" required>
+            <input type="text" name="p2_legal" placeholder="Partner 2 Legal/Chosen Name" required>
+            <textarea name="vows" placeholder="Optional: Custom Vow Addendum (Limited to 250 characters)"></textarea>
+        </section>
+
+        <section class="form-block">
+            <h3>Archival Signature</h3>
+            <label class="checkbox-container">
+                <input type="checkbox" required>
+                I certify that this bond represents an active, consensual intimate partnership.
+            </label>
+        </section>
+        
+        <button type="submit" class="btn-gold-lg">Proceed to Secure Payment ($29.99)</button>
+    </form>
+</main>
