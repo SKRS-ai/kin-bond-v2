@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Ledger | Solomon Kin Records</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .billing-container { max-width: 900px; margin: 120px auto; padding: 0 5%; }
+        .billing-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; }
+        .ledger-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass);
+            padding: 30px;
+            border-radius: 20px;
+        }
+        .invoice-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--glass);
+            font-size: 0.85rem;
+        }
+        .status-paid { color: #00ff64; font-weight: bold; text-transform: uppercase; font-size: 0.7rem; }
+        .payment-method {
+            background: #000;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--gold);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="dashboard-bg">
+
+    <nav class="top-nav">
+        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
+        <div class="nav-links">
+            <a href="account-settings.html">Back to Settings</a>
+            <a href="dashboard.html">The Vault</a>
+        </div>
+    </nav>
+
+    <div class="billing-container">
+        <header style="margin-bottom: 50px;">
+            <h1 class="gold-text-italic">Financial Ledger</h1>
+            <p style="color: var(--text-gray);">Manage subscriptions, invoices, and IP Shield maintenance.</p>
+        </header>
+
+        <div class="billing-grid">
+            <div class="ledger-card">
+                <h3 style="margin-bottom: 20px;">Archival History</h3>
+                <div class="invoice-row">
+                    <span>March 18, 2026</span>
+                    <span>Unity Bond (Initial)</span>
+                    <span class="status-paid">Paid $29.99</span>
+                </div>
+                <div class="invoice-row">
+                    <span>Next Renewal</span>
+                    <span>March 18, 2027</span>
+                    <span style="color: var(--gold);">$29.99 Pending</span>
+                </div>
+                
+                <button class="btn-outline-sm full-width" style="margin-top: 30px;" onclick="location.href='https://billing.stripe.com/p/login/...' ">
+                    Access Stripe Customer Portal
+                </button>
+            </div>
+
+            <div class="ledger-card">
+                <h3>Payment Method</h3>
+                <div class="payment-method">
+                    <p style="font-size: 0.7rem; color: var(--gold); margin-bottom: 10px;">PRIMARY CARD</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span>•••• 4242</span>
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" width="30">
+                    </div>
+                    <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Expires: 12/28</p>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <h4 style="font-size: 0.8rem; margin-bottom: 10px;">Upgrade Plan</h4>
+                    <p style="font-size: 0.75rem; color: var(--text-gray); margin-bottom: 15px;">Secure your record forever with a one-time Lifetime payment.</p>
+                    <button class="btn-gold-sm full-width">Upgrade to Lifetime ($49.99)</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; text-align: center; color: #444; font-size: 0.7rem;">
+            Transactions processed by Solomon Kin LLC Registry Division. <br>
+            Protected by 256-bit SSL Encryption.
+        </div>
+    </div>
+
+</body>
+</html>

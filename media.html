@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Citizen Joe | Vexilla Impact Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .media-container { max-width: 1100px; margin: 120px auto; padding: 0 5%; }
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
+        .media-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .media-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .media-thumb { height: 180px; background: #000; display: flex; align-items: center; justify-content: center; color: #333; font-size: 2rem; }
+        .media-body { padding: 25px; }
+        .media-body h4 { font-family: var(--font-serif); margin-bottom: 10px; font-size: 1.1rem; }
+        .media-body p { font-size: 0.85rem; color: var(--text-gray); }
+        
+        .impact-bar {
+            background: var(--velvet);
+            padding: 50px;
+            border-radius: 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="dashboard-bg">
+
+    <nav class="top-nav">
+        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
+        <div class="nav-links">
+            <a href="grants.html">Grants Ledger</a>
+            <a href="governance.html">Corporate Hierarchy</a>
+        </div>
+    </nav>
+
+    <div class="media-container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">A Non-Profit Vexilla Division</span>
+            <h1 style="font-size: 3rem; margin-top: 10px;">Global <span class="gold-text-italic">Citizen Joe.</span></h1>
+            <p style="color: var(--text-gray); max-width: 700px; margin: 20px auto;">Connecting the Solomon Kin ecosystem to global impact, media transparency, and non-profit grant initiatives.</p>
+        </header>
+
+        <div class="media-grid">
+            <div class="media-card">
+                <div class="media-thumb">🎥</div>
+                <div class="media-body">
+                    <h4>Vexilla Impact Media</h4>
+                    <p>Independent, secure, and decentralized media focused on digital autonomy and global citizenship.</p>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="media-thumb">💻</div>
+                <div class="media-body">
+                    <h4>Digital Sovereignty Grants</h4>
+                    <p>Funding tools and education for underserved communities to secure their digital identities (Powered by KinSense Labs).</p>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="media-thumb">🤝</div>
+                <div class="media-body">
+                    <h4>Community Ledger Grants</h4>
+                    <p>Micro-grants for local leaders using decentralized technology to improve local governance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="impact-bar">
+            <h3>Your Purchase Makes an Impact</h3>
+            <p style="color: var(--text-gray); margin: 15px 0; max-width: 600px; margin: 15px auto;">
+                A percentage of all Solomon Kin Unity Bond registration fees directly funds the Vexilla Foundation and the Global Citizen Joe Media initiatives. We are building a more transparent world, one bond at a time.
+            </p>
+            <a href="support.html" class="btn-gold-sm" style="margin-top: 25px; display: inline-block;">Initialize Your Bond</a>
+        </div>
+    </div>
+
+</body>
+</html>
