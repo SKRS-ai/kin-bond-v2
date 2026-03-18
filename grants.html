@@ -7,38 +7,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .grant-container { max-width: 1200px; margin: 120px auto; padding: 0 5%; }
-        .grant-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 50px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 15px;
-            overflow: hidden;
-        }
-        .grant-table th {
-            text-align: left;
-            padding: 20px;
-            background: var(--gold);
-            color: black;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .grant-table td {
-            padding: 20px;
-            border-bottom: 1px solid var(--glass);
-            font-size: 0.9rem;
-        }
-        .grant-table tr:hover { background: rgba(212, 175, 55, 0.05); }
-        .amount-tag { color: var(--gold); font-weight: bold; font-family: monospace; }
-        .status-pill {
-            padding: 4px 10px;
+        .grants-container { max-width: 1000px; margin: 120px auto; padding: 0 5%; }
+        
+        /* The Specialized Grant Impact Card (Hover Glow) */
+        .grant-impact-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid var(--glass);
+            padding: 50px 40px;
             border-radius: 20px;
-            font-size: 0.7rem;
-            background: rgba(255,255,255,0.1);
+            text-align: center;
+            transition: all 0.6s var(--ease);
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
         }
-        .urgent { border: 1px solid #cc3333; color: #cc3333; }
+        
+        /* Specialized Coding: Magnetic Lift & Glow on Hover */
+        .grant-impact-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 50px var(--gold-glow);
+        }
+
+        .funding-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .fund-card { background: var(--velvet); border: 1px solid var(--glass); padding: 30px; border-radius: 15px; text-align: left; }
+        .fund-card h4 { color: var(--gold); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
+        
     </style>
 </head>
 <body class="dashboard-bg">
@@ -46,55 +40,42 @@
     <nav class="top-nav">
         <div class="logo">VEXILLA <span class="gold-text">FOUNDATION</span></div>
         <div class="nav-links">
-            <a href="governance.html">Corporate Hierarchy</a>
             <a href="index.html">Marketplace</a>
+            <a href="impact.html">Impact Ledger</a>
+            <a href="dashboard.html" class="btn-gold-sm">Secure Vault</a>
         </div>
     </nav>
 
-    <div class="grant-container">
-        <header style="margin-bottom: 60px;">
-            <h1 class="gold-text-italic">Funding & Grant Ledger</h1>
-            <p style="color: var(--text-gray); max-width: 800px; margin-top: 20px;">
-                The Vexilla Foundation identifies critical gaps in digital privacy, environmental verification, and community technology. Below is the active ledger of 2026 funding requirements for our non-profit divisions.
-            </p>
+    <div class="grants-container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">Decentralized Funding Node</span>
+            <h1>The Grant <span class="gold-text-italic">Funding Ledger.</span></h1>
+            <p style="color: var(--text-gray); max-width: 700px; margin: 20px auto;">Reviewing the allocation of funds from Solomon Kin Record verification fees to non-profit digital rights initiatives.</p>
         </header>
 
-        <table class="grant-table">
-            <thead>
-                <tr>
-                    <th>Project / Organization Name</th>
-                    <th>Sector</th>
-                    <th>Funding Needed</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>KinOS Open Source Lab</td><td>Technology</td><td class="amount-tag">$250,000</td><td><span class="status-pill urgent">Open</span></td></tr>
-                <tr><td>Clean Blue Green Community Audit</td><td>Environment</td><td class="amount-tag">$125,000</td><td><span class="status-pill">Pending</span></td></tr>
-                <tr><td>The Identity Protection Fund</td><td>Privacy</td><td class="amount-tag">$500,000</td><td><span class="status-pill urgent">High Priority</span></td></tr>
-                <tr><td>Vexilla Youth Tech Grant</td><td>Education</td><td class="amount-tag">$75,000</td><td><span class="status-pill">Active</span></td></tr>
-                <tr><td>Global Citizen Joe Media Grant</td><td>Media</td><td class="amount-tag">$180,000</td><td><span class="status-pill">Open</span></td></tr>
-                
-                <tr><td>Autonomous UI Accessibility Project</td><td>Software</td><td class="amount-tag">$95,000</td><td><span class="status-pill">Open</span></td></tr>
-                <tr><td>Industrial Verification Scholarship</td><td>Government</td><td class="amount-tag">$60,000</td><td><span class="status-pill">Pending</span></td></tr>
-                <tr><td>The Intimacy Rights Legal Fund</td><td>Legal</td><td class="amount-tag">$300,000</td><td><span class="status-pill urgent">Urgent</span></td></tr>
-                <tr><td>Digital Archival Preservation</td><td>History</td><td class="amount-tag">$110,000</td><td><span class="status-pill">Active</span></td></tr>
-                <tr><td>Sub-Saharan Connectivity Initiative</td><td>Infrastructure</td><td class="amount-tag">$1,200,000</td><td><span class="status-pill">Strategic</span></td></tr>
+        <div class="grant-impact-card">
+            <div id="product-icon" class="gold-seal" style="border: 2px solid var(--gold); border-radius: 50%; color: var(--gold); padding: 15px; font-weight: 900; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;">VxF</div>
+            
+            <h2>Decentralized Network <span class="gold-text-italic">Map.</span></h2>
+            <p style="color: var(--text-gray); margin-bottom: 25px; font-size: 0.9rem;">Visualizing the flow of Vexilla AITS tokens across the secure ledger to global grant recipients.</p>
+            
+            <img src="placeholder-network-map.png" alt="Vexilla Grant Network Map" style="width: 100%; border-radius: 10px; border: 1px solid var(--glass);">
+            
+            <p style="font-size: 0.7rem; color: #444; margin-top: 15px; text-align: center;">Vexilla AITS Protocol | Active Ledger Status: Grade A</p>
+        </div>
 
-                <tr><td>KinSense Health Data Privacy</td><td>Healthcare</td><td class="amount-tag">$450,000</td><td><span class="status-pill">Open</span></td></tr>
-                <tr><td>Rural Windmill Tech Grant</td><td>Renewables</td><td class="amount-tag">$85,000</td><td><span class="status-pill">Open</span></td></tr>
-                <tr><td>Small Business Digital Bond Grant</td><td>Economy</td><td class="amount-tag">$200,000</td><td><span class="status-pill">Active</span></td></tr>
-                <tr><td>Global Ledger Transparency Project</td><td>Blockchain</td><td class="amount-tag">$350,000</td><td><span class="status-pill">Pending</span></td></tr>
-                <tr><td>Vexilla Crisis Response Media</td><td>Public Safety</td><td class="amount-tag">$140,000</td><td><span class="status-pill">Open</span></td></tr>
+        <div class="funding-grid">
+            <div class="fund-card">
+                <h4>Recipient Node 01</h4>
+                <h3>Digital Sovereignty Grant</h3>
+                <p>Funding tools and education for underserved communities to secure their digital identities (Powered by KinSense Labs).</p>
+            </div>
 
-                <tr><td>Project 16-25: Multi-Sector Micro-Grants</td><td>Various</td><td class="amount-tag">$650,000</td><td><span class="status-pill">Ongoing</span></td></tr>
-            </tbody>
-        </table>
-
-        <div style="margin-top: 60px; text-align: center; border-top: 1px solid var(--glass); padding-top: 40px;">
-            <h3>Submit a Grant Proposal</h3>
-            <p style="color: var(--text-gray); margin: 15px 0;">Are you an organization looking to partner with Solomon Kin LLC?</p>
-            <button class="btn-gold" onclick="location.href='contact.html'">Contact Foundation Office</button>
+            <div class="fund-card">
+                <h4>Recipient Node 02</h4>
+                <h3>Independent Media Defense</h3>
+                <p>Supporting decentralized platforms like Global Citizen Joe, focused on algorithmic transparency and data privacy.</p>
+            </div>
         </div>
     </div>
 

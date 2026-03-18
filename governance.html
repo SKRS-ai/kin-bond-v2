@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate Governance | Solomon Kin LLC</title>
+    <title>Vexilla Hierarchy Governance | Solomon Kin LLC</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .gov-container { max-width: 1100px; margin: 120px auto; padding: 0 5%; }
-        .hierarchy-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 60px;
-        }
-        .corp-card {
-            background: rgba(255, 255, 255, 0.02);
-            border-left: 4px solid var(--gold);
-            padding: 30px;
-            border-radius: 0 15px 15px 0;
-        }
-        .corp-card h3 { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 15px; }
-        .entity-list { list-style: none; font-size: 0.9rem; color: var(--text-gray); }
-        .entity-list li { margin-bottom: 8px; padding-left: 15px; position: relative; }
-        .entity-list li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+        .governance-container { max-width: 1000px; margin: 120px auto; padding: 0 5%; }
         
-        .blueprint-section {
-            background: #000;
-            border: 1px solid var(--glass);
-            padding: 50px;
+        /* The Specialized Corporate Shield Card (Hover Glow) */
+        .corporate-shield-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid var(--glass);
+            padding: 50px 40px;
             border-radius: 20px;
-            margin-top: 80px;
+            text-align: center;
+            transition: all 0.6s var(--ease);
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
         }
-        .stat-line { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--glass); font-size: 0.8rem; }
+        
+        /* Specialized Coding: Magnetic Lift & Glow on Hover */
+        .corporate-shield-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 50px var(--gold-glow);
+        }
+
+        .governance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .gov-card { background: var(--velvet); border: 1px solid var(--glass); padding: 30px; border-radius: 15px; text-align: left; }
+        .gov-card h4 { color: var(--gold); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
+        
     </style>
 </head>
 <body class="dashboard-bg">
@@ -40,69 +40,44 @@
     <nav class="top-nav">
         <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
         <div class="nav-links">
-            <a href="index.html">Marketplace</a>
-            <a href="dashboard.html">The Vault</a>
+            <a href="grants.html">Grants Ledger</a>
+            <a href="impact.html">Impact Ledger</a>
+            <a href="dashboard.html" class="btn-gold-sm">Secure Vault</a>
         </div>
     </nav>
 
-    <div class="gov-container">
-        <header style="text-align: center; margin-bottom: 80px;">
-            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">Institutional Protocol</span>
-            <h1 style="font-size: 3rem; margin-top: 10px;">Corporate <span class="gold-text-italic">Hierarchy.</span></h1>
-            <p style="color: var(--text-gray); max-width: 700px; margin: 20px auto;">The Vexilla Enterprise network manages the intersection of digital intimacy, environmental verification, and autonomous technology.</p>
+    <div class="governance-container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">Corporate Registry</span>
+            <h1>Corporate <span class="gold-text-italic">Governance.</span></h1>
+            <p style="color: var(--text-gray); max-width: 700px; margin: 20px auto;">Reviewing the corporate integrity, multi-page ecosystem, and organizational hierarchy of the Vexilla Enterprise.</p>
         </header>
 
-        <div class="hierarchy-grid">
-            <div class="corp-card">
-                <h3>SOLOMON KIN RECORDS</h3>
-                <ul class="entity-list">
-                    <li>Digital Relationship Registry</li>
-                    <li>IP Shield Verification (Grade A)</li>
-                    <li>The Unity Bond Ledger</li>
-                </ul>
-            </div>
-
-            <div class="corp-card">
-                <h3>VEXILLA ENV. SYSTEMS</h3>
-                <ul class="entity-list">
-                    <li>Clean Blue Green Corp.</li>
-                    <li>IBINGOD Trade, Inc.</li>
-                    <li>Industrial Verification Packages</li>
-                </ul>
-            </div>
-
-            <div class="corp-card">
-                <h3>KIN SENSE LABS</h3>
-                <ul class="entity-list">
-                    <li>KinOS Operating Environment</li>
-                    <li>AutoPilotUI Software</li>
-                    <li>Global Citizen Joe Media Group</li>
-                </ul>
-            </div>
-
-            <div class="corp-card">
-                <h3>VEXILLA FOUNDATION</h3>
-                <ul class="entity-list">
-                    <li>Non-Profit Grant Management</li>
-                    <li>Community Technology Labs</li>
-                    <li>Legacy Archival Services</li>
-                </ul>
-            </div>
+        <div class="corporate-shield-card">
+            <div id="product-icon" class="gold-seal" style="border: 2px solid var(--gold); border-radius: 50%; color: var(--gold); padding: 15px; font-weight: 900; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;">SKR</div>
+            
+            <h2>Vexilla Enterprise <span class="gold-text-italic">Hierarchy.</span></h2>
+            <p style="color: var(--text-gray); margin-bottom: 25px; font-size: 0.9rem;">Visualizing the relationship between Solomon Kin LLC (archival records) and the non-profit Vexilla Foundation (impact funding).</p>
+            
+            <img src="vexilla-grant-network-map.png" alt="Vexilla Grant Network Map" style="width: 100%; border-radius: 10px; border: 1px solid var(--glass);">
+            
+            <p style="font-size: 0.7rem; color: #444; margin-top: 15px; text-align: center;">Vexilla AITS Protocol | Active Ledger Status: Grade A</p>
         </div>
 
-        <div class="blueprint-section">
-            <h2 style="margin-bottom: 30px;">Operational <span class="gold-text">Verification</span></h2>
-            <div class="stat-line"><span>Parent Organization:</span> <span>Solomon Kin LLC</span></div>
-            <div class="stat-line"><span>Principal:</span> <span>Nehemiah Brown</span></div>
-            <div class="stat-line"><span>Encryption Protocol:</span> <span>Vexilla AITS (Proprietary)</span></div>
-            <div class="stat-line"><span>Current Fiscal Year:</span> <span>2026</span></div>
-            <div class="stat-line"><span>Status:</span> <span style="color: #00ff64;">ACTIVE & COMPLIANT</span></div>
+        <div class="governance-grid">
+            <div class="gov-card">
+                <h4>Sector 01: Private Records</h4>
+                <h3>Solomon Kin LLC</h3>
+                <p>A mission-driven enterprise focused on the secure digital evolution of human relationship records.</p>
+            </div>
+
+            <div class="gov-card">
+                <h4>Sector 02: Community Impact</h4>
+                <h3>Vexilla Foundation (Non-Profit)</h3>
+                <p>Utilizing Solomon Kin verification fees to fund global digital rights and social change grants.</p>
+            </div>
         </div>
     </div>
-
-    <footer class="main-footer">
-        <p style="text-align: center; color: #444; font-size: 0.7rem;">PROPERTY OF SOLOMON KIN LLC. UNAUTHORIZED REPLICATION OF HIERARCHY IS PROHIBITED.</p>
-    </footer>
 
 </body>
 </html>

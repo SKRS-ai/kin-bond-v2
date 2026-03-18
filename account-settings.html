@@ -3,66 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Identity Settings | Solomon Kin Records</title>
+    <title>Identity Hub | Solomon Kin Records</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .settings-container {
-            max-width: 900px;
-            margin: 100px auto;
-            padding: 0 5%;
-        }
-        .settings-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--glass);
-            padding: 40px;
-            border-radius: 25px;
-            margin-bottom: 30px;
-        }
-        .settings-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--glass);
-        }
-        .settings-row:last-child { border-bottom: none; }
-        .input-group { flex: 1; margin-right: 20px; }
-        .input-group label { display: block; font-size: 0.7rem; color: var(--gold); margin-bottom: 5px; text-transform: uppercase; }
-        .input-group input { width: 100%; background: #000; border: 1px solid #333; color: white; padding: 10px; border-radius: 5px; }
+        .identity-container { max-width: 900px; margin: 120px auto; padding: 0 5%; }
         
-        .security-badge {
-            background: rgba(0, 255, 100, 0.05);
-            border: 1px solid rgba(0, 255, 100, 0.2);
-            color: #00ff64;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-        }
-        .toggle-switch {
-            width: 50px;
-            height: 24px;
-            background: #333;
+        /* The Specialized 'Profile Shield' Card (Magnetic Effect) */
+        .profile-shield {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid var(--glass);
+            padding: 50px 40px;
             border-radius: 20px;
+            text-align: center;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
-            cursor: pointer;
+            overflow: hidden;
+            perspective: 1000px; /* Essential for 3D lifting effect */
         }
-        .toggle-switch::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
-            transition: 0.3s;
+        
+        /* Specialized Coding: Magnetic Lift & Glow on Hover */
+        .profile-shield:hover {
+            transform: translateY(-10px) rotateX(3deg);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
-        .toggle-switch.on { background: var(--gold); }
-        .toggle-switch.on::after { left: 28px; }
+
+        /* Glass highlight effect on hover */
+        .profile-shield::after {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0) 60%);
+            opacity: 0; transition: opacity 0.6s var(--ease); pointer-events: none;
+        }
+        .profile-shield:hover::after { opacity: 1; }
+
+        .form-group { text-align: left; margin-bottom: 25px; }
+        .form-group label { display: block; font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; margin-bottom: 8px; }
+        .form-group input { width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: #fff; border-radius: 5px; font-family: inherit; }
+        
     </style>
 </head>
 <body class="dashboard-bg">
@@ -70,70 +48,44 @@
     <nav class="top-nav">
         <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
         <div class="nav-links">
-            <a href="dashboard.html">Back to Vault</a>
+            <a href="billing.html">Manage Payments</a>
+            <a href="dashboard.html" class="btn-outline-sm">Secure Vault</a>
         </div>
     </nav>
 
-    <div class="settings-container">
-        <header style="margin-bottom: 40px;">
-            <h1 class="gold-text-italic">Identity Settings</h1>
-            <p style="color: var(--text-gray);">Manage how your union appears on the Public Ledger.</p>
+    <div class="identity-container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">Identity Verification</span>
+            <h1>Manage <span class="gold-text-italic">My Profile.</span></h1>
+            <p style="color: var(--text-gray); margin-top: 20px;">Review and update your titles, names, and contact protocols in the secure ledger.</p>
         </header>
 
-        <div class="security-badge">
-            <span style="font-size: 1.2rem; margin-right: 15px;">🛡️</span>
-            Your data is currently protected by Grade A Encryption under the SK-IP Shield.
-        </div>
+        <div class="profile-shield">
+            <div id="product-icon" class="gold-seal" style="border: 2px solid var(--gold); border-radius: 50%; color: var(--gold); padding: 15px; font-weight: 900; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;">SKR</div>
+            
+            <form action="#">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>Member One (Envoy Title)</label>
+                        <input type="text" placeholder="Nehemiah Brown, Elected Envoy">
+                    </div>
+                    <div class="form-group">
+                        <label>Member Two (Envoy Title)</label>
+                        <input type="text" placeholder="Jane Doe, Social Officer">
+                    </div>
+                </div>
 
-        <div class="settings-card">
-            <h3 style="margin-bottom: 20px;">Ledger Appearance</h3>
-            <div class="settings-row">
-                <div class="input-group">
-                    <label>Public Display Name</label>
-                    <input type="text" value="Nehemiah Brown">
+                <div class="form-group">
+                    <label>Encrypted Ledger Email</label>
+                    <input type="email" placeholder="n.brown@vexilla.org">
                 </div>
-                <button class="btn-outline-sm">Update</button>
-            </div>
-            <div class="settings-row">
-                <div class="input-group">
-                    <label>Preferred Pronouns / Identity</label>
-                    <input type="text" value="Man (He/Him)">
-                </div>
-                <button class="btn-outline-sm">Update</button>
-            </div>
-        </div>
 
-        <div class="settings-card">
-            <h3 style="margin-bottom: 20px;">IP Shield Privacy</h3>
-            <div class="settings-row">
-                <div class="input-group">
-                    <h4>Public Search Visibility</h4>
-                    <p style="font-size: 0.8rem; color: #666;">Allow others to find your bond by searching your names.</p>
-                </div>
-                <div class="toggle-switch on" onclick="this.classList.toggle('on')"></div>
+                <button type="submit" class="btn-gold full-width">Update Legacy Identity</button>
+            </form>
+            
+            <div style="margin-top: 40px; border-top: 1px solid var(--glass); padding-top: 30px;">
+                <p style="font-size: 0.8rem; color: #555;">To terminate your record and IP Shield protection, visit the <a href="dissolve.html" style="color: #666; text-decoration: underline;">Dissolution Request Protocol</a> page.</p>
             </div>
-            <div class="settings-row">
-                <div class="input-group">
-                    <h4>Hide Ledger ID</h4>
-                    <p style="font-size: 0.8rem; color: #666;">Mask your serial number on the public verification page.</p>
-                </div>
-                <div class="toggle-switch" onclick="this.classList.toggle('on')"></div>
-            </div>
-        </div>
-
-        <div class="settings-card" style="border-color: var(--gold);">
-            <h3 style="margin-bottom: 20px;">Subscription & Renewal</h3>
-            <div class="settings-row">
-                <div class="input-group">
-                    <h4>Unity Bond Renewal</h4>
-                    <p style="font-size: 0.8rem; color: #666;">Auto-renew archival status on March 18, 2027.</p>
-                </div>
-               <button class="btn-gold-sm" onclick="location.href='billing.html'">Manage Billing</button>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <p style="font-size: 0.7rem; color: #444;">Solomon Kin Records LLC | Last Login: March 18, 2026</p>
         </div>
     </div>
 
