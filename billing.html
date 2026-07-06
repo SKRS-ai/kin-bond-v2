@@ -3,62 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Ledger | Solomon Kin Records</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Secure Payment Terminal | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .billing-container { max-width: 900px; margin: 120px auto; padding: 0 5%; }
-        .ledger-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; margin-top: 50px; }
-        .ledger-card { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass); padding: 40px; border-radius: 20px; position: relative; }
-        .upgrade-callout { background: rgba(212, 175, 55, 0.05); border: 2px solid var(--gold); border-radius: 10px; padding: 20px; text-align: center; margin-top: 30px; }
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 20px 60px 20px;
+        }
+
+        .billing-container {
+            width: 100%;
+            max-width: 950px;
+            perspective: 1200px;
+        }
+
+        .billing-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            transform-style: preserve-3d;
+        }
+
+        @media (max-width: 768px) {
+            .billing-grid { grid-template-columns: 1fr; }
+        }
+
+        .billing-card {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-input-node {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            padding: 14px 16px;
+            color: var(--text-white);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0;
+        }
+
+        .form-input-node:focus {
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 15px var(--sapphire-glow);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .summary-block {
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 25px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-glass);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .summary-row:last-child {
+            border-bottom: none;
+            padding-top: 15px;
+        }
+
+        .security-badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .security-item {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
-        <div class="nav-links">
-            <a href="account-settings.html">Back to Identity</a>
-            <a href="dashboard.html" class="btn-gold-sm">Secure Vault</a>
+    <!-- Fortified Navigation Header -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="identity-gateway">
+            <a href="dashboard.html" class="btn-core btn-auth-outline">‹ Cancel</a>
         </div>
     </nav>
 
-    <div class="billing-container">
-        <header style="text-align: center;">
-            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">Office of Records</span>
-            <h1>Financial <span class="gold-text-italic">Ledger.</span></h1>
-            <p style="color: var(--text-gray); margin-top: 20px;">Review your archival bond history and manage the IP Shield maintenance fee.</p>
-        </header>
+    <!-- Main Payment Desk Workspace -->
+    <div class="billing-container perspective-container">
+        <div class="billing-grid">
+            
+            <!-- Left Card: Secure Payment Parameter Input Desk -->
+            <div class="billing-card card-3d">
+                <div class="emoji-badge pop-3d">💳 Secure Stripe Processing Terminal</div>
+                <h2 style="font-size: 1.8rem; font-weight: 800; color: #fff; margin: 10px 0 30px 0;">Payment <span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Information</span></h2>
+                
+                <form id="payment-form" onsubmit="event.preventDefault(); alert('Transaction processing successful via Global Citizen Joe, LLC. Diverting to success clearing yard...'); location.href='success.html';">
+                    
+                    <div class="form-group pop-3d">
+                        <label>Cardholder Legal Name</label>
+                        <input type="text" class="form-input-node" placeholder="As displayed on billing account" required>
+                    </div>
 
-        <div class="ledger-grid">
-            <div class="ledger-card">
-                <h3>Transaction History</h3>
-                <div style="margin-top: 20px; border-top: 1px solid var(--glass);">
-                    <div style="display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid var(--glass);">
-                        <span>MAR 18, 2026</span>
-                        <span style="color: var(--text-gray);">ANNUAL UNITY BOND</span>
-                        <span class="gold-text">$29.99 [PAID]</span>
+                    <div class="form-group pop-3d">
+                        <label>Credit or Debit Card Number</label>
+                        <div style="position: relative;">
+                            <input type="text" class="form-input-node" placeholder="0000 0000 0000 0000" maxlength="19" required style="padding-left: 45px;">
+                            <span style="position: absolute; left: 16px; top: 13px; font-size: 1.1rem; opacity: 0.5;">🔒</span>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="form-group pop-3d">
+                            <label>Expiration Date</label>
+                            <input type="text" class="form-input-node" placeholder="MM / YY" maxlength="5" required style="text-align: center;">
+                        </div>
+                        <div class="form-group pop-3d">
+                            <label>Security Key (CVC)</label>
+                            <input type="password" class="form-input-node" placeholder="•••" maxlength="4" required style="text-align: center;">
+                        </div>
+                    </div>
+
+                    <div class="form-group pop-3d" style="margin-bottom: 0;">
+                        <label>Billing Postal Code</label>
+                        <input type="text" class="form-input-node" placeholder="e.g. 19102" required>
+                    </div>
+            </div>
+
+            <!-- Right Card: Transaction Summary & Institutional Authorization -->
+            <div class="billing-card card-3d" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 20px; font-weight: 700;">Order Valuation</h3>
+                    
+                    <div class="summary-block pop-3d">
+                        <div class="summary-row">
+                            <span>Fulfillment Target:</span>
+                            <strong style="color: #fff;" id="billing-item-name">Kinetic Gold Exhibition Print</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Merchant Statement:</span>
+                            <strong style="color: var(--text-muted); font-size: 0.85rem;">Global Citizen Joe, LLC</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax Allocation (0%):</span>
+                            <strong style="color: #cbd5e1;">$0.00</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span style="font-weight: 700; color: #fff;">Aggregate Charge:</span>
+                            <strong style="color: var(--kinetic-gold); font-size: 1.25rem; font-weight: 800;" id="billing-item-total">$85.00</strong>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; text-align: center;" class="pop-3d">
+                        Your transaction data is fully tokenized and transmitted across standard banking layers. wekinnected.com never tracks or intercepts temporary raw card data clusters.
+                    </p>
+                </div>
+
+                <div class="pop-3d">
+                    <button type="submit" class="btn-core btn-gold-glow full-width" style="justify-content: center; padding: 16px; font-size: 1rem; margin-top: 25px;">
+                        Authorize Secure Payment 🛡️
+                    </button>
+
+                    <!-- Security Verification Indicators -->
+                    <div class="security-badge-row">
+                        <div class="security-item"><span>🔒</span> 256-Bit SSL</div>
+                        <div class="security-item"><span>🛡️</span> PCI Compliant</div>
+                        <div class="security-item"><span>💳</span> Stripe Verified</div>
                     </div>
                 </div>
-                <button class="btn-outline-sm full-width" style="margin-top: 30px;" onclick="location.href='https://billing.stripe.com/p/session/...' ">
-                    Access Stripe Billing Portal
-                </button>
-                <p style="font-size: 0.7rem; color: #444; margin-top: 10px; text-align: center;">Transactions secured by Vexilla AITS encryption.</p>
+                </form>
             </div>
 
-            <div class="ledger-card">
-                <h4>IP Shield Status</h4>
-                <div class="price" style="font-size: 2.5rem; margin: 10px 0;">ACTIVE</div>
-                <p style="font-size: 0.8rem; color: #888;">Next Maintenance Fee Due: <br> MAR 18, 2027 ($29.99)</p>
-
-                <div class="upgrade-callout">
-                    <h4>Evolve to Perpetual</h4>
-                    <p style="font-size: 0.8rem; color: #bbb; margin: 10px 0;">Secure your legacy forever with a one-time payment. All future maintenance fees are waived.</p>
-                    <a href="support.html?product=lifetime" class="btn-gold full-width">Lock My Bond Forever ($49.99)</a>
-                </div>
-            </div>
         </div>
     </div>
+
+    <!-- Interface URL State Detection Injection Logic -->
+    <script>
+        window.onload = function() {
+            // Checks search parameters to dynamically calculate value adjustments
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetTier = urlParams.get('tier');
+
+            const nameElement = document.getElementById('billing-item-name');
+            const totalElement = document.getElementById('billing-item-total');
+
+            if (targetTier === 'lifetime' || targetTier === 'institutional') {
+                nameElement.innerText = "Infinite Ledger Pass";
+                totalElement.innerText = "$499.00";
+            } else if (targetTier === 'frame' || targetTier === 'sovereign') {
+                nameElement.innerText = "The Grand Sovereign Case";
+                totalElement.innerText = "$175.00";
+            } else if (targetTier === 'dissolution' || targetTier === 'revocation') {
+                nameElement.innerText = "Filing Settlement Fee";
+                totalElement.innerText = "$14.99";
+            }
+        };
+    </script>
 
 </body>
 </html>
