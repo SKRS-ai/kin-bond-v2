@@ -2,49 +2,300 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Bond | Solomon Kin Records</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Connection Lifecycle | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
+        }
+
+        .vault-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+            padding-top: 75px;
+        }
+
+        @media (max-width: 768px) {
+            .vault-container { grid-template-columns: 1fr; }
+            .vault-sidebar { border-right: none !important; border-bottom: 1px solid var(--border-glass); }
+        }
+
+        .vault-sidebar {
+            background: rgba(15, 23, 42, 0.4);
+            border-right: 1px solid var(--border-glass);
+            padding: 40px 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .sidebar-link.active {
+            background: linear-gradient(135deg, #eab308 0%, var(--kinetic-gold) 100%);
+            color: #060b24;
+            font-weight: 700;
+            box-shadow: 0 4px 15px var(--gold-glow);
+        }
+
+        .vault-main { 
+            padding: 50px 5%; 
+        }
+
+        /* Specialized Management Framework Layout */
+        .management-sections {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .inventory-card {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 30px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .inventory-card:hover {
+            border-color: var(--electric-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--sapphire-glow);
+        }
+
+        .inventory-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Document and Invitation Lists */
+        .data-table-node {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .data-table-node th {
+            padding: 12px 16px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .data-table-node td {
+            padding: 16px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            color: #cbd5e1;
+        }
+
+        .data-table-node tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-status.approved { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .badge-status.pending { background: rgba(234, 179, 8, 0.1); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.2); }
+
+        .btn-action-sm {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid var(--border-glass);
+            background: rgba(255,255,255,0.03);
+            color: #fff;
+            transition: all 0.2s;
+        }
+
+        .btn-action-sm:hover {
+            border-color: #fff;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .lifecycle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .lifecycle-action-card {
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .lifecycle-action-card:hover {
+            background: rgba(0, 0, 0, 0.25);
+        }
+    </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <div class="manage-container">
-        <header class="manage-header">
-            <span class="gold-text">SOLOMON KIN LLC</span>
-            <h1>Bond Lifecycle Management</h1>
-            <p>Current Status: <span class="status-active">ACTIVE - VERIFIED</span></p>
-        </header>
-
-        <div class="management-grid">
-            <div class="manage-card">
-                <div class="icon">⏳</div>
-                <h3>Extend Validation</h3>
-                <p>Your current bond expires in <strong>32 Days</strong>. Renew now to maintain your standing in the Kin Records Archive.</p>
-                <button class="btn-gold-sm">Renew for 1 Year ($19.99)</button>
-            </div>
-
-            <div class="manage-card">
-                <div class="icon">✏️</div>
-                <h3>Amend Identities</h3>
-                <p>Changed your pronouns or preferred names? Update your digital certificate across the entire SK network.</p>
-                <button class="btn-outline-sm">File Amendment ($9.99)</button>
-            </div>
-
-            <div class="manage-card danger">
-                <div class="icon">💔</div>
-                <h3>Dissolve Bond</h3>
-                <p>Formally end this digital record. Both parties must confirm. This will move the record to the 'Expired' archive.</p>
-                <button class="btn-danger" onclick="confirmDissolution()">Initiate Dissolution ($14.99)</button>
-            </div>
+    <!-- Fortified Sticky Navbar Navigation -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="identity-gateway">
+            <span class="emoji-badge" style="margin-bottom: 0;">🛠️ CENTRAL CONTROL DESK</span>
+            <a href="index.html" class="btn-core btn-auth-outline" style="padding: 10px 20px;">Logout</a>
         </div>
+    </nav>
 
-        <div class="back-link">
-            <a href="dashboard.html">← Return to Member Vault</a>
-        </div>
+    <!-- Main Grid Workspace Matrix -->
+    <div class="vault-container">
+        
+        <!-- Sidebar Options Tree -->
+        <aside class="vault-sidebar">
+            <a href="dashboard.html" class="sidebar-link">📂 Active Ledger Bonds</a>
+            <a href="#" class="sidebar-link active">⚙️ Manage Document Inventory</a>
+            <a href="account-settings.html" class="sidebar-link">👤 Identity Settings</a>
+            <a href="support.html" class="sidebar-link">🛡️ System Support Desk</a>
+            <hr style="border: 0; border-top: 1px solid var(--border-glass); margin: 25px 0;">
+            <a href="dissolve.html" class="sidebar-link" style="color: #ef4444; background: rgba(239, 68, 68, 0.02); border: 1px solid rgba(239, 68, 68, 0.1);">
+                💔 Execute Contract Dissolution
+            </a>
+        </aside>
+
+        <!-- Main Desk View Window -->
+        <main class="vault-main perspective-container">
+            <header style="margin-bottom: 40px;">
+                <h1 style="font-size: 2.4rem; font-weight: 800; color: #fff; background: none; -webkit-text-fill-color: initial;">
+                    Operational <span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Lifecycle Manager</span>
+                </h1>
+                <p style="color: var(--text-muted); margin-top: 4px; font-size: 1.05rem;">Review uploaded telemetry materials and cross-signature invitations.</p>
+            </header>
+
+            <div class="management-sections">
+                
+                <!-- Section 1: Uploaded Identification Verification Matrix -->
+                <section class="inventory-card">
+                    <h3><span>📁</span> Verified Document Inventory</h3>
+                    <table class="data-table-node">
+                        <thead>
+                            <tr>
+                                <th>Document Label</th>
+                                <th>Associated Signatory</th>
+                                <th>Validation Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Gov_Passport_Scan.pdf</b></td>
+                                <td>Signatory Node 1 (You)</td>
+                                <td><span class="badge-status approved">● Verified Authentic</span></td>
+                                <td><button class="btn-action-sm" onclick="alert('Opening secure file sandbox viewer...')">Inspect File</button></td>
+                            </tr>
+                            <tr>
+                                <td><b>Residence_Lease_Agreement.jpg</b></td>
+                                <td>Joint Shared Assets</td>
+                                <td><span class="badge-status approved">● Verified Authentic</span></td>
+                                <td><button class="btn-action-sm" onclick="alert('Opening secure file sandbox viewer...')">Inspect File</button></td>
+                            </tr>
+                            <tr>
+                                <td><b>Secondary_Identity_Proof.pdf</b></td>
+                                <td>Signatory Node 2</td>
+                                <td><span class="badge-status pending">⏳ Pending Extraction</span></td>
+                                <td><button class="btn-action-sm" disabled style="opacity: 0.4;">Processing</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Section 2: Outbound Co-Signatory Invitation Systems -->
+                <section class="inventory-card">
+                    <h3><span>✉️</span> Active Cross-Authentication Invitations</h3>
+                    <table class="data-table-node">
+                        <thead>
+                            <tr>
+                                <th>Target Recipient Email</th>
+                                <th>Allocated Relationship Track</th>
+                                <th>Transmission Age</th>
+                                <th>Management</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>partner-node@domain.com</td>
+                                <td>Intimate Partners / Exclusive Dating</td>
+                                <td>24 Hours Elapsed</td>
+                                <td>
+                                    <button class="btn-action-sm" onclick="alert('Re-transmitting token strings...')">Ping Link</button>
+                                    <button class="btn-action-sm" style="color: #ef4444; border-color: rgba(239, 68, 68, 0.2);" onclick="alert('Revoking verification access tokens...')">Revoke</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Section 3: Configuration Tracking Shifts -->
+                <section class="inventory-card">
+                    <h3><span>⚙️</span> Relationship Parameter Adjustments</h3>
+                    <div class="lifecycle-grid">
+                        <div class="lifecycle-action-card">
+                            <h4 style="color: #fff; font-size: 1rem; margin-bottom: 8px;">Amend Profile Data</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">
+                                File real-time naming conventions or fluid pronoun matrix parameter adjustments without breaking current ledger blocks.
+                            </p>
+                            <button class="btn-core btn-auth-outline" style="padding: 8px 16px; font-size: 0.8rem;" onclick="location.href='account-settings.html'">File Amendment ✏️</button>
+                        </div>
+                        <div class="lifecycle-action-card">
+                            <h4 style="color: #fff; font-size: 1rem; margin-bottom: 8px;">Extend Node Durability</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">
+                                Your active records carry full evergreen protection settings, backed directly by our proprietary architecture. Connect to high-tier print processing.
+                            </p>
+                            <button class="btn-core btn-gold-glow" style="padding: 8px 16px; font-size: 0.8rem;" onclick="location.href='buy-unity.html'">Exhibition Order 📜</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
     </div>
 
-    <footer class="mini-footer">
-        <p class="disclaimer">
-            DISSOLUTION NOTICE: Once a bond is dissolved, the Verification ID is permanently retired. Solomon Kin LLC maintains a history of all dissolved records for archival integrity under the 2026 IP Shield.
+    <!-- Institutional Footer Bar -->
+    <footer style="background: #04081a; padding: 30px 5%; border-top: 1px solid var(--border-glass); margin-top: 60px;">
+        <p style="color: var(--text-muted); font-size: 0.8rem; text-align: center; line-height: 1.6; max-width: 1000px; margin: 0 auto;">
+            <strong>REGULATORY SYSTEM COMPLIANCE NOTICE:</strong> All active data validation strings and uploaded identification assets are isolated within Private Tier encryption boundaries inside the Global Citizen Joe, LLC security shield. Dissolution or formal structural revocation completely clears temporary staging nodes. Historical ledger entry IDs are preserved as immutable archive metadata.
         </p>
     </footer>
 
