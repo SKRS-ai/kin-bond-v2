@@ -3,67 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Impact Ledger | Vexilla Foundation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Social Impact Ledger | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .impact-container { max-width: 1000px; margin: 120px auto; padding: 0 5%; }
-        .mission-panel { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass); padding: 50px; border-radius: 20px; margin-bottom: 60px; text-align: center; }
-        .mission-panel h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        
-        .cause-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .cause-card { background: var(--velvet); border: 1px solid var(--glass); padding: 30px; border-radius: 15px; }
-        .cause-card h4 { color: var(--gold); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; }
-        .cause-card h3 { font-family: var(--font-serif); margin-bottom: 15px; font-size: 1.4rem; }
-        .cause-card p { font-size: 0.9rem; color: var(--text-gray); }
-        
-        .impact-summary { background: #000; border: 2px solid var(--gold); padding: 40px; border-radius: 20px; text-align: center; margin-top: 80px; }
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
+        }
+
+        .impact-container {
+            max-width: 1100px;
+            margin: 140px auto 80px auto;
+            padding: 0 20px;
+            perspective: 1200px;
+        }
+
+        /* 3D Statistical Metric Card Layouts */
+        .metric-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 45px;
+        }
+
+        .metric-card {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 30px 24px;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: transform 0.4s var(--ease-3d), border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px) rotateX(2deg);
+            border-color: var(--electric-blue);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px var(--sapphire-glow);
+        }
+
+        .metric-value {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--kinetic-gold);
+            margin-bottom: 5px;
+            text-shadow: 0 0 15px var(--gold-glow);
+            font-family: monospace;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-white);
+            font-weight: 700;
+        }
+
+        /* Sector Information Matrix */
+        .cause-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .cause-card {
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-glass);
+            padding: 35px;
+            border-radius: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .cause-card:hover {
+            border-color: var(--border-glass);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .cause-card h4 {
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cause-card h3 {
+            font-size: 1.35rem;
+            color: #fff;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .cause-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Wholesome Action Highlight Area */
+        .impact-summary {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(6, 11, 36, 0.8) 100%);
+            border: 1px solid var(--kinetic-gold);
+            padding: 50px 40px;
+            border-radius: 24px;
+            text-align: center;
+            margin-top: 60px;
+            box-shadow: 0 0 30px var(--gold-glow);
+        }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">VEXILLA <span class="gold-text">FOUNDATION</span></div>
-        <div class="nav-links">
-            <a href="grants.html">Grants Ledger</a>
-            <a href="governance.html">Corporate Hierarchy</a>
+    <!-- Fortified Fixed Top Sticky Navigation Bar -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="nav-menu">
+            <li><a href="index.html" class="nav-link">🏠 Main Portal</a></li>
+            <li><a href="grants.html" class="nav-link">🏛️ Grant Mission</a></li>
+        </ul>
+        <div class="identity-gateway">
+            <a href="wekinnected_form.html" class="btn-core btn-gold-glow" style="padding: 10px 20px;">Get Certified 📜</a>
         </div>
     </nav>
 
-    <div class="impact-container">
+    <!-- Main Strategic Impact Area Container -->
+    <div class="impact-container perspective-container">
+        
         <header style="text-align: center; margin-bottom: 60px;">
-            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">A Non-Profit Vexilla Cause</span>
-            <h1 style="font-size: 3rem; margin-top: 10px;">The Social <span class="gold-text-italic">Change Ledger.</span></h1>
-            <p style="color: var(--text-gray); max-width: 700px; margin: 20px auto;">Connecting the Solomon Kin ecosystem to tangible community impact, relationship support, and non-profit grant initiatives.</p>
+            <div class="emoji-badge">📊 Data Verification & Empirical Tracking</div>
+            <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1.2; margin-top: 10px; background: none; -webkit-text-fill-color: initial;">
+                The Social <span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Impact Ledger</span>
+            </h1>
+            <p style="color: var(--text-muted); max-width: 750px; margin: 16px auto 0 auto; font-size: 1.1rem; line-height: 1.7;">
+                Analyzing behavioral telemetry and relationship outcomes. Discover how explicit digital milestones protect modern partnerships and foster community cohesion.
+            </p>
         </header>
 
-        <div class="cause-grid">
+        <!-- 3D Numerical Analytics Grid Matrix -->
+        <section class="metric-row pop-3d">
+            <div class="metric-card">
+                <div class="metric-value pop-3d">+42%</div>
+                <div class="metric-label pop-3d">Longevity Increase</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Couples state higher conflict-resolution capabilities following structured milestone registration.</p>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value pop-3d">94%</div>
+                <div class="metric-label pop-3d">Coordinated Safety</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Users report explicit dual-authentication signature rules minimize relational misunderstandings.</p>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value pop-3d">0%</div>
+                <div class="metric-label pop-3d">Data Leak Factor</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Private Tier account frameworks isolate data completely away from corporate tracking grids.</p>
+            </div>
+        </section>
+
+        <!-- Sector Outcome Descriptions -->
+        <div class="cause-grid pop-3d">
+            
+            <!-- Card 1: Family & Couple Track -->
             <div class="cause-card">
-                <h4>Sector 01: Community</h4>
-                <h3>Against Social Regression</h3>
-                <p>We are dedicated to combating forces that erode community trust and social cohesion. This fund supports digital literacy, media transparency (Global Citizen Joe), and decentralized platforms that reconnect people.</p>
+                <h4><span>📈</span> Sector 01: Pre-Marriage Stability</h4>
+                <h3>Sustaining Partnerships Early</h3>
+                <p>
+                    Formal contract declarations establish an early, serious behavioral roadmap. Requiring explicit mutual validation loops encourages transparent communication, empowering dating or cohabiting partners to design structural expectations prior to pursuing marriage tracks.
+                </p>
             </div>
 
+            <!-- Card 2: Youth & Community Mentorship Track -->
             <div class="cause-card">
-                <h4>Sector 02: Support</h4>
-                <h3>Sustaining Relationships</h3>
-                <p>Digital commitment is just the start. This fund provides micro-grants for relationship counseling, intimacy workshops, and community spaces that support strong, independent bonds, man to woman and woman to man.</p>
+                <h4><span>🤝</span> Sector 02: Mentorship Safeguards</h4>
+                <h3>Anchoring Community Togetherness</h3>
+                <p>
+                    Structured digital oversight protects vulnerable community clusters. Logging secure, verifiable bonds between regional mentors and youth networks reduces tracking isolation, ensures program compliance, and reinforces systemic trust inside local care systems.
+                </p>
             </div>
 
+            <!-- Card 3: Inclusivity Alignment Track -->
             <div class="cause-card">
-                <h4>Sector 03: Identity</h4>
-                <h3>Digital Rights Grant</h3>
-                <p>Powered by KinSense Labs, this initiative funds research into sovereign digital identity, protecting users from state and corporate overreach (Our original cause).</p>
+                <h4><span>🌈</span> Sector 03: Fluid Identity Equity</h4>
+                <h3>Universal Social Validation</h3>
+                <p>
+                    Our proprietary selection matrix ensures non-traditional families and intersectional partnerships achieve equal prestige. Restoring formal institutional record standing to historically underrepresented bonds reduces systemic exclusion and advances societal equity metrics.
+                </p>
             </div>
+
         </div>
 
-        <div class="impact-summary">
-            <h3>Your Purchase Makes an Impact</h3>
-            <p style="color: var(--text-gray); margin: 15px 0; max-width: 600px; margin: 15px auto;">
-                A percentage of all Solomon Kin Unity Bond registration fees directly funds the Vexilla Foundation and these critical social change initiatives.
+        <!-- Conversion Action Panel -->
+        <div class="impact-summary pop-3d">
+            <span class="celebration-badge" style="font-size: 2.5rem; display: block; margin-bottom: 10px;">🌟</span>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 12px; font-weight: 700;">Secure Your Shared Footprint</h3>
+            <p style="color: #cbd5e1; font-size: 1rem; max-width: 650px; margin: 0 auto 25px auto; line-height: 1.6;">
+                Whether you are formalizing an intimate pre-marriage track or an operational mentorship node, your dual-authentication filing anchors accountability and helps validate a resilient social infrastructure.
             </p>
-            <a href="support.html" class="btn-gold-sm" style="margin-top: 25px; display: inline-block;">Initialize Your Bond</a>
+            <a href="wekinnected_form.html" class="btn-core btn-gold-glow" style="padding: 14px 32px; font-size: 1rem;">
+                Initialize Your Connection Node 🚀
+            </a>
         </div>
+
     </div>
 
 </body>
