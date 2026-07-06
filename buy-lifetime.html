@@ -3,156 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional Ledger Pass Procurement | wekinnected.com</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Premium Archival Certificate Mockup | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --deep-sapphire: #060b24;
+            --royal-slate: #0f172a;
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --kinetic-gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.15);
+            --sapphire-glow: rgba(59, 130, 246, 0.2);
+            --ease-3d: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
         body {
             background-color: var(--deep-sapphire);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 120px 20px 60px 20px;
+            margin: 0;
+            padding: 40px;
+            font-family: 'Inter', sans-serif;
         }
 
-        .tier-container {
-            width: 100%;
-            max-width: 1000px;
-            perspective: 1200px;
-        }
-
-        .tier-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 1fr;
-            gap: 35px;
-            transform-style: preserve-3d;
-        }
-
-        @media (max-width: 768px) {
-            .tier-grid { grid-template-columns: 1fr; }
-        }
-
-        .tier-card {
-            background: var(--royal-slate);
-            border: 1px solid var(--border-glass);
-            padding: 45px 40px;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-        }
-
-        .feature-item {
+        /* 3D Physical Space Viewport */
+        .mockup-stage {
+            perspective: 1600px;
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 18px;
-            font-size: 0.95rem;
-            color: #cbd5e1;
-            line-height: 1.5;
-        }
-
-        .feature-item b {
-            color: var(--electric-blue);
-        }
-
-        .price-badge-block {
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border-glass);
-            border-radius: 16px;
-            padding: 24px;
-            text-align: center;
-            margin: 25px 0;
-            transform: translateZ(20px);
-        }
-
-        .form-input-node {
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-glass);
-            border-radius: 10px;
-            padding: 14px 16px;
-            color: var(--text-white);
-            margin-bottom: 16px;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
+            max-width: 500px;
         }
 
-        .form-input-node:focus {
-            border-color: var(--electric-blue);
-            box-shadow: 0 0 15px var(--sapphire-glow);
+        /* The Grand Sovereign Frame Case (Obsidian Solid Wood Layer) */
+        .frame-case-shadow {
+            background: #090d16;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 
+                        inset 0 0 0 2px #1e293b,
+                        0 0 40px var(--sapphire-glow);
+            transform: rotateX(15deg) rotateY(-12deg) rotateZ(2deg);
+            transform-style: preserve-3d;
+            transition: transform 0.6s var(--ease-3d), box-shadow 0.6s var(--ease-3d);
+        }
+
+        .frame-case-shadow:hover {
+            transform: rotateX(8deg) rotateY(-4deg) rotateZ(1deg) scale(1.02);
+            box-shadow: 0 45px 90px rgba(0, 0, 0, 0.85), 
+                        0 0 50px var(--gold-glow);
+        }
+
+        /* Heavy Matte Sheet Interior Ring */
+        .matte-sheet-layer {
+            background: #f8fafc;
+            padding: 28px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.06), 0 10px 25px rgba(0,0,0,0.5);
+            transform: translateZ(25px);
+            position: relative;
+        }
+
+        /* Premium Pressed Laser Metallic Gold Foil Boundary Border */
+        .gold-foil-trim {
+            border: 3px double var(--kinetic-gold);
+            padding: 20px;
+            height: 100%;
+            position: relative;
+            outline: 1px solid rgba(212, 175, 55, 0.3);
+            outline-offset: -6px;
+        }
+
+        /* Certificate Internal Typography Setup */
+        .cert-body {
+            text-align: center;
+            color: #0f172a;
+        }
+
+        .cert-header {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .cert-seal-stamp {
+            width: 45px;
+            height: 45px;
+            border: 1px dashed var(--kinetic-gold);
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 900;
+            color: var(--kinetic-gold);
+            background: rgba(214, 175, 55, 0.05);
+        }
+
+        .cert-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 10px 0;
+            line-height: 1.1;
+        }
+
+        .cert-text {
+            font-size: 0.75rem;
+            line-height: 1.6;
+            color: #334155;
+            max-width: 280px;
+            margin: 12px auto;
+        }
+
+        .cert-names {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #000;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        /* Commemorative Reference Ledger Box Metadata */
+        .cert-meta-block {
+            border-top: 1px solid #e2e8f0;
+            margin-top: 20px;
+            padding-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.55rem;
+            font-family: monospace;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        /* Interactive Dynamic Highlight Sheen Overlays */
+        .foil-glare-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0) 50%);
+            pointer-events: none;
+            transform: translateZ(30px);
         }
     </style>
 </head>
 <body>
 
-    <!-- Fortified Sticky Navigation Header -->
-    <nav class="fortified-nav">
-        <a href="index.html" class="logo-block">
-            🤝 we<span>kinnected</span>
-        </a>
-        <div class="identity-gateway">
-            <a href="dashboard.html" class="btn-core btn-auth-outline">‹ Exit Gateway</a>
-        </div>
-    </nav>
-
-    <!-- Main Tier Operational Panel -->
-    <div class="tier-container perspective-container">
-        <div class="tier-grid">
-            
-            <!-- Left Side: Institutional Value Proposition Presentation -->
-            <div class="tier-card card-3d">
-                <div class="emoji-badge pop-3d">🏛️ Institutional Network Authority</div>
-                <h2 style="font-size: 2.2rem; font-weight: 800; color: #fff; margin: 12px 0 20px 0; line-height: 1.2;">
-                    The Infinite <span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Ledger Pass</span>
-                </h2>
-                <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">
-                    Engineered explicitly for community directors, spiritual heads, youth mentors, and organizational leaders. This framework unlocks unrestricted clearance paths to act as a centralized registrar.
-                </p>
-
-                <!-- System Core Features Checklist -->
-                <div class="features-list-wrapper pop-3d">
-                    <div class="feature-item">
-                        <b>✓</b> <span><strong>Infinite Node Generation:</strong> Issue unlimited community, mentorship, co-parenting, or spiritual sponsorship bonds directly under your dashboard.</span>
-                    </div>
-                    <div class="feature-item">
-                        <b>✓</b> <span><strong>Custom Vanity Architecture:</strong> Configure tailored verification lookup paths for your program tracking layouts (e.g., <span style="font-family: monospace; color: var(--kinetic-gold);">wekinnected.com/verify/YourCommunityID</span>).</span>
-                    </div>
-                    <div class="feature-item">
-                        <b>✓</b> <span><strong>Unified Telemetry Oversight:</strong> Monitor active cross-signature statuses and manage document compliance inventories across all secondary units simultaneously.</span>
-                    </div>
-                    <div class="feature-item">
-                        <b>✓</b> <span><strong>Evergreen Structural Standing:</strong> Issued nodes remain active with zero recurring maintenance fees or ledger expiration markers.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Side: Pricing Metrics & Secure Authentication Checkout Desk -->
-            <div class="tier-card card-3d" style="display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 8px; font-weight: 700;">Establish Registrar Node</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Deploy an administrative framework to begin issuing connection bonds.</p>
-                    
-                    <div class="price-badge-block">
-                        <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; display: block;">One-Time Activation Asset Cost</span>
-                        <strong style="color: var(--kinetic-gold); font-size: 2.8rem; font-weight: 900; display: block; margin-top: 5px; text-shadow: 0 0 20px var(--gold-glow);">$499.00 <span style="font-size: 1rem; color: var(--text-muted); font-weight: 400; letter-spacing: 0;">USD</span></strong>
-                    </div>
-
-                    <form id="institutional-form" onsubmit="event.preventDefault(); alert('Redirecting to Global Citizen Joe secure processing terminal...');">
-                        <input type="text" class="form-input-node" placeholder="Organization / Institution Legal Name" required>
-                        <input type="text" class="form-input-node" placeholder="Authorized Representative Full Name" required>
-                        <input type="text" class="form-input-node" placeholder="Requested Prefix String (e.g., MentorHub)" required>
+    <!-- 3D Render Placeholder Module Entry Point -->
+    <div class="mockup-stage">
+        <div class="frame-case-shadow">
+            <div class="matte-sheet-layer">
+                <div class="gold-foil-trim">
+                    <div class="cert-body">
                         
-                        <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; text-align: center; margin-top: 15px;">
-                            Protected under the Global Citizen Joe, LLC Data Shield. This transaction grants permanent institutional registrar rights across our secure cloud directories.
-                        </p>
+                        <div class="cert-header">Global Relationship Registry</div>
+                        <div class="cert-seal-stamp">WKND</div>
+                        
+                        <div class="cert-title">Certificate of Verifiable Unity</div>
+                        <p class="cert-text">This document explicitly records that a consensual, synchronized connection node was formalized inside the data directory lines.</p>
+                        
+                        <div class="cert-names">Nehemiah Brown & Partner</div>
+                        
+                        <p class="cert-text" style="font-size: 0.65rem; font-style: italic; opacity: 0.8;">"Protected Under the Global Citizen Joe Security Shield Mandate"</p>
+                        
+                        <div class="cert-meta-block">
+                            <span>Index: WK-2026-XJ92</span>
+                            <span>Status: Verified Active</span>
+                        </div>
+                        
+                    </div>
                 </div>
-
-                <button type="submit" class="btn-core btn-gold-glow full-width" style="justify-content: center; padding: 16px; font-size: 1rem; margin-top: 30px;">
-                    Activate Infinite Ledger Pass 🚀
-                </button>
-                </form>
+                <div class="foil-glare-overlay"></div>
             </div>
-
         </div>
     </div>
 
