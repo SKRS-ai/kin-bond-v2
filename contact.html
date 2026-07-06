@@ -3,96 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Concierge | Solomon Kin LLC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Client Success Desk | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .contact-container { max-width: 1000px; margin: 120px auto; padding: 0 5%; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; }
-        .contact-info h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .contact-method { margin-bottom: 30px; }
-        .contact-method h4 { color: var(--gold); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 5px; }
-        .contact-method p { font-size: 1.1rem; color: var(--text-main); }
-        
-        .contact-form { background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 20px; border: 1px solid var(--glass); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 0.75rem; color: var(--text-gray); margin-bottom: 8px; }
-        .form-group input, .form-group textarea, .form-group select { 
-            width: 100%; background: #000; border: 1px solid #333; color: white; padding: 12px; border-radius: 5px; font-family: inherit;
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
         }
-        .form-group textarea { height: 120px; resize: none; }
+
+        .contact-container { 
+            max-width: 1100px; 
+            margin: 140px auto 80px auto; 
+            padding: 0 20px; 
+            display: grid; 
+            grid-template-columns: 1fr 1.3fr; 
+            gap: 50px; 
+            perspective: 1200px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; margin-top: 100px; gap: 40px; }
+        }
+
+        .contact-info {
+            padding: 20px 0;
+        }
+
+        .contact-info h2 { 
+            font-size: 2.5rem; 
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px; 
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        .contact-method { 
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-glass);
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 20px; 
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            border-color: var(--electric-blue);
+            background: rgba(59, 130, 246, 0.02);
+        }
+
+        .contact-method h4 { 
+            color: var(--kinetic-gold); 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            letter-spacing: 1px; 
+            font-weight: 700;
+            margin-bottom: 6px; 
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-method p { 
+            font-size: 1.05rem; 
+            color: #e2e8f0; 
+            font-weight: 500;
+        }
         
-        .office-hours { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--glass); font-size: 0.8rem; color: #555; }
+        /* 3D Moving Interactive Input Card */
+        .contact-form-card { 
+            background: var(--royal-slate); 
+            padding: 45px; 
+            border-radius: 24px; 
+            border: 1px solid var(--border-glass); 
+            transform-style: preserve-3d;
+            transition: transform 0.5s var(--ease-3d), border-color 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-form-card:hover {
+            transform: translateY(-4px) rotateX(1deg);
+            border-color: var(--electric-blue);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 30px var(--sapphire-glow);
+        }
+
+        .form-group { 
+            margin-bottom: 24px; 
+        }
+
+        .form-group label { 
+            display: block; 
+            font-size: 0.8rem; 
+            color: var(--text-muted); 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 8px; 
+        }
+
+        .form-input-node { 
+            width: 100%; 
+            background: rgba(255, 255, 255, 0.02); 
+            border: 1px solid var(--border-glass); 
+            color: white; 
+            padding: 14px 16px; 
+            border-radius: 10px; 
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0;
+        }
+
+        .form-input-node:focus {
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 15px var(--sapphire-glow);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        textarea.form-input-node { 
+            height: 140px; 
+            resize: none; 
+        }
+        
+        .office-hours { 
+            margin-top: 40px; 
+            padding-top: 25px; 
+            border-top: 1px solid var(--border-glass); 
+            font-size: 0.85rem; 
+            color: var(--text-muted); 
+            line-height: 1.6;
+        }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
-        <div class="nav-links">
-            <a href="index.html">Marketplace</a>
-            <a href="governance.html">Governance</a>
+    <!-- Fortified Sticky Navbar Framework -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="nav-menu">
+            <li><a href="index.html" class="nav-link">🏠 Portal Home</a></li>
+            <li><a href="grants.html" class="nav-link">🏛️ Grant Mission</a></li>
+        </div>
+        <div class="identity-gateway">
+            <span class="emoji-badge" style="margin-bottom: 0;">🛎️ HELP & CLIENT CARE DESK</span>
         </div>
     </nav>
 
-    <div class="contact-container">
+    <!-- Main Active Communication Grid Matrix -->
+    <div class="contact-container perspective-container">
+        
+        <!-- Left Side: Information Support Pipelines -->
         <div class="contact-info">
-            <h2>The <span class="gold-text-italic">Concierge.</span></h2>
-            <p style="color: var(--text-gray); margin-bottom: 40px;">Direct access to the Solomon Kin Records Office and Vexilla Enterprise support.</p>
+            <h2>The Client <span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Success Desk</span></h2>
+            <p style="color: var(--text-muted); margin-bottom: 35px; font-size: 1.05rem; line-height: 1.6;">
+                Direct routing pathways for assistance with technical document uploads, framing shipments, or institutional grant parameters.
+            </p>
             
             <div class="contact-method">
-                <h4>General Enquiries</h4>
-                <p>nehemiah.brown@solomonkinrecords.com</p>
+                <h4><span>🛠️</span> Technical Intake Queries</h4>
+                <p>support@wekinnected.com</p>
             </div>
 
             <div class="contact-method">
-                <h4>Legal & IP Shield</h4>
-                <p>nehemiah.brown@solomonkinrecords.com</p>
+                <h4><span>📦</span> Print & Delivery Tracking</h4>
+                <p>fulfillment@wekinnected.com</p>
             </div>
 
             <div class="contact-method">
-                <h4>Corporate Mobile</h4>
-                <p>778-400-6262</p>
+                <h4><span>🏛️</span> Public-Private Partnerships</h4>
+                <p>partners@wekinnected.com</p>
             </div>
 
             <div class="office-hours">
-                EST Deployment Hours: 09:00 — 18:00 <br>
-                Solomon Kin LLC | Vexilla Enterprise Hierarchy
+                <strong>Standard Core Desk Operations:</strong><br>
+                Monday — Friday | 09:00 — 18:00 EST <br>
+                Identity Infrastructure Branch | Global Citizen Joe, LLC
             </div>
         </div>
 
-        <div class="contact-form">
-            <form action="#">
-                <div class="form-group">
-                    <label>Full Name / Organization</label>
-                    <input type="text" placeholder="Nehemiah Brown" required>
+        <!-- Right Side: 3D Interactive Messaging Terminal Form -->
+        <div class="contact-form-card card-3d">
+            <div class="emoji-badge pop-3d">✉️ Secure Ticket Encryption Staging</div>
+            <h3 style="color: #fff; font-size: 1.4rem; font-weight: 700; margin: 10px 0 25px 0;">Initialize a <span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Case Ticket</span></h3>
+            
+            <form onsubmit="event.preventDefault(); alert('Case submission logged inside our queue network under Global Citizen Joe, LLC protocols. A manager will reply within 12 standard business hours.'); this.reset();">
+                
+                <div class="form-group pop-3d">
+                    <label>Legal Full Name / Institution</label>
+                    <input type="text" class="form-input-node" placeholder="e.g. Nehemiah Brown" required>
                 </div>
                 
-                <div class="form-group">
-                    <label>Inquiry Department</label>
-                    <select>
-                        <option>General Support</option>
-                        <option>IP Shield Verification Issue</option>
-                        <option>Corporate Partnership</option>
-                        <option>Vexilla Foundation / Grants</option>
-                        <option>Media Inquiry</option>
+                <div class="form-group pop-3d">
+                    <label>Primary Account Email Path</label>
+                    <input type="email" class="form-input-node" placeholder="yourname@domain.com" required>
+                </div>
+                
+                <div class="form-group pop-3d">
+                    <label>Target Case Assignment Department</label>
+                    <select class="form-input-node" style="width: 100%;">
+                        <option>Technical Document Upload Assistance 📂</option>
+                        <option>Fulfillment Casing & Printing Support 📜</option>
+                        <option>Ledger Status & Validation Check Questions 🔒</option>
+                        <option>Institutional Pass & Grant Alignment Inquiries 🏛️</option>
+                        <option>Corporate Partnership / Media Outreach 📈</option>
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label>Message / Case Details</label>
-                    <textarea placeholder="How can the Office assist you today?"></textarea>
+                <div class="form-group pop-3d">
+                    <label>Operational Message / Case Details</label>
+                    <textarea class="form-input-node" placeholder="Please outline the parameters of your operational request..." required></textarea>
                 </div>
 
-                <button type="submit" class="btn-gold full-width">Transmit Message</button>
+                <button type="submit" class="btn-core btn-gold-glow full-width pop-3d" style="justify-content: center; padding: 15px; font-size: 1rem;">
+                    Transmit Secure Case Data 🚀
+                </button>
             </form>
-            <p style="text-align: center; font-size: 0.6rem; color: #444; margin-top: 20px;">
-                SECURE END-TO-END ENCRYPTED COMMUNICATION
+            
+            <p style="text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 24px; letter-spacing: 0.5px; font-weight: 500;" class="pop-3d">
+                🔒 REINFORCED TRANSMISSION ROUTING PROTECTED BY GLOBAL CITIZEN JOE DATA CODES
             </p>
         </div>
     </div>
 
-    <footer class="main-footer">
-        <p style="text-align: center; color: #444; font-size: 0.7rem;">&copy; 2026 Solomon Kin LLC. All Rights Reserved.</p>
+    <!-- Institutional Footer Panel Layout -->
+    <footer style="background: #04081a; padding: 35px 5%; border-top: 1px solid var(--border-glass);">
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem; line-height: 1.5;">
+            &copy; 2026 Global Citizen Joe, LLC. All Rights Reserved. Client support systems conform to international user privacy and database protection rules. Personal interaction scripts are processed directly by our secure internal help-desk networks.
+        </p>
     </footer>
 
 </body>
