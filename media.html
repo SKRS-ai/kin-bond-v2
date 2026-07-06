@@ -3,84 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Citizen Joe | Vexilla Impact Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Digital Press Kit & Media Assets | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .media-container { max-width: 1100px; margin: 120px auto; padding: 0 5%; }
-        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
-        .media-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--glass);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: 0.3s;
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
         }
-        .media-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .media-thumb { height: 180px; background: #000; display: flex; align-items: center; justify-content: center; color: #333; font-size: 2rem; }
-        .media-body { padding: 25px; }
-        .media-body h4 { font-family: var(--font-serif); margin-bottom: 10px; font-size: 1.1rem; }
-        .media-body p { font-size: 0.85rem; color: var(--text-gray); }
-        
-        .impact-bar {
-            background: var(--velvet);
-            padding: 50px;
+
+        .media-container {
+            max-width: 1100px;
+            margin: 140px auto 80px auto;
+            padding: 0 20px;
+            perspective: 1200px;
+        }
+
+        /* 3D Asset Matrix Grid Layout */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .media-card {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
             border-radius: 20px;
-            margin-top: 80px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.4s var(--ease-3d), border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px) rotateX(1deg);
+            border-color: var(--electric-blue);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 25px var(--sapphire-glow);
+        }
+
+        .media-thumb {
+            height: 180px;
+            background: rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 1px solid var(--border-glass);
+            position: relative;
+        }
+
+        .badge-overlay {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            color: var(--electric-blue);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .media-body {
+            padding: 30px;
+        }
+
+        .media-body h4 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .media-body p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Interactive Clipboard Copy Area */
+        .copy-snippet-box {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-glass);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            font-style: italic;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .copy-snippet-box:hover {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: var(--kinetic-gold);
+        }
+
+        /* Celebratory Announcement Banner Panel */
+        .announcement-banner-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(6, 11, 36, 0.8) 100%);
+            border: 1px solid var(--kinetic-gold);
+            padding: 50px 40px;
+            border-radius: 24px;
             text-align: center;
+            margin-top: 60px;
+            box-shadow: 0 0 30px var(--gold-glow);
         }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
-        <div class="nav-links">
-            <a href="grants.html">Grants Ledger</a>
-            <a href="governance.html">Corporate Hierarchy</a>
+    <!-- Fortified Sticky Navbar Framework -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="nav-menu">
+            <li><a href="index.html" class="nav-link">🏠 Main Portal</a></li>
+            <li><a href="impact.html" class="nav-link">📊 Impact Metrics</a></li>
+        </div>
+        <div class="identity-gateway">
+            <a href="dashboard.html" class="btn-core btn-auth-outline" style="padding: 10px 20px;">Return to Vault</a>
         </div>
     </nav>
 
-    <div class="media-container">
+    <!-- Main Press Kit Layout Workspace -->
+    <div class="media-container perspective-container">
+        
         <header style="text-align: center; margin-bottom: 60px;">
-            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">A Non-Profit Vexilla Division</span>
-            <h1 style="font-size: 3rem; margin-top: 10px;">Global <span class="gold-text-italic">Citizen Joe.</span></h1>
-            <p style="color: var(--text-gray); max-width: 700px; margin: 20px auto;">Connecting the Solomon Kin ecosystem to global impact, media transparency, and non-profit grant initiatives.</p>
+            <div class="emoji-badge">📣 Share Your Milestone Block</div>
+            <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1.2; margin-top: 10px; background: none; -webkit-text-fill-color: initial;">
+                The wekinnected Digital <br><span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Press & Announcement Kit</span>
+            </h1>
+            <p style="color: var(--text-muted); max-width: 750px; margin: 16px auto 0 auto; font-size: 1.1rem; line-height: 1.7;">
+                Celebrate your dual-authentication verification. Access high-resolution asset displays, announcement layout strings, and verification badges tailored for your social profiles.
+            </p>
         </header>
 
-        <div class="media-grid">
+        <!-- The Media Kit Cards Matrix -->
+        <div class="media-grid pop-3d">
+            
+            <!-- Asset 1: Digital Verification Badges -->
             <div class="media-card">
-                <div class="media-thumb">🎥</div>
+                <div class="media-thumb">🛡️<span class="badge-overlay">PNG / SVG</span></div>
                 <div class="media-body">
-                    <h4>Vexilla Impact Media</h4>
-                    <p>Independent, secure, and decentralized media focused on digital autonomy and global citizenship.</p>
+                    <h4>Smart Verification Badges</h4>
+                    <p>High-contrast, elegant vector icons designed explicitly for profile headers, story overlays, or personal web spaces to link directly back to your secure node ID reference lookup.</p>
+                    <div class="copy-snippet-box" onclick="alert('Asset signature payload prepared for download package...');">
+                        <span>Get Badge Package Asset (.zip)</span>
+                        <strong style="color: var(--kinetic-gold);">↓</strong>
+                    </div>
                 </div>
             </div>
 
+            <!-- Asset 2: Copy Snippet for Dating Track -->
             <div class="media-card">
-                <div class="media-thumb">💻</div>
+                <div class="media-thumb">✍️<span class="badge-overlay">TEXT COPY</span></div>
                 <div class="media-body">
-                    <h4>Digital Sovereignty Grants</h4>
-                    <p>Funding tools and education for underserved communities to secure their digital identities (Powered by KinSense Labs).</p>
+                    <h4>Partnership Status Verbiage</h4>
+                    <p>A refined announcement snippet optimized for public social bio spaces or stories. Let your network know your partnership values intentional stability and private protection keys.</p>
+                    <div class="copy-snippet-box" onclick="navigator.clipboard.writeText('Officially verified our connection stability baseline on the ledger. Node reference secured at wekinnected.com 🔒'); alert('Dating verification snippet copied to clipboard!');">
+                        <span>"Officially verified our connection..."</span>
+                        <strong style="color: var(--electric-blue);">📋 Copy</strong>
+                    </div>
                 </div>
             </div>
 
+            <!-- Asset 3: Printable Story Layout Patterns -->
             <div class="media-card">
-                <div class="media-thumb">🤝</div>
+                <div class="media-thumb">📸<span class="badge-overlay">1080 x 1920</span></div>
                 <div class="media-body">
-                    <h4>Community Ledger Grants</h4>
-                    <p>Micro-grants for local leaders using decentralized technology to improve local governance.</p>
+                    <h4>Exhibition Story Templates</h4>
+                    <p>Gorgeously configured vertical grid backdrops matching our Deep Sapphire and Velvet aesthetics. Overlay your random-generated Node ID badge to create an immaculate shareable image.</p>
+                    <div class="copy-snippet-box" onclick="alert('Graphic frames loaded inside temporary layout window...');">
+                        <span>Download Story Templates</span>
+                        <strong style="color: var(--kinetic-gold);">↓</strong>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-        <div class="impact-bar">
-            <h3>Your Purchase Makes an Impact</h3>
-            <p style="color: var(--text-gray); margin: 15px 0; max-width: 600px; margin: 15px auto;">
-                A percentage of all Solomon Kin Unity Bond registration fees directly funds the Vexilla Foundation and the Global Citizen Joe Media initiatives. We are building a more transparent world, one bond at a time.
+        <!-- Social Enterprise Footnote Context -->
+        <div class="announcement-banner-card pop-3d">
+            <span class="celebration-badge" style="font-size: 2.5rem; display: block; margin-bottom: 10px;">✨</span>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 12px; font-weight: 700;">Announce with Intentional Prestige</h3>
+            <p style="color: #cbd5e1; font-size: 1rem; max-width: 650px; margin: 0 auto 25px auto; line-height: 1.6;">
+                By moving your milestone declarations from temporary updates into a structured directory network, you stand against algorithmic noise. Share your verification and celebrate your alignment.
             </p>
-            <a href="support.html" class="btn-gold-sm" style="margin-top: 25px; display: inline-block;">Initialize Your Bond</a>
+            <a href="wekinnected_form.html" class="btn-core btn-gold-glow" style="padding: 14px 32px; font-size: 1rem;">
+                Initialize Another Connection Node 🚀
+            </a>
         </div>
+
     </div>
 
 </body>
