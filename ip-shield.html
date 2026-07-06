@@ -3,111 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP Shield Protocol | Solomon Kin LLC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Intellectual Property Shield Notice | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .shield-container { max-width: 900px; margin: 120px auto; padding: 0 5%; }
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
+        }
+
+        .shield-container {
+            max-width: 1000px;
+            margin: 140px auto 80px auto;
+            padding: 0 20px;
+            perspective: 1200px;
+        }
+
+        /* 3D Protocol Protection Cards */
         .protocol-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--glass);
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
             padding: 40px;
             border-radius: 20px;
             margin-bottom: 30px;
             position: relative;
             overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.5s var(--ease-3d), border-color 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
+
+        .protocol-card:hover {
+            transform: translateY(-4px) rotateX(1deg);
+            border-color: var(--kinetic-gold);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 25px var(--gold-glow);
+        }
+
         .protocol-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
-            background: var(--gold);
+            top: 0; 
+            left: 0; 
+            width: 4px; 
+            height: 100%;
+            background: var(--kinetic-gold);
         }
+
+        .protocol-card h3 {
+            font-size: 1.35rem;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
         .protocol-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 25px;
         }
+
+        @media (max-width: 640px) {
+            .protocol-grid { grid-template-columns: 1fr; }
+        }
+
         .data-point {
-            background: #000;
+            background: rgba(0, 0, 0, 0.15);
             padding: 20px;
-            border-radius: 10px;
-            border: 1px solid var(--glass);
+            border-radius: 12px;
+            border: 1px solid var(--border-glass);
         }
-        .data-point h4 { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 10px; }
+
+        .data-point h4 { 
+            color: var(--kinetic-gold); 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 8px; 
+        }
+
+        .data-point p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Wholesome Console Logging Block */
         .encryption-visual {
             font-family: monospace;
-            font-size: 0.7rem;
-            color: #444;
-            line-height: 1.2;
+            font-size: 0.8rem;
+            color: var(--electric-blue);
+            line-height: 1.5;
             margin-top: 40px;
-            padding: 20px;
-            background: rgba(0,0,0,0.5);
-            border-radius: 5px;
+            padding: 24px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            border: 1px solid var(--border-glass);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
-        <div class="nav-links">
-            <a href="index.html">Marketplace</a>
-            <a href="governance.html">Governance</a>
+    <!-- Fortified Sticky Top Navigation Bar -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="nav-menu">
+            <li><a href="index.html" class="nav-link">🏠 Main Portal</a></li>
+            <li><a href="governance.html" class="nav-link">⚖️ Governance</a></li>
+        </div>
+        <div class="identity-gateway">
+            <span class="emoji-badge" style="margin-bottom: 0;">🛡️ INTELLECTUAL PROPERTY SHIELD</span>
         </div>
     </nav>
 
-    <div class="shield-container">
-        <header style="margin-bottom: 60px;">
-            <span class="gold-text" style="letter-spacing: 3px; font-size: 0.8rem;">SECURITY CLASSIFICATION: GRADE A</span>
-            <h1 style="margin-top: 10px;">The <span class="gold-text-italic">IP Shield</span> Protocol.</h1>
-            <p style="color: var(--text-gray); margin-top: 20px;">
-                Traditional records are public and rigid. The Solomon Kin IP Shield (v2.0) is a proprietary archival framework designed to protect the sovereign intimacy of our members.
+    <!-- Main Shield Structural Workspace -->
+    <div class="shield-container perspective-container">
+        
+        <header style="margin-bottom: 55px; text-align: center;">
+            <div class="emoji-badge">📜 Pre-Patent Protection Notice | 2026 Revision</div>
+            <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1.2; margin-top: 10px; background: none; -webkit-text-fill-color: initial;">
+                Proprietary Asset Structure & <br><span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">The IP Shield Mandate</span>
+            </h1>
+            <p style="color: var(--text-muted); max-width: 850px; margin: 16px auto 0 auto; font-size: 1.1rem; line-height: 1.7;">
+                Public declaration of legal ownership regarding the underlying digital relationship bond metrics, interface matrix processes, and software structures held by Global Citizen Joe, LLC.
             </p>
         </header>
 
+        <!-- Node 1: Protection Scope -->
         <div class="protocol-card">
-            <h3>01. Sovereign Data Archival</h3>
-            <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">
-                Unlike state-issued marriage licenses, Solomon Kin records are held in a private, encrypted ledger. We do not sell data to third-party advertisers or share "Relationship Status" metrics with social networks.
+            <h3>01. Scope of Protection & Business Methods</h3>
+            <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.7;">
+                This framework serves as a formal declaration of ownership for the Digital Relationship Bond (DRB) delivery systems. Unauthorized cloning of our proprietary selection workflows or derivation of the cross-signature issuance code is strictly prohibited by law.
             </p>
-            <div class="protocol-grid">
+            <div class="protocol-grid pop-3d">
                 <div class="data-point">
-                    <h4>Hashing</h4>
-                    <p style="font-size: 0.75rem;">SHA-256 Unique Bond Identifiers</p>
+                    <h4>The Universal Selection Matrix</h4>
+                    <p>The explicit visual UI/UX programming logic enabling comprehensive, inclusive pronoun, transition, and identity option arrays inside a standardized contract generation system.</p>
                 </div>
                 <div class="data-point">
-                    <h4>Access</h4>
-                    <p style="font-size: 0.75rem;">Dual-Key Member Authorization</p>
+                    <h4>Active Engagement Verification</h4>
+                    <p>The procedural business logic model utilizing simultaneous dual-authentication triggers to record and validate mutual consent metrics for private relationships.</p>
                 </div>
             </div>
         </div>
 
+        <!-- Node 2: Core Asset Nomenclature -->
         <div class="protocol-card">
-            <h3>02. The "Pulse" Verification</h3>
-            <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">
-                The Public Pulse is a one-way verification link. It confirms the "Active" status of a bond without exposing sensitive underlying metadata or personal addresses.
+            <h3>02. Brand Integrity & Nomenclature Guardrails</h3>
+            <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.7;">
+                All front-end source code frameworks, high-resolution certificate watermark layouts, and the unique functional branding variations—specifically including the <strong>"wekinnected"</strong> and <strong>"Unity Bond"</strong> asset classifications—are the exclusive property of Global Citizen Joe, LLC. Any competitive deployment of identical relationship registration interfaces will be met with immediate legal cease-and-desist actions.
             </p>
         </div>
 
+        <!-- Node 3: Trade Secret Non-Compete Matrix -->
         <div class="protocol-card">
-            <h3>03. Legal Neutrality</h3>
-            <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">
-                The IP Shield operates as a private contract record. It is designed to stand outside of bureaucratic overreach, providing a 2026-standard for autonomous relationship management.
+            <h3>03. Trade Secret Security & Non-Compete Mandate</h3>
+            <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.7;">
+                Any development groups, external auditing networks, or entities interacting with this software ecosystem acknowledge that the functional data architecture is a proprietary asset of the parent company. Utilizing our structural layout parameters to deploy competing consumer relationship contract tools constitutes an actionable breach of global trade secret statutes.
             </p>
         </div>
 
-        <div class="encryption-visual">
-            [SYS_LOG]: INITIALIZING SHIELD... <br>
-            [STATUS]: ENCRYPTING VEXILLA_HIERARCHY_DATA... <br>
-            [HASH]: 8821-XJ-SOLOMON-KIN-2026-SUCCESS <br>
-            [IP_SHIELD]: ACTIVE.
+        <!-- Wholesome Terminal Console Visual -->
+        <div class="encryption-visual pop-3d">
+            [GCJ_LLC_SHIELD_ENGINE]: INITIALIZING SECURE DEFENSIVE RINGS... <br>
+            [STATUS]: CATALOGING PROPRIETARY IDENTITY SELECTION MATRIX MATRIX_V2... <br>
+            [COMPLIANCE]: FLUID IDENTITY RENDER PATHWAY VERIFIED... <br>
+            [SHIELD]: ARCHITECTURAL PROTECT LOCK ACTIVE (REGISTRATION_REF_2026).
         </div>
 
-        <div style="margin-top: 60px; text-align: center;">
-            <p style="font-size: 0.8rem; color: #444;">Questions regarding your privacy rights under the IP Shield? <br>
-            Contact the Office of Records: <a href="contact.html" class="gold-text">nehemiah.brown@solomonkinrecords.com</a></p>
+        <!-- Technical Legal Contact Footnote -->
+        <div style="margin-top: 60px; text-align: center; border-top: 1px solid var(--border-glass); padding-top: 35px;">
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                For systemic evaluation questions or to process authorized architectural alignment reviews under our corporate shield, submit formal inquiries to the Infrastructure Branch via our primary support network.<br>
+                <a href="support.html" style="color: var(--kinetic-gold); text-decoration: none; font-weight: 600; margin-top: 8px; display: inline-block;">Open Legal & Compliance Pipeline ›</a>
+            </p>
         </div>
     </div>
 
