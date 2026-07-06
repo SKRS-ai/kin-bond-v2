@@ -1,3 +1,33 @@
+# wekinnected.com (V2)
+### The Universal Relationship Verification Ledger & Registry Architecture
+**A Sovereign Identity & Social Enterprise Sub-Entity of Global Citizen Joe, LLC**
+
+## Executive Overview
+`wekinnected.com` is a high-fidelity digital verification framework engineered to formalize, archive, and celebrate the diverse spectrum of human connections. Moving past rigid, clinical public registries, this platform serves as an institutional-grade Private Registry. It delivers cryptographically-verifiable "Bonds" that act as certified records of active devotion, mutual responsibility, and shared identity.
+
+The platform targets relationship development before marriage, alongside vital community connections like spiritual godparenting, co-parenting, legal guardianship, and legacy youth mentorships.
+
+## Structural Design Philosophy
+The ecosystem utilizes a dual-layered visual psychology strategy:
+1. **Public-Facing Trust (Wholesome & Institutional):** The root directory (`index.html`) operates on a clean, light Slate Blue palette to radiate trustworthiness, security, and global civic responsibility to families and grant funding bodies.
+2. **Private-Tier Utility (Prestige & Luxury):** The transaction/intake system (`wekinnected_form.html`) shifts dynamically into a "Midnight Velvet & Kinetic Gold" glassmorphism aesthetic, elevating the act of digital signing into a premium, memorable ceremonial milestone.
+
+## Application Architecture & Inventory Matrix
+*   `/index.html` - Primary High-Trust Wholesome Institutional Landing Environment.
+*   `/wekinnected_form.html` - Premium Glassmorphism Interface for Profile Intake & Identity Document Uploads.
+*   `/proclamation.html` - Pre-signing ceremonial portal housing hardcoded covenant logic.
+*   `/verify.html` - Public ledger cryptographic node for scanning and confirming bond records.
+*   `/dissolve.html` - Secure dual-authorization mechanism for executing contract dissolutions.
+*   `/grants.html` - Strategic framework alignment documenting relationship wellness metrics for HHS/ACF funding applications.
+
+## Technical Requirements
+*   **Frontend Engine:** HTML5 / CSS3 (Dynamic Responsive Flex/Grid)
+*   **Logic Model:** Native ES6 JavaScript client-side template literal data-binding (`app.js`)
+*   **Resolution Targets:** High-fidelity layouts optimized for seamless mobile browser performance.
+
+## Intellectual Property & Regulatory Compliance
+© 2026 Global Citizen Joe, LLC. All Rights Reserved. All software architecture, data collection matrix mechanics, and contract issuance paths are protected under proprietary digital asset patents pending. All relationship certificates serve as commemorative and private verification contracts under the sovereign registry system and do not substitute for state-sanctioned marriage licenses.
+
 # kin-bond-v2
 A luxury-focused, digital verification system designed to certify and archive active intimate partnerships. This repository contains the "Unity Bond" framework—a streamlined, inclusive application using HTML/CSS to facilitate the formal agreement of relationship vows between two parties.
 kin-bond-v2
