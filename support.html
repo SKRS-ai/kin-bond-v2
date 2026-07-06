@@ -3,75 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Your Legacy | Solomon Kin Records</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Knowledge Center & Support Base | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .checkout-container { max-width: 1000px; margin: 120px auto; padding: 0 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        .product-summary { background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 20px; border: 1px solid var(--glass); }
-        .gold-seal { color: var(--gold); border: 2px solid var(--gold); padding: 10px; border-radius: 50%; font-weight: 900; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-        .summary-price { font-size: 3rem; color: #fff; margin: 20px 0; }
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
+        }
+
+        .support-wrapper {
+            max-width: 1000px;
+            margin: 140px auto 80px auto;
+            padding: 0 20px;
+            perspective: 1200px;
+        }
+
+        /* 3D Category Selection Grid */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .hub-card {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            padding: 25px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-3d);
+            transform-style: preserve-3d;
+        }
+
+        .hub-card:hover {
+            transform: translateY(-4px) rotateX(2deg);
+            border-color: var(--electric-blue);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3), 0 0 20px var(--sapphire-glow);
+        }
+
+        .hub-card h3 {
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 12px 0 6px 0;
+        }
+
+        .hub-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Interactive FAQ Accordion Elements */
+        .faq-block {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #fff;
+            text-align: left;
+            padding: 15px 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-trigger span.icon {
+            color: var(--kinetic-gold);
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding-right: 20px;
+        }
+
+        .faq-block.open .faq-content {
+            max-height: 150px; /* Provides a clean animated sliding path drop down */
+            padding-bottom: 15px;
+        }
+
+        .faq-block.open .faq-trigger span.icon {
+            transform: rotate(45deg);
+        }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
+    <!-- Fortified Sticky Navbar Layout -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="nav-menu">
+            <li><a href="index.html" class="nav-link">🏠 Portal Home</a></li>
+            <li><a href="contact.html" class="nav-link">✉️ Open Ticket</a></li>
+        </div>
+        <div class="identity-gateway">
+            <span class="emoji-badge" style="margin-bottom: 0;">🛡️ SELF-SERVICE DESK</span>
+        </div>
     </nav>
 
-    <div class="checkout-container">
-        <div style="text-align: center;">
-            <img src="support-guided-access.png" alt="Guided Access Interface" style="max-width: 100%; border-radius: 15px; border: 1px solid var(--glass); margin-bottom: 20px;">
-            <p style="color: var(--text-gray); font-size: 0.8rem;">You are authenticating your identity for a secure Ledger ID. The IP Shield (A-Grade) is active.</p>
-        </div>
+    <!-- Main System Support Content Grid Canvas -->
+    <div class="support-wrapper perspective-container">
+        
+        <header style="text-align: center; margin-bottom: 55px;">
+            <div class="emoji-badge">🔍 Automated Knowledge Hub & Diagnostic Desk</div>
+            <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1.2; margin-top: 10px; background: none; -webkit-text-fill-color: initial;">
+                How Can We Support <br><span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Your Connection?</span>
+            </h1>
+            <p style="color: var(--text-muted); max-width: 750px; margin: 16px auto 0 auto; font-size: 1.1rem; line-height: 1.7;">
+                Select an operational system node below or browse critical knowledge layers regarding your private relationship contract variables.
+            </p>
+        </header>
 
-        <div class="product-summary">
-            <div id="product-icon" class="gold-seal">SKR</div>
+        <!-- Top Row Segment Category Triggers -->
+        <section class="hub-grid pop-3d">
+            <div class="hub-card" onclick="scrollToFaq()">
+                <div style="font-size: 1.8rem;">📁</div>
+                <h3>Identity Ingestion</h3>
+                <p>Troubleshoot government-issued document photo scans, verification uploads, and pronoun matrix configurations.</p>
+            </div>
+            <div class="hub-card" onclick="alert('Redirecting to external carrier parcel network maps...');">
+                <div style="font-size: 1.8rem;">📜</div>
+                <h3>Exhibition Print Logistics</h3>
+                <p>Trace physical courier delivery, frame casing dimensions, packaging tracking links, and print adjustments.</p>
+            </div>
+            <div class="hub-card" onclick="location.href='governance.html'">
+                <div style="font-size: 1.8rem;">🔒</div>
+                <h3>Ledger Security Shield</h3>
+                <p>Learn how our Private Tier non-indexing algorithms mask data and prevent third-party profiling systems.</p>
+            </div>
+        </section>
+
+        <!-- Bottom Core Layer Accordion Space Section -->
+        <section id="faq-directory" style="margin-top: 60px;">
+            <h2 style="color: #fff; font-size: 1.8rem; margin-bottom: 25px; text-align: center; font-weight: 700;">System Knowledge Layers</h2>
             
-            <h2 id="product-title">Archival <span class="gold-text-italic">Initialization.</span></h2>
-            <p id="product-desc">Confirming your intent to create a permanent record in the Solomon Kin Ledger.</p>
-            
-            <div class="summary-price" id="display-price">$ --.--</div>
-            
-            <p style="color: var(--text-gray); margin-bottom: 25px; font-size: 0.8rem;">Protected by Vexilla Governance bylaws and standard IP Shield Protocol.</p>
-            
-            <a href="https://buy.stripe.com/..." id="stripe-link" class="btn-gold full-width">Proceed to Payment</a>
-            
-            <p style="font-size: 0.6rem; color: #444; margin-top: 15px; text-align: center;">By proceeding, you agree to the Terms of Covenant.</p>
-        </div>
+            <!-- Accordion Q1 -->
+            <div class="faq-block">
+                <button class="faq-trigger" onclick="toggleAccordion(this)">
+                    How long does the cross-signature identity document audit take?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-content">
+                    Once both parties transmit dual-authentication signatures and matching government identification materials, our systems process verification nodes instantly. Manual exceptions or unclear photo extractions pass through automated diagnostic flags within twelve standard operational hours.
+                </div>
+            </div>
+
+            <!-- Accordion Q2 -->
+            <div class="faq-block">
+                <button class="faq-trigger" onclick="toggleAccordion(this)">
+                    Can I make changes to my pronouns or preferred name after a bond is active?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-content">
+                    Yes. Our fluid identity programming parameters support live adjustments. Simply access your Identity Settings node inside the vault and file an Amendment block. Your digital certificate ledger parameters will update automatically across our network arrays.
+                </div>
+            </div>
+
+            <!-- Accordion Q3 -->
+            <div class="faq-block">
+                <button class="faq-trigger" onclick="toggleAccordion(this)">
+                    What happens if we execute a contract dissolution file?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-content">
+                    Filing a dissolution triggers an immediate structural state transformation. Your active directory code tracking loops drop entirely out of active query lists, the public lookup pulse flags status output updates to "DISSOLVED," and original certificate token values are retired.
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Bottom Fallback Outreach Space -->
+        <section style="text-align: center; margin-top: 65px; border-top: 1px solid var(--border-glass); padding-top: 45px;" class="pop-3d">
+            <h3 style="color: #fff; font-size: 1.4rem; margin-bottom: 10px;">Still Need System Infrastructure Guidance? 🤝</h3>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 25px auto; font-size: 0.95rem; line-height: 1.6;">
+                If your specific telemetry query is not resolved inside the database matrices, open a secure direct communications thread with our manager network.
+            </p>
+            <a href="contact.html" class="btn-core btn-gold-glow" style="padding: 14px 28px;">Initialize Secure Support Ticket</a>
+        </section>
+
     </div>
 
+    <!-- Active Structural Interactivity Animation Scripting -->
     <script>
-        // 1. Get the parameter from the URL (e.g., ?product=lifetime)
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedProduct = urlParams.get('product');
-
-        // 2. Define the product data
-        const products = {
-            'unity-bond': {
-                title: 'Unity <span class="gold-text-italic">Bond</span>',
-                desc: 'Standard professional archival verification with annual renewal fees.',
-                price: '$29.99<span style="font-size: 1rem;">/yr</span>',
-                link: 'https://buy.stripe.com/...' // Your $29.99 Stripe Link
-            },
-            'lifetime': {
-                title: 'Lifetime <span class="gold-text-italic">Archive</span>',
-                desc: 'Perpetual ledger entry. Zero renewal fees. High-Elected Official validation.',
-                price: '$49.99<span style="font-size: 1rem;">/once</span>',
-                link: 'https://buy.stripe.com/...' // Your $49.99 Stripe Link
+        function toggleAccordion(element) {
+            const blockContainer = element.parentElement;
+            
+            // Toggles active state configuration patterns
+            if (blockContainer.classList.contains('open')) {
+                blockContainer.classList.remove('open');
+            } else {
+                // Clear any other open blocks for smooth accordion interface aesthetics
+                document.querySelectorAll('.faq-block').forEach(item => item.classList.remove('open'));
+                blockContainer.classList.add('open');
             }
-        };
+        }
 
-        // 3. Update the page content if a valid product is selected
-        if (products[selectedProduct]) {
-            const prod = products[selectedProduct];
-            document.getElementById('product-title').innerHTML = prod.title;
-            document.getElementById('product-desc').innerText = prod.desc;
-            document.getElementById('display-price').innerHTML = prod.price;
-            document.getElementById('stripe-link').setAttribute('href', prod.link);
-        } else {
-            // Default behavior if no (or invalid) product is passed.
-            document.getElementById('display-price').innerText = "$29.99";
+        function scrollToFaq() {
+            document.getElementById('faq-directory').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 
