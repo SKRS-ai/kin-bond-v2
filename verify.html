@@ -3,59 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify Bond Status | Solomon Kin Records</title>
+    <title>Verify Bond Status | wekinnected.com</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+        }
+
+        .verification-wrapper {
+            width: 100%;
+            max-width: 650px;
+            margin-top: 40px;
+        }
+
+        /* 3D Glowing Status Badge Components */
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 8px 18px;
+            border-radius: 30px;
+            margin: 0 auto 30px auto;
+            transform: translateZ(30px);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+        }
+
+        .status-indicator.active .pulse {
+            width: 10px;
+            height: 10px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #10b981, 0 0 20px #10b981;
+            animation: pulseGlow 1.8s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.6; }
+        }
+
+        .status-text {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #10b981;
+            text-transform: uppercase;
+        }
+
+        .verify-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .wk-logo-badge {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .verify-header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .ledger-id {
+            font-family: monospace;
+            color: var(--electric-blue);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* 3D Layout Framework Alignment Box */
+        .verified-parties {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin: 35px 0;
+            transform: translateZ(20px);
+        }
+
+        .party {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-glass);
+            padding: 20px;
+            border-radius: 14px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .party:hover {
+            border-color: var(--border-glass);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .party h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        .p-type {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .bond-link-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--sapphire-glow);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--sapphire-glow);
+            animation: floatIcon 3s infinite ease-in-out;
+        }
+
+        @keyframes floatIcon {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Data Matrix Rows */
+        .verification-data {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-glass);
+        }
+
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .data-row span {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .data-row strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .verify-footer {
+            text-align: center;
+        }
+
+        .legal-tiny {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 24px;
+            line-height: 1.5;
+        }
+    </style>
 </head>
-<body class="verify-bg">
+<body>
 
-    <div class="verification-wrapper">
-        <div class="status-indicator active">
-            <div class="pulse"></div>
-            <span class="status-text">ACTIVE INTIMATE BOND</span>
+    <!-- Fortified Navigation Header -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="identity-gateway">
+            <a href="index.html" class="btn-core btn-auth-outline">‹ Exit Node</a>
         </div>
+    </nav>
 
-        <header class="verify-header">
-            <div class="sk-logo-gold">SK</div>
-            <h1>Verified Partnership</h1>
-            <p class="ledger-id">Ledger Ref: #SK-8821-BOND</p>
-        </header>
-
-        <section class="verified-parties">
-            <div class="party">
-                <h2 id="p1-display">Marcus Aurelius</h2>
-                <span class="p-type">He/Him</span>
-            </div>
+    <!-- Main Core Verification Wrapper -->
+    <div class="verification-wrapper perspective-container">
+        <div class="card-3d" style="text-align: center;">
             
-            <div class="bond-link-icon">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="var(--gold)">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
+            <!-- Dynamic 3D Floating Status Badge -->
+            <div class="status-indicator active">
+                <div class="pulse"></div>
+                <span class="status-text">🔒 Verified Active Bond</span>
             </div>
 
-            <div class="party">
-                <h2 id="p2-display">Elena Vance</h2>
-                <span class="p-type">She/Her</span>
-            </div>
-        </section>
+            <header class="verify-header">
+                <div class="wk-logo-badge pop-3d">✨</div>
+                <h1 class="pop-3d">Ledger Status Validation</h1>
+                <p class="ledger-id">Node ID: #WK-8821-BOND</p>
+            </header>
 
-        <div class="verification-data">
-            <div class="data-row">
-                <span>Registration Date:</span>
-                <strong>March 14, 2026</strong>
-            </div>
-            <div class="data-row">
-                <span>Engagement Type:</span>
-                <strong>Intimate / Active</strong>
-            </div>
-            <div class="data-row">
-                <span>Security Level:</span>
-                <strong>SK-IP Protected</strong>
-            </div>
-        </div>
+            <!-- Verified Co-Signers Panel Display -->
+            <section class="verified-parties">
+                <div class="party">
+                    <h2>Marcus Aurelius</h2>
+                    <span class="p-type">Identity Matrix: He/Him</span>
+                </div>
+                
+                <div class="bond-link-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--electric-blue)">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
 
-        <div class="verify-footer">
-            <button class="btn-gold-sm" onclick="location.href='index.html'">Create Your Own Bond</button>
-            <p class="legal-tiny">Protected by Solomon Kin LLC Intellectual Property Shield. Any unauthorized use of this verification ID is subject to archival blacklisting.</p>
+                <div class="party">
+                    <h2>Elena Vance</h2>
+                    <span class="p-type">Identity Matrix: She/Her</span>
+                </div>
+            </section>
+
+            <!-- Metadata Record Row System Block -->
+            <div class="verification-data pop-3d">
+                <div class="data-row">
+                    <span>Registration Date:</span>
+                    <strong>March 14, 2026</strong>
+                </div>
+                <div class="data-row">
+                    <span>Relationship Track:</span>
+                    <strong>Intimate Partners / Exclusive Dating</strong>
+                </div>
+                <div class="data-row">
+                    <span>Security Clearance:</span>
+                    <strong>GCJ-LLC Data Shield Secure</strong>
+                </div>
+            </div>
+
+            <div class="verify-footer pop-3d">
+                <button class="btn-core btn-gold-glow" onclick="location.href='wekinnected_form.html'">
+                    Create Your Relationship Bond 🚀
+                </button>
+                <p class="legal-tiny">
+                    Authorized validation record protected under Global Citizen Joe, LLC. Any fraudulent replication or tamper-attempts of this certificate node ID will trigger immediate structural data blacklisting.
+                </p>
+            </div>
+
         </div>
     </div>
 
