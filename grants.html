@@ -3,80 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grant Funding Ledger | Vexilla Foundation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Grant Alignment & Public Partnerships | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .grants-container { max-width: 1000px; margin: 120px auto; padding: 0 5%; }
-        
-        /* The Specialized Grant Impact Card (Hover Glow) */
-        .grant-impact-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 2px solid var(--glass);
-            padding: 50px 40px;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.6s var(--ease);
-            position: relative;
-            overflow: hidden;
-            perspective: 1000px;
-        }
-        
-        /* Specialized Coding: Magnetic Lift & Glow on Hover */
-        .grant-impact-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.2);
-            box-shadow: 0 20px 50px var(--gold-glow);
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
         }
 
-        .funding-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .fund-card { background: var(--velvet); border: 1px solid var(--glass); padding: 30px; border-radius: 15px; text-align: left; }
-        .fund-card h4 { color: var(--gold); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
-        
+        .grants-container {
+            max-width: 1100px;
+            margin: 140px auto 80px auto;
+            padding: 0 20px;
+            perspective: 1200px;
+        }
+
+        /* Institutional Strategic Impact Statement Card */
+        .grant-impact-card {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            padding: 50px 45px;
+            border-radius: 24px;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            margin-bottom: 40px;
+        }
+
+        .grant-impact-card:hover {
+            border-color: var(--electric-blue);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 30px var(--sapphire-glow);
+        }
+
+        .grant-impact-card h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 20px;
+            background: none;
+            -webkit-text-fill-color: initial;
+            font-weight: 800;
+        }
+
+        .grant-impact-card p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Federal Framework Matrix Grid */
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .fund-card {
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-glass);
+            padding: 35px;
+            border-radius: 18px;
+            transition: all 0.3s var(--ease-3d);
+        }
+
+        .fund-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--kinetic-gold);
+            background: rgba(214, 175, 55, 0.01);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .fund-card h4 {
+            color: var(--kinetic-gold);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .fund-card h3 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        .fund-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .framework-tag-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .framework-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--electric-blue);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(59, 130, 246, 0.15);
+        }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">VEXILLA <span class="gold-text">FOUNDATION</span></div>
-        <div class="nav-links">
-            <a href="index.html">Marketplace</a>
-            <a href="impact.html">Impact Ledger</a>
-            <a href="dashboard.html" class="btn-gold-sm">Secure Vault</a>
+    <!-- Fortified Sticky Navbar Framework -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="nav-menu">
+            <li><a href="index.html" class="nav-link">🏠 Main Portal</a></li>
+            <li><a href="impact.html" class="nav-link">📊 Impact Metrics</a></li>
+        </div>
+        <div class="identity-gateway">
+            <span class="emoji-badge" style="margin-bottom: 0;">🏛️ PARTNERSHIP GATEWAY</span>
         </div>
     </nav>
 
-    <div class="grants-container">
-        <header style="text-align: center; margin-bottom: 60px;">
-            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.8rem; text-transform: uppercase;">Decentralized Funding Node</span>
-            <h1>The Grant <span class="gold-text-italic">Funding Ledger.</span></h1>
-            <p style="color: var(--text-gray); max-width: 700px; margin: 20px auto;">Reviewing the allocation of funds from Solomon Kin Record verification fees to non-profit digital rights initiatives.</p>
+    <!-- Main Strategic Documentation Canvas -->
+    <div class="grants-container perspective-container">
+        
+        <header style="text-align: center; margin-bottom: 55px;">
+            <div class="emoji-badge">📊 Social Enterprise Framework Evaluation</div>
+            <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1.2; margin-top: 10px; background: none; -webkit-text-fill-color: initial;">
+                Federal Grant Alignment & <br><span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Public-Private Synergies</span>
+            </h1>
+            <p style="color: var(--text-muted); max-width: 800px; margin: 16px auto 0 auto; font-size: 1.1rem; line-height: 1.7;">
+                Documenting how the wekinnected.com verification architecture satisfies federal relationship health, domestic stability, and protective mentorship program directives.
+            </p>
         </header>
 
-        <div class="grant-impact-card">
-            <div id="product-icon" class="gold-seal" style="border: 2px solid var(--gold); border-radius: 50%; color: var(--gold); padding: 15px; font-weight: 900; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;">VxF</div>
-            
-            <h2>Decentralized Network <span class="gold-text-italic">Map.</span></h2>
-            <p style="color: var(--text-gray); margin-bottom: 25px; font-size: 0.9rem;">Visualizing the flow of Vexilla AITS tokens across the secure ledger to global grant recipients.</p>
-            
-            <img src="placeholder-network-map.png" alt="Vexilla Grant Network Map" style="width: 100%; border-radius: 10px; border: 1px solid var(--glass);">
-            
-            <p style="font-size: 0.7rem; color: #444; margin-top: 15px; text-align: center;">Vexilla AITS Protocol | Active Ledger Status: Grade A</p>
+        <!-- Executive Methodology Statement Block -->
+        <article class="grant-impact-card card-3d">
+            <div class="emoji-badge pop-3d">📜 Abstract Statement</div>
+            <h2>Software Architecture as a Behavioral Intervention Tool</h2>
+            <p>
+                Traditional domestic and community commitment structures often lack an intentional, accessible digital onboarding framework. Individual relationship milestones remain unrecorded or fragmented across informal consumer communication networks. This fragmentation presents significant barriers to tracking social cohesion, household durability, and youth mentorship safety metrics.
+            </p>
+            <p>
+                Operating as a dedicated public benefit initiative under <strong>Global Citizen Joe, LLC</strong>, the <code>wekinnected.com</code> platform translates abstract relationship milestones into structured, cryptographically-verifiable private contract nodes. By requiring an intentional <strong>Dual-Authentication Validation Layer</strong> and rigorous primary document processing, the platform mitigates non-consensual dynamics, fosters household teamwork, and establishes an objective, secure verification archive for modern social governance.
+            </p>
+            <div style="border-top: 1px solid var(--border-glass); padding-top: 20px; font-size: 0.8rem; color: var(--text-muted); text-align: center;" class="pop-3d">
+                Global Citizen Joe, LLC Core Compliance Index | Application Year: 2026 | Technical Category: Social Stability Infrastructure
+            </div>
+        </article>
+
+        <!-- Specific Grant Tracking Matrix -->
+        <div class="section-title" style="text-align: center; margin-top: 60px;">
+            <h2 style="color: #fff; font-size: 1.8rem; font-weight: 700;">Federal Funding Vectors</h2>
+            <p style="color: var(--text-muted); margin-top: 6px;">Mapping the application's alignment to explicit agency mandates.</p>
         </div>
 
-        <div class="funding-grid">
+        <div class="funding-grid pop-3d">
+            
+            <!-- Grant Box 1: HHS HEART -->
             <div class="fund-card">
-                <h4>Recipient Node 01</h4>
-                <h3>Digital Sovereignty Grant</h3>
-                <p>Funding tools and education for underserved communities to secure their digital identities (Powered by KinSense Labs).</p>
+                <h4><span>❤️</span> HHS / OFA Reference</h4>
+                <h3>HEART Initiative Alignment</h3>
+                <p>
+                    Satisfies the objectives of the <em>Helping Every Area of Relationships Thrive</em> program by offering an intentional pre-marriage sandbox interface. The dual-authentication requirement forces prospective couples to systematically establish boundaries, share operations, and formalize expectations before pursuing marriage records.
+                </p>
+                <div class="framework-tag-row">
+                    <span class="framework-tag">Pre-Marriage Stability</span>
+                    <span class="framework-tag">Domestic Health</span>
+                </div>
             </div>
 
+            <!-- Grant Box 2: HHS READY4Life -->
             <div class="fund-card">
-                <h4>Recipient Node 02</h4>
-                <h3>Independent Media Defense</h3>
-                <p>Supporting decentralized platforms like Global Citizen Joe, focused on algorithmic transparency and data privacy.</p>
+                <h4><span>🚀</span> ACF / FYSB Reference</h4>
+                <h3>READY4Life Youth Integration</h3>
+                <p>
+                    Directly maps to <em>Relationships, Education, Advancement, Development for Youth</em> parameters by providing transitional young adults with a highly styled, inclusive UI to practice transparent consent. The custom identity options ensure non-traditional and underrepresented groups navigate status agreements safely.
+                </p>
+                <div class="framework-tag-row">
+                    <span class="framework-tag">Adulthood Preparation</span>
+                    <span class="framework-tag">Inclusive Equity</span>
+                </div>
             </div>
+
+            <!-- Grant Box 3: Youth Mentorship Protection -->
+            <div class="fund-card">
+                <h4><span>🛡️</span> OJJDP / FYSB Reference</h4>
+                <h3>Legacy Mentorship Security</h3>
+                <p>
+                    Establishes a rigorous digital verification baseline for Big Brother / Big Sister and local community guidance pairings. Requiring government photo identification cross-checks protects vulnerable cohorts while formalizing and validating mentoring networks across a centralized private registry.
+                </p>
+                <div class="framework-tag-row">
+                    <span class="framework-tag">Community Protection</span>
+                    <span class="framework-tag">Mentorship Compliance</span>
+                </div>
+            </div>
+
         </div>
+
+        <!-- Partnership Outreach Section -->
+        <section style="text-align: center; margin-top: 70px; border-top: 1px solid var(--border-glass); padding-top: 50px;">
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 12px;">Request Technical Integration Documentation 📁</h3>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 25px auto; font-size: 0.95rem; line-height: 1.6;">
+                Are you an authorized evaluator representing a state agency, university social laboratory, or non-profit foundation? Request our technical white papers, programmatic logic models, and privacy shield white-box reports.
+            </p>
+            <a href="support.html" class="btn-core btn-gold-glow" style="padding: 14px 28px;">Engage Partnership Relations Desk</a>
+        </section>
+
     </div>
 
 </body>
