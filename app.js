@@ -1,7 +1,10 @@
 /* PROPERTY OF SOLOMON KIN LLC - PATENT PENDING (2026)
    CORE ENGINE: BOND GENERATION & SESSION MANAGEMENT
 */
+---
 
+### Next Development Milestone
+Now that the comprehensive plan of action is mapped out, which page or script from the inventory would you like to build or refactor next? We can jump right into the core data-binding functionality of **`app.js`**, or set up the text architectures for the core contract spaces like **`proclamation.html`**.
 const SK_APP = {
     // 1. Core Configuration
     config: {
