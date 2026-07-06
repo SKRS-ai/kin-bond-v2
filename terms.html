@@ -3,75 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Covenant | Solomon Kin Records</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>System Terms of Service | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .terms-container { max-width: 800px; margin: 120px auto; padding: 0 5%; }
-        .legal-block {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--glass);
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
         }
-        .legal-block h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .legal-text { color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; }
-        .scroll-box { height: 300px; overflow-y: scroll; padding: 20px; background: #000; border: 1px solid #222; margin: 20px 0; border-radius: 10px; }
-        .scroll-box::-webkit-scrollbar { width: 5px; }
-        .scroll-box::-webkit-scrollbar-thumb { background: var(--gold); }
+
+        .legal-container {
+            max-width: 900px;
+            margin: 140px auto 80px auto;
+            padding: 0 20px;
+            perspective: 1200px;
+        }
+
+        .legal-card {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            padding: 50px 45px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            transform-style: preserve-3d;
+            transition: transform 0.5s var(--ease-3d), border-color 0.4s ease;
+        }
+
+        .legal-card:hover {
+            border-color: var(--electric-blue);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 30px var(--sapphire-glow);
+        }
+
+        .legal-card h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        .legal-card p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .legal-section {
+            margin-top: 35px;
+            border-top: 1px solid var(--border-glass);
+            padding-top: 30px;
+            transform: translateZ(15px);
+        }
+
+        .legal-section h3 {
+            font-size: 1.3rem;
+            color: var(--kinetic-gold);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .legal-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
-        <div class="nav-links">
-            <a href="index.html">Marketplace</a>
-            <a href="ip-shield.html">Privacy</a>
+    <!-- Fortified Header Navigation -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="nav-menu">
+            <li><a href="index.html" class="nav-link">🏠 Portal Home</a></li>
+            <li><a href="privacy.html" class="nav-link">🔒 Privacy Rules</a></li>
+        </div>
+        <div class="identity-gateway">
+            <span class="emoji-badge" style="margin-bottom: 0;">⚖️ SYSTEM TERMS OF USE</span>
         </div>
     </nav>
 
-    <div class="terms-container">
-        <header style="margin-bottom: 60px; text-align: center;">
-            <span class="gold-text" style="letter-spacing: 3px; font-size: 0.8rem;">GOVERNANCE DOCUMENT v2.1</span>
-            <h1 style="margin-top: 10px;">Terms of <span class="gold-text-italic">Covenant.</span></h1>
-            <p style="color: var(--text-gray); margin-top: 20px;">The binding agreement between Member Users and Solomon Kin LLC.</p>
-        </header>
+    <!-- Main Core Terms Workspace -->
+    <div class="legal-container perspective-container">
+        <div class="legal-card card-3d">
+            <div class="emoji-badge pop-3d">⚖️ Parent Entity Regulatory Agreement</div>
+            <h2>System Terms: <span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">The Directory Framework</span></h2>
+            <p>
+                By accessing the wekinnected.com registration portals, you agree to comply with the operational statutes and system requirements specified below.
+            </p>
 
-        <div class="legal-block">
-            <h3>01. Nature of the Record</h3>
-            <div class="legal-text">
-                The Solomon Kin "Unity Bond" is a private, digital archival product. While designed to exceed the professional standards of traditional unions, it is a **private contractual record** managed by the Vexilla Enterprise Hierarchy. Users acknowledge that this is an independent alternative to state-governed frameworks.
-            </div>
-        </div>
-
-        <div class="legal-block">
-            <h3>02. Intellectual Property & The Shield</h3>
-            <div class="legal-text">
-                All data submitted is protected by the **IP Shield Protocol**. Solomon Kin LLC maintains the infrastructure, but the user maintains the "Right of Intimacy." Unauthorized replication of the Solomon Kin branding, pulse animations, or ledger IDs is strictly prohibited under Vexilla AITS enforcement.
-            </div>
-        </div>
-
-        <div class="legal-block">
-            <h3>03. Full Terms & Conditions</h3>
-            <div class="scroll-box">
-                <p style="color: #666; font-size: 0.8rem;">
-                    [LEGAL PREAMBLE] <br><br>
-                    By clicking "Initialize Bond" or "Secure Forever," you agree to the following: <br><br>
-                    1. BINDING AGREEMENT: This document constitutes a binding agreement between you (the "Member") and Solomon Kin LLC (the "Provider"). <br><br>
-                    2. FEES: Annual bonds are billed at $29.99/year. Failure to maintain the IP Shield maintenance fee may result in a "DEACTIVATED" pulse status. Lifetime Bonds ($49.99) are exempt from future fees. <br><br>
-                    3. DISSOLUTION: Retirement of a bond requires a formal filing fee of $14.99 and dual-signature verification. <br><br>
-                    4. IDENTITY: Solomon Kin LLC respects identity fluidity. Users may update titles and pronouns via the Member Dashboard at no additional cost. <br><br>
-                    5. LIMITATION OF LIABILITY: Solomon Kin LLC provides archival services only. We are not responsible for the personal outcome of relationships or external legal recognition in specific jurisdictions. <br><br>
-                    6. GOVERNANCE: This agreement is governed by the Vexilla Enterprise internal bylaws and the laws of the operating jurisdiction.
+            <!-- Section 1 -->
+            <div class="legal-section">
+                <h3>1. Contractual Qualification</h3>
+                <p>
+                    All connection certificates issued via the software layout are classified as private relationship contracts and private commemorative assets within the internal registry system. wekinnected.com functions exclusively as an independent, alternative record-keeping ledger. No operations, certification files, or outputs generated by the platform constitute a state-sanctioned, government-issued marriage license or legal partnership status recognition.
                 </p>
             </div>
-        </div>
 
-        <div style="text-align: center; border-top: 1px solid var(--glass); padding-top: 40px;">
-            <p style="font-size: 0.8rem; color: #444;">Last Updated: March 18, 2026 | Solomon Kin LLC | 817-839-3217</p>
-            <a href="index.html" class="btn-gold-sm" style="margin-top: 20px; display: inline-block;">Return to Marketplace</a>
+            <!-- Section 2 -->
+            <div class="legal-section">
+                <h3>2. Intentional Mutual Authentication</h3>
+                <p>
+                    The platform enforces an absolute dual-authentication condition. No active validation record node can be initialized, certified, or rendered without the explicit, voluntary digital signatures and verified identification inputs of both individual participating parties. Any attempt to forge credential files or transmit uncoordinated, non-consensual link invites triggers systemic suspension of the underlying master profile.
+                </p>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="legal-section">
+                <h3>3. Lifecycle Retraction Rules</h3>
+                <p>
+                    In strict accordance with our system security rules, validation records are entirely non-transferable and remain locked to the unique profiles of the original signatories. To cancel an active node tracking block, users must formally execute a multi-signature "Dissolution Filing." Upon verification, the public indicator node is updated to historical metadata standings and the public certificate token string is retired.
+                </p>
+            </div>
+
+            <!-- System Terms Statement Footnote -->
+            <div style="margin-top: 45px; border-top: 1px solid var(--border-glass); padding-top: 20px; font-size: 0.8rem; color: var(--text-muted); text-align: center;" class="pop-3d">
+                Operational Regulatory Index: GCJ-LLC-2026-TERMS | System Governance: Enforced
+            </div>
         </div>
     </div>
 
