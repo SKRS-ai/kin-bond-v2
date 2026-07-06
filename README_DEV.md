@@ -1,3 +1,19 @@
+# wekinnected.com | Developer Onboarding & Architecture Guide
+**Strict Internal Protocol for Global Citizen Joe, LLC Technical Teams**
+
+## 1. UI Theme Control Constraints
+Developers must adhere strictly to the dual-theme framework. Do not blend colors between the public layer and the execution layer.
+
+```css
+/* Palette 1: Public Institutional (Light / Trustworthy) */
+--primary-blue: #1e3a8a;
+--secondary-blue: #3b82f6;
+--bg-light: #f8fafc;
+
+/* Palette 2: Signing Utility (Dark / Midnight Velvet) */
+--midnight-velvet: #0a0915;
+--kinetic-gold: #d4af37;
+--glass-bg: rgba(255, 255, 255, 0.03);
 /* Property of Solomon Kin LLC - Patent Pending */
 
 :root {
