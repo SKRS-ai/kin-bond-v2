@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wekinnected.com | Official Relationship Registry</title>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a; /* Trustworthy, institutional navy */
+            --secondary-blue: #3b82f6; /* Modern, clean tech blue */
+            --accent-gold: #eab308; /* Wholesome, premium gold accent */
+            --bg-light: #f8fafc; /* Crisp, clean slate-tinted white */
+            --text-dark: #0f172a; /* Deep, readable text */
+            --text-muted: #475569; /* Soft descriptive text */
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary-blue);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-blue);
+        }
+
+        .nav-btn {
+            background-color: var(--secondary-blue);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.2s !important;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 90px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #eff6ff 0%, var(--bg-light) 100%);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: var(--secondary-blue);
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 35px auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.1);
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-blue);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(30, 58, 138, 0.04);
+        }
+
+        /* Core Matrix Section */
+        .matrix-section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h3 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .matrix-card {
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .matrix-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.05);
+            border-color: var(--secondary-blue);
+        }
+
+        .matrix-card .icon-tag {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--secondary-blue);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .matrix-card h4 {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .matrix-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Trust & Security Banner */
+        .trust-banner {
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .trust-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .trust-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .trust-item h5 {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .trust-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            padding: 60px 40px 30px 40px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            color: #93c5fd;
+            max-width: 300px;
+        }
+
+        .footer-links dl {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+        }
+
+        .footer-links a {
+            color: #f8fafc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 20px; flex-direction: column; gap: 15px; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav a { margin: 0 10px; }
+            .hero h2 { font-size: 2.2rem; }
+            .cta-group { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+            .footer-content { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        Official Global Ledger Initiative under the Authority of Global Citizen Joe, LLC
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <a href="#" class="logo">we<span>kinnected</span></a>
+        <nav>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#registry-types">Registry Systems</a>
+            <a href="#security">Security Protocol</a>
+            <a href="wekinnected_form.html" class="nav-btn">Create a Bond</a>
+        </nav>
+    </header>
+
+    <!-- Wholesome / Serious Hero Banner -->
+    <section class="hero">
+        <h2>Fostering Togetherness.<br><span>Securing Identity.</span></h2>
+        <p>Welcome to the world's premier universal relationship ledger. We provide verified, official digital records for every foundational human connection—bringing couples, families, and mentors closer together.</p>
+        <div class="cta-group">
+            <a href="wekinnected_form.html" class="btn-primary">Register Your Bond</a>
+            <a href="#how-it-works" class="btn-secondary">Explore Frameworks</a>
+        </div>
+    </section>
+
+    <!-- Institutional Verification Trust Section -->
+    <section class="trust-banner" id="security">
+        <div class="trust-container">
+            <div class="trust-item">
+                <h5>Government-Grade Intake</h5>
+                <p>Secure document submissions ensure legally defensible validation layers.</p>
+            </div>
+            <div class="trust-item">
+                <h5>Dual-Authentication Mandate</h5>
+                <p>No agreement is generated without simultaneous, mutual verified consent.</p>
+            </div>
+            <div class="trust-item">
+                <h5>Immutable Archiving</h5>
+                <p>Every relationship status is permanently protected within our private cloud ledger.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wholesome & Professional Relationship Classes Grid -->
+    <section class="matrix-section" id="registry-types">
+        <div class="section-title">
+            <h3>Human Connections, Formally Certified</h3>
+            <p>Select the precise framework that represents your commitment structure. Accessible to all identities.</p>
+        </div>
+
+        <div class="matrix-grid">
+            <!-- Card 1 -->
+            <div class="matrix-card">
+                <span class="icon-tag">Commitment Track</span>
+                <h4>Intimate & Pre-Marriage Bonds</h4>
+                <p>Designed for dating or life partners moving toward marriage. Establish explicit mutual vows, private engagement options, and coordinated relationship transparency.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="matrix-card">
+                <span class="icon-tag">Lineage Track</span>
+                <h4>Godparent & Spiritual Covenants</h4>
+                <p>Formally record lifelong spiritual and protective structures between godparents and godchildren, securing the social framework supporting the next generation.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="matrix-card">
+                <span class="icon-tag">Community Track</span>
+                <h4>Legacy Mentorship Alliances</h4>
+                <p>Certify structured commitments between guides, guardians, or big brothers/sisters, anchoring safety, development, and community togetherness into an immutable file.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>wekinnected</h4>
+                <p>A Global Citizen Joe, LLC Secure Identity Initiative. Architecting the digital infrastructure for emotional and social governance.</p>
+            </div>
+            <div class="footer-links">
+                <dl>
+                    <a href="wekinnected_form.html">Bond Intake Builder</a>
+                    <a href="#">Privacy Protocols</a>
+                    <a href="#">Fulfillment & Prints</a>
+                    <a href="#">Institutional Verification</a>
+                </dl>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Global Citizen Joe, LLC. All Rights Reserved. Private Relationship Contract Framework. All issued certificates serve as commemorative and private verification contracts under the sovereign registry system and do not constitute a state-sanctioned marriage license.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
