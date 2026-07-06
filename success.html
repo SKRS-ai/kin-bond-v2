@@ -3,108 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bond Sealed | Solomon Kin Records</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Bond Node Initialized | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .success-wrapper {
+        body {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle at center, #1a1a1d 0%, #050505 100%);
-            text-align: center;
             padding: 20px;
         }
+
+        .success-wrapper {
+            width: 100%;
+            max-width: 620px;
+            perspective: 1200px; /* Activates 3D physical coordinate field */
+        }
+
         .success-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--gold);
-            padding: 60px 40px;
-            border-radius: 30px;
-            max-width: 600px;
-            box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);
-            animation: cardFadeIn 1.5s ease-out;
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            padding: 50px 40px;
+            border-radius: 28px;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: transform 0.5s var(--ease-3d), border-color 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            animation: cardFadeIn 1.2s var(--ease-3d);
         }
-        .crown-icon {
-            font-size: 4rem;
+
+        .success-card:hover {
+            transform: translateY(-4px) rotateX(2deg);
+            border-color: var(--electric-blue);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 30px var(--sapphire-glow);
+        }
+
+        .celebration-badge {
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            display: block;
-            animation: crownPulse 2s infinite ease-in-out;
-        }
-        @keyframes crownPulse {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px var(--gold)); }
-            50% { transform: scale(1.1); filter: drop-shadow(0 0 15px var(--gold)); }
-        }
-        @keyframes cardFadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .success-title {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-        .id-badge {
-            background: #000;
             display: inline-block;
-            padding: 10px 20px;
-            border-radius: 50px;
-            border: 1px solid var(--glass);
-            color: var(--gold);
-            font-family: monospace;
-            font-size: 1.1rem;
-            margin: 20px 0;
-            letter-spacing: 2px;
+            animation: badgeBounce 2.5s infinite ease-in-out;
+            transform: translateZ(30px);
         }
+
+        @keyframes badgeBounce {
+            0%, 100% { transform: translateZ(30px) translateY(0) scale(1); filter: drop-shadow(0 0 0px var(--sapphire-glow)); }
+            50% { transform: translateZ(30px) translateY(-6px) scale(1.05); filter: drop-shadow(0 0 15px var(--sapphire-glow)); }
+        }
+
+        @keyframes cardFadeIn {
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .success-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+            color: #fff;
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        .success-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .id-badge {
+            background: rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            border: 1px solid var(--border-glass);
+            color: var(--kinetic-gold);
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 24px 0;
+            letter-spacing: 2px;
+            transform: translateZ(20px);
+        }
+
         .next-steps {
             text-align: left;
-            margin-top: 40px;
-            border-top: 1px solid var(--glass);
-            padding-top: 30px;
+            margin-top: 35px;
+            border-top: 1px solid var(--border-glass);
+            padding-top: 25px;
         }
+
         .step {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: var(--text-gray);
+            align-items: flex-start;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.5;
         }
-        .step b { color: var(--gold); margin-right: 10px; }
+
+        .step b { 
+            color: var(--electric-blue); 
+            margin-right: 12px; 
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
 
-    <div class="success-wrapper">
+    <!-- Fortified Application Top Sticky Navbar -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="identity-gateway">
+            <a href="index.html" class="btn-core btn-auth-outline">‹ Return Home</a>
+        </div>
+    </nav>
+
+    <!-- Main 3D Card Containment Workspace -->
+    <div class="success-wrapper perspective-container">
         <div class="success-card">
-            <span class="crown-icon">👑</span>
-            <h1 class="success-title">Your Bond is <span class="gold-text-italic">Sealed.</span></h1>
-            <p>Welcome to the Solomon Kin Ledger. Your intimate engagement is now an official, encrypted record.</p>
             
+            <span class="celebration-badge">✨</span>
+            
+            <h1 class="success-title">Connection Node <span style="color: var(--kinetic-gold); font-style: italic; font-family: 'Playfair Display', serif;">Initialized.</span></h1>
+            <p>Welcome to the global relationship ledger. Your validation framework has been established as an official record queue item.</p>
+            
+            <!-- Dynamic Cryptographic ID Target Display -->
             <div class="id-badge" id="display-id">
-                SK-ARCHIVE-2026
+                WK-PENDING-2026
             </div>
 
-            <div class="next-steps">
-                <div class="step"><b>01.</b> Partner 2 has been sent a signature request.</div>
-                <div class="step"><b>02.</b> Once signed, your "Pulse" turns Green.</div>
-                <div class="step"><b>03.</b> Download your High-Res Certificate in the Vault.</div>
+            <!-- Wholesome Workflow Instruction Blocks -->
+            <div class="next-steps pop-3d">
+                <div class="step"><b>01.</b> A secure verification notification link has been issued to the secondary co-signatory party.</div>
+                <div class="step"><b>02.</b> Once double-authenticated and IDs match validation nodes, your ledger pulse lights turn green.</div>
+                <div class="step"><b>03.</b> Gain immediate rights to access print options or download the free 300 DPI verified document vault.</div>
             </div>
 
-            <div style="margin-top: 40px;">
-                <a href="dashboard.html" class="btn-gold full-width">Enter Your Private Vault</a>
-                <br><br>
-                <a href="index.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.8rem;">Return to Archive Home</a>
+            <!-- Interactivity System Gateways -->
+            <div style="margin-top: 35px; display: flex; flex-direction: column; gap: 12px;" class="pop-3d">
+                <a href="dashboard.html" class="btn-core btn-gold-glow full-width" style="justify-content: center; padding: 15px; font-size: 1rem;">
+                    Enter Secure Relationship Vault 🔒
+                </a>
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s;" onhover="this.style.color='#fff'">
+                    Return to Registry Homepage
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Celebration Asset Injections -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
-        // Trigger Gold Confetti on Load
         window.onload = function() {
-            var count = 200;
-            var defaults = { origin: { y: 0.7 } };
+            var count = 180;
+            var defaults = { origin: { y: 0.65 } };
 
             function fire(particleRatio, opts) {
                 confetti(Object.assign({}, defaults, opts, {
@@ -112,12 +169,13 @@
                 }));
             }
 
-            fire(0.25, { spread: 26, startVelocity: 55, colors: ['#d4af37', '#ffffff'] });
-            fire(0.2, { spread: 60, colors: ['#d4af37', '#aa8400'] });
-            fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8, colors: ['#d4af37'] });
+            // High-End Wholesome Gold & Electric Blue Particle Confetti Burst
+            fire(0.25, { spread: 30, startVelocity: 60, colors: ['#d4af37', '#ffffff', '#3b82f6'] });
+            fire(0.20, { spread: 65, colors: ['#d4af37', '#1e3a8a'] });
+            fire(0.35, { spread: 110, decay: 0.92, scalar: 0.85, colors: ['#d4af37', '#3b82f6'] });
             
-            // Generate a random-looking ID for visual satisfaction
-            const randomId = "SK-" + Math.random().toString(36).substr(2, 9).toUpperCase() + "-2026";
+            // Dynamic Generation logic creating institutional registry index formats
+            const randomId = "WK-" + Math.random().toString(36).substr(2, 9).toUpperCase() + "-2026";
             document.getElementById('display-id').innerText = randomId;
         };
     </script>
