@@ -3,134 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Vault | Solomon Kin Records</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Secure Relationship Vault | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
+        }
+
         .vault-container {
             display: grid;
             grid-template-columns: 280px 1fr;
             min-height: 100vh;
-            padding-top: 80px;
+            padding-top: 75px;
         }
+
+        @media (max-width: 768px) {
+            .vault-container {
+                grid-template-columns: 1fr;
+            }
+            .vault-sidebar {
+                border-right: none !important;
+                border-bottom: 1px solid var(--border-glass);
+            }
+        }
+
+        /* Sidebar Component Framework styling */
         .vault-sidebar {
-            background: rgba(255, 255, 255, 0.02);
-            border-right: 1px solid var(--glass);
+            background: rgba(15, 23, 42, 0.4);
+            border-right: 1px solid var(--border-glass);
             padding: 40px 20px;
+            backdrop-filter: blur(10px);
         }
-        .vault-main { padding: 40px 6%; }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .sidebar-link.active {
+            background: linear-gradient(135deg, #eab308 0%, var(--kinetic-gold) 100%);
+            color: #060b24;
+            font-weight: 700;
+            box-shadow: 0 4px 15px var(--gold-glow);
+        }
+
+        /* Main Workspace Control Desk */
+        .vault-main { 
+            padding: 50px 5%; 
+        }
+
         .stat-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
+
         .stat-card {
-            background: var(--velvet);
-            border: 1px solid var(--glass);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            padding: 24px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
         }
+
+        .stat-card:hover {
+            border-color: var(--border-glass);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Multi-Bond Record List Layout blocks */
         .bond-list-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass);
-            border-radius: 15px;
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
             padding: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            transition: 0.3s;
+            transform-style: preserve-3d;
+            transition: transform 0.4s var(--ease-3d), border-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .bond-list-item:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.02); }
+
+        .bond-list-item:hover { 
+            transform: translateY(-3px);
+            border-color: var(--electric-blue); 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--sapphire-glow); 
+        }
+
+        @media (max-width: 640px) {
+            .bond-list-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            .bond-actions {
+                width: 100%;
+                display: flex;
+                gap: 10px;
+            }
+            .bond-actions button {
+                flex: 1;
+            }
+        }
+
         .pulse-indicator {
-            width: 12px;
-            height: 12px;
-            background: #00ff64;
+            width: 10px;
+            height: 10px;
+            background: #10b981;
             border-radius: 50%;
             display: inline-block;
-            margin-right: 10px;
-            box-shadow: 0 0 10px #00ff64;
-            animation: pulse-glow 2s infinite;
+            margin-right: 12px;
+            box-shadow: 0 0 10px #10b981, 0 0 20px #10b981;
+            animation: pulse-glow 2s infinite ease-in-out;
         }
+
         @keyframes pulse-glow {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
+            0%, 100% { opacity: 0.7; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1.1); }
         }
-        .sidebar-link {
-            display: block;
-            padding: 15px;
-            color: var(--text-gray);
-            text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-        .sidebar-link.active { background: var(--gold); color: black; font-weight: bold; }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
-        <div class="nav-links">
-            <span style="font-size: 0.8rem; color: var(--gold);">SECURE VAULT ACCESS</span>
-            <a href="index.html" class="btn-outline-sm">Logout</a>
+    <!-- Fortified Fixed Header Navigation Panel -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="identity-gateway">
+            <span class="emoji-badge" style="margin-bottom: 0;">🛡️ SECURE VAULT ACCESS</span>
+            <a href="index.html" class="btn-core btn-auth-outline" style="padding: 10px 20px;">Logout</a>
         </div>
     </nav>
 
+    <!-- Main Grid Dashboard Architecture Split -->
     <div class="vault-container">
+        
+        <!-- Sidebar Navigation Options Node -->
         <aside class="vault-sidebar">
-            <a href="#" class="sidebar-link active">Active Bonds</a>
-            <a href="account-settings.html" class="sidebar-link">Identity Settings</a>
-            <a href="support.html" class="sidebar-link">IP Shield Support</a>
-            <hr style="border: 0; border-top: 1px solid var(--glass); margin: 20px 0;">
-            <a href="dissolve.html" class="sidebar-link" style="color: #cc3333;">Retire a Bond</a>
+            <a href="#" class="sidebar-link active">📂 Active Ledger Bonds</a>
+            <a href="manage.html" class="sidebar-link">⚙️ Manage Document Inventory</a>
+            <a href="account-settings.html" class="sidebar-link">👤 Identity Settings</a>
+            <a href="support.html" class="sidebar-link">🛡️ System Support Desk</a>
+            <hr style="border: 0; border-top: 1px solid var(--border-glass); margin: 25px 0;">
+            <a href="dissolve.html" class="sidebar-link" style="color: #ef4444; background: rgba(239, 68, 68, 0.02); border: 1px solid rgba(239, 68, 68, 0.1);">
+                💔 Execute Contract Dissolution
+            </a>
         </aside>
 
-        <main class="vault-main">
+        <!-- Main Workspace Interface Desk -->
+        <main class="vault-main perspective-container">
             <header style="margin-bottom: 40px;">
-                <h1>The <span class="gold-text">Private Vault</span></h1>
-                <p style="color: var(--text-gray);">Managing 1 Active Archival Record</p>
+                <h1 style="font-size: 2.4rem; font-weight: 800; color: #fff; background: none; -webkit-text-fill-color: initial;">
+                    The Private <span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Vault Ledger</span>
+                </h1>
+                <p style="color: var(--text-muted); margin-top: 4px; font-size: 1.05rem;">Reviewing your active institutional verifiable connections.</p>
             </header>
 
+            <!-- Metrics Block Grid Display -->
             <div class="stat-grid">
                 <div class="stat-card">
-                    <div style="font-size: 0.7rem; color: var(--gold); text-transform: uppercase;">Ledger Standing</div>
-                    <div style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">Verified</div>
+                    <div style="font-size: 0.8rem; color: var(--kinetic-gold); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Ledger Validation</div>
+                    <div style="font-size: 1.6rem; font-weight: 800; margin-top: 8px; color: #fff;">2 Nodes Active</div>
                 </div>
                 <div class="stat-card">
-                    <div style="font-size: 0.7rem; color: var(--gold); text-transform: uppercase;">IP Shield Level</div>
-                    <div style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">Grade A</div>
+                    <div style="font-size: 0.8rem; color: var(--electric-blue); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Data Shield Status</div>
+                    <div style="font-size: 1.6rem; font-weight: 800; margin-top: 8px; color: #fff;">GCJ Protected</div>
                 </div>
                 <div class="stat-card">
-                    <div style="font-size: 0.7rem; color: var(--gold); text-transform: uppercase;">Renewal Due</div>
-                    <div style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">364 Days</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Account Standing</div>
+                    <div style="font-size: 1.6rem; font-weight: 800; margin-top: 8px; color: #fff;">Verified Official</div>
                 </div>
             </div>
 
-            <h3 style="margin-bottom: 20px;">Your Records</h3>
+            <!-- Active Records Section Area -->
+            <h3 style="margin-bottom: 24px; font-size: 1.4rem; font-weight: 700; color: #fff;">Your Registered Records</h3>
             
-            <div class="bond-list-item">
-                <div class="bond-info">
-                    <div style="display: flex; align-items: center;">
-                        <span class="pulse-indicator"></span>
-                        <h4 id="vault-bond-id">SK-BOND-XJ92-2026</h4>
+            <div class="records-container">
+                
+                <!-- Active Record 1: Intimate Dating Bond -->
+                <div class="bond-list-item">
+                    <div class="bond-info">
+                        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                            <span class="pulse-indicator"></span>
+                            <h4 style="font-family: monospace; font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: 1px;">WK-BOND-XJ92-2026</h4>
+                            <span class="emoji-badge" style="margin-bottom: 0; padding: 2px 8px; font-size: 0.75rem;">🌹 Pre-Marriage</span>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px; font-weight: 500;">
+                            Initialized: March 18, 2026 | Signatories: Nehemiah Brown & Partner
+                        </p>
                     </div>
-                    <p style="font-size: 0.8rem; color: var(--text-gray); margin-top: 5px;">
-                        Created: March 18, 2026 | Partners: Nehemiah & [Partner Name]
-                    </p>
+                    <div class="bond-actions" style="display: flex; gap: 10px;">
+                        <button class="btn-core btn-auth-outline" style="padding: 10px 20px; font-size: 0.85rem;" onclick="alert('Preparing 300 DPI High-Resolution PDF Package...')">Download PDF</button>
+                        <a href="verify.html" class="btn-core btn-gold-glow" style="padding: 10px 20px; font-size: 0.85rem;">View Validation Node</a>
+                    </div>
                 </div>
-                <div class="bond-actions">
-                    <button class="btn-outline-sm" onclick="alert('Downloading High-Res Archive...')">Download Certificate</button>
-                    <button class="btn-gold-sm" style="margin-left: 10px;" onclick="location.href='verify.html'">View Pulse Link</button>
+
+                <!-- Active Record 2: Mentorship Track Bond -->
+                <div class="bond-list-item">
+                    <div class="bond-info">
+                        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                            <span class="pulse-indicator"></span>
+                            <h4 style="font-family: monospace; font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: 1px;">WK-MNTR-PL40-2026</h4>
+                            <span class="emoji-badge" style="margin-bottom: 0; padding: 2px 8px; font-size: 0.75rem;">👑 Mentorship</span>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px; font-weight: 500;">
+                            Initialized: June 02, 2026 | Signatories: Nehemiah Brown & Mentee Unit
+                        </p>
+                    </div>
+                    <div class="bond-actions" style="display: flex; gap: 10px;">
+                        <button class="btn-core btn-auth-outline" style="padding: 10px 20px; font-size: 0.85rem;" onclick="alert('Preparing 300 DPI High-Resolution PDF Package...')">Download PDF</button>
+                        <a href="verify.html" class="btn-core btn-gold-glow" style="padding: 10px 20px; font-size: 0.85rem;">View Validation Node</a>
+                    </div>
                 </div>
+
             </div>
 
-            <div style="text-align: center; border: 2px dashed var(--glass); padding: 40px; border-radius: 15px; margin-top: 40px;">
-                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 20px;">Ready to archive another connection?</p>
-                <a href="index.html#verify" class="btn-outline-sm">+ Initialize New Bond</a>
+            <!-- Initialize Additional Nodes Prompt -->
+            <div style="text-align: center; border: 2px dashed var(--border-glass); padding: 45px; border-radius: 20px; margin-top: 40px; background: rgba(255,255,255,0.01);" class="pop-3d">
+                <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; font-weight: 500;">Ready to archive another verified human connection framework?</p>
+                <a href="wekinnected_form.html" class="btn-core btn-auth-outline" style="padding: 12px 28px;">+ Initialize New Connection Node</a>
             </div>
         </main>
     </div>
