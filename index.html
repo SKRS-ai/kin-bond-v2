@@ -3,125 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solomon Kin Records | The Unity Bond Ledger</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>wekinnected.com | Universal Relationship Registry</title>
+    <style>
+        :root {
+            --midnight-velvet: #0a0915;
+            --kinetic-gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.2);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-light: #f4f4f9;
+            --text-muted: #8e8d9a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--midnight-velvet);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background-image: radial-gradient(circle at top right, rgba(20, 18, 45, 0.8), var(--midnight-velvet));
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+
+        header h1 span {
+            color: var(--kinetic-gold);
+            text-shadow: 0 0 15px var(--gold-glow);
+        }
+
+        header p {
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            color: var(--kinetic-gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--kinetic-gold);
+            box-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .clause-box {
+            background: rgba(212, 175, 55, 0.02);
+            border-left: 3px solid var(--kinetic-gold);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 30px;
+        }
+
+        .clause-box p {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #d1d1d6;
+        }
+
+        .action-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #b89326, var(--kinetic-gold));
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px var(--gold-glow);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: translateY(1px);
+        }
+
+        .fulfillment-options {
+            margin-top: 30px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 30px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .option-item {
+            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-item.active {
+            border-color: var(--kinetic-gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .option-item h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .option-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .legal-footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--glass-border);
+            padding-top: 20px;
+        }
+    </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
-        <div class="nav-links">
-            <a href="proclamation.html">The Proclamation</a>
-            <a href="governance.html">Governance</a>
-            <a href="impact.html">Our Impact</a>
-            <a href="dashboard.html" class="btn-outline-sm">Login</a>
-            <a href="support.html" class="btn-gold-sm">Secure My Bond</a>
-        </div>
-    </nav>
-
-    <header class="hero" style="margin-top: 100px;">
-        <div class="hero-content">
-            <span class="gold-text" style="letter-spacing: 5px; font-size: 0.7rem; text-transform: uppercase;">A Vexilla Enterprise Subsidiary</span>
-            <h1>Sovereign <span class="gold-text-italic">Legacies.</span></h1>
-            <p>Don't just say you're together—record it. Secure your connection in the private, encrypted Solomon Kin Ledger today.</p>
-            <div class="hero-btns" style="margin-top: 30px; display: flex; gap: 20px; justify-content: center;">
-                <a href="support.html" class="btn-gold-lg">Purchase Your Bond</a>
-                <a href="proclamation.html" class="btn-outline">Read the Envoy's Letter</a>
-            </div>
-        </div>
+<div class="container">
+    <header>
+        <h1>we<span>kinnected</span>.com</h1>
+        <p>The Global Relationship Ledger | Under Authority of Global Citizen Joe, LLC</p>
     </header>
 
-    <section class="services-section" id="purchase">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 2.5rem;">The <span class="gold-text">Archival Tiers</span></h2>
-            <p style="color: var(--text-gray);">Guiding you toward permanent digital evolution.</p>
+    <div class="grid">
+        <!-- Structural Relationship Type System Configuration -->
+        <div class="form-group full-width">
+            <label for="relationship-type">Select Relationship Class Allocation</label>
+            <select id="relationship-type">
+                <optgroup label="The Intimacy & Commitment Tier">
+                    <option value="intimate">Intimate Partners / Exclusive Dating Bond</option>
+                    <option value="lifepartner">Life Partners / Co-Habitants Covenant</option>
+                    <option value="fiance">Fiancés / Betrothed Milestone Achievement</option>
+                </optgroup>
+                <optgroup label="Extended Kinship & Spiritual Sovereignty">
+                    <option value="godparent">Godparent (Godmother / Godfather) Covenant</option>
+                    <option value="chosenkin">Chosen Kin / Non-Biological Lineage Archive</option>
+                    <option value="coparent">Co-Parents Operational Integration Unity</option>
+                </optgroup>
+                <optgroup label="Guardianship & Protective Alliances">
+                    <option value="guardian">Legal Guardian / Protective Warden Record</option>
+                    <option value="mentor">Legacy Mentorship Alliance (Big Brother / Big Sister)</option>
+                </optgroup>
+            </select>
         </div>
 
-        <div class="service-grid">
-            
-            <div class="service-card">
-                <h3>The Unity Bond</h3>
-                <div class="price">$29.99<span style="font-size: 0.9rem; color: #555;">/yr</span></div>
-                <ul class="entity-list">
-                    <li>Digital Archival Certificate</li>
-                    <li>Active Public Pulse Link</li>
-                    <li>IP Shield Data Privacy</li>
-                </ul>
-                <a href="support.html?product=unity-bond" class="btn-gold full-width">Initialize Archive</a>
+        <!-- First Signatory Profile Intake -->
+        <div class="card">
+            <h2>First Signatory Profile</h2>
+            <div class="form-group">
+                <label for="p1-name">Legal Full Name</label>
+                <input type="text" id="p1-name" placeholder="As stated on legal documents">
             </div>
-
-            <div class="service-card highlight">
-                <div class="tag" style="background:white; color:black; font-weight:900; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 20px; display: inline-block;">PERPETUAL</div>
-                <h3>Lifetime Archive</h3>
-                <div class="price">$49.99<span style="font-size: 0.9rem; color: #555;">/once</span></div>
-                <ul class="entity-list">
-                    <li>Perpetual Ledger Entry</li>
-                    <li>Premium Gold-Seal Certificate</li>
-                    <li>Zero Renewal Fees Forever</li>
-                </ul>
-                <a href="support.html?product=lifetime" class="btn-gold full-width">Secure Forever</a>
+            <div class="form-group">
+                <label for="p1-identity">Identity & Pronoun Structure</label>
+                <select id="p1-identity">
+                    <option value="he">Identity Matrix: He / Him</option>
+                    <option value="she">Identity Matrix: She / Her</option>
+                    <option value="they">Identity Matrix: They / Them</option>
+                    <option value="nb">Identity Matrix: Non-Binary / Fluid</option>
+                    <option value="trans-m">Identity Matrix: Transgender Masculine</option>
+                    <option value="trans-f">Identity Matrix: Transgender Feminine</option>
+                    <option value="switch">Identity Matrix: Adaptive / Switch</option>
+                </select>
             </div>
-
-        </div>
-    </section>
-
-    <footer class="main-footer">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <div class="logo" style="margin-bottom: 20px;">SOLOMON <span class="gold-text">KIN</span></div>
-                <p>Protected by the Vexilla AITS Protocol. Managed by the Office of the Social Relationship Envoy.</p>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Vault Access</h4>
-                <a href="dashboard.html">Login to Vault</a>
-                <a href="verify.html">Verify a Bond</a>
-                <a href="billing.html">Manage Payments</a>
-            </div>
-
-            <div class="footer-column">
-                <h4>Vexilla Impact</h4>
-                <a href="governance.html">Corporate Hierarchy</a>
-                <a href="grants.html">Grant Ledger</a>
-                <a href="impact.html">Social Change</a>
-                <a href="media.html">Global Citizen Joe</a>
-            </div>
-
-            <div class="footer-column">
-                <h4>The Office</h4>
-                <a href="ip-shield.html">Privacy Shield</a>
-                <a href="terms.html">Covenant Terms</a>
-                <a href="contact.html">Contact Concierge</a>
-                <p style="color: var(--gold); margin-top: 15px;">817-839-3217</p>
+            <div class="form-group">
+                <label for="p1-document">Identity Verification Document (.pdf / .jpg)</label>
+                <input type="file" id="p1-document" style="padding: 8px;">
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Solomon Kin LLC. | <span class="gold-text-italic">Nehemiah Brown, Elected Envoy</span>
+
+        <!-- Second Signatory Profile Intake -->
+        <div class="card">
+            <h2>Second Signatory Profile</h2>
+            <div class="form-group">
+                <label for="p2-name">Legal Full Name</label>
+                <input type="text" id="p2-name" placeholder="As stated on legal documents">
+            </div>
+            <div class="form-group">
+                <label for="p2-identity">Identity & Pronoun Structure</label>
+                <select id="p2-identity">
+                    <option value="she">Identity Matrix: She / Her</option>
+                    <option value="he">Identity Matrix: He / Him</option>
+                    <option value="they">Identity Matrix: They / Them</option>
+                    <option value="nb">Identity Matrix: Non-Binary / Fluid</option>
+                    <option value="trans-m">Identity Matrix: Transgender Masculine</option>
+                    <option value="trans-f">Identity Matrix: Transgender Feminine</option>
+                    <option value="switch">Identity Matrix: Adaptive / Switch</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="p2-document">Identity Verification Document (.pdf / .jpg)</label>
+                <input type="file" id="p2-document" style="padding: 8px;">
+            </div>
         </div>
-    </footer>
-<script>
-    // MAGNETIC CARD EFFECT
-    const cards = document.querySelectorAll('.service-card, .profile-shield');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)`;
-        });
-    });
-</script>
+
+        <!-- The Universal Hardcoded Covenant Display Area -->
+        <div class="full-width">
+            <label>Universal Covenant Baseline Text</label>
+            <div class="clause-box">
+                <p>"We, the undersigned, do hereby attest under the digital seal of The Universal Relationship Registry, that we are currently and actively engaged in a committed partnership framework. We acknowledge our union as a singular social, supportive, and operational unit. By executing this Bond, we accept the responsibilities of our mutual vows, the exclusivity of our private engagement options, and the recognition of our partnership within the Global Citizen Joe Secure Archive. This bond is evergreen, voluntary, and verified by mutual dual-authentication consent."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Commercial Premium Fulfillment Expansion Section -->
+    <div class="fulfillment-options">
+        <label>Select Secure Certificate Delivery Pathway</label>
+        <div class="options-grid">
+            <div class="option-item active">
+                <h3>Verifiable Digital Asset</h3>
+                <p style="color: var(--kinetic-gold); font-weight: bold; margin-top: 5px;">FREE</p>
+                <p>High-resolution secure 300 DPI PDF document with cryptographic ledger QR link verification.</p>
+            </div>
+            <div class="option-item">
+                <h3>Kinetic Gold Exhibition</h3>
+                <p style="color: var(--kinetic-gold); font-weight: bold; margin-top: 5px;">+ $85.00</p>
+                <p>Heavyweight textured matte document, metallic laser-ink gold trim, delivered in archival casing.</p>
+            </div>
+            <div class="option-item">
+                <h3>The Grand Sovereign Case</h3>
+                <p style="color: var(--kinetic-gold); font-weight: bold; margin-top: 5px;">+ $175.00</p>
+                <p>Premium physical print set inside an obsidian-stained solid hardwood museum frame display.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dual Signature Multi-Party Transmission Interface Trigger -->
+    <div class="action-container">
+        <button class="btn-submit">[ Execute Dual-Authentication Protocol ]</button>
+    </div>
+
+    <div class="legal-footer">
+        <p>© 2026 Global Citizen Joe, LLC. All Rights Reserved. Private Relationship Contract Framework. Protected under proprietary digital identity asset patents pending. Not a state-issued marriage registration tool.</p>
+    </div>
+</div>
+
 </body>
 </html>
