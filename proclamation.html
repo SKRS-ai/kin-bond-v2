@@ -3,91 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Proclamation | Solomon Kin Records</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>The Proclamation of Alignment | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .proclamation-container { max-width: 900px; margin: 120px auto; padding: 0 5%; line-height: 1.8; }
-        .seal-header { text-align: center; margin-bottom: 60px; }
-        .official-seal { width: 120px; height: 120px; margin: 0 auto 20px; border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--gold); position: relative; }
-        .official-seal::after { content: 'OFFICIAL RECORD'; position: absolute; font-size: 0.5rem; bottom: 10px; letter-spacing: 1px; }
+        .proclamation-container { 
+            max-width: 900px; 
+            margin: 120px auto 60px auto; 
+            padding: 0 20px; 
+            line-height: 1.8; 
+            perspective: 1200px; /* Activates 3D spatial calculations for the card */
+        }
         
-        .letter-content { background: rgba(255,255,255,0.02); border: 1px solid var(--glass); padding: 60px; border-radius: 5px; position: relative; }
-        .letter-content h2 { font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 30px; border-bottom: 1px solid var(--gold); padding-bottom: 10px; }
-        .benefit-section { margin: 40px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .benefit-box { background: #000; padding: 25px; border-radius: 10px; border: 1px solid #222; }
-        .benefit-box h4 { color: var(--gold); margin-bottom: 10px; text-transform: uppercase; font-size: 0.8rem; }
+        .seal-header { 
+            text-align: center; 
+            margin-bottom: 50px; 
+        }
         
-        .signature-block { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--glass); display: flex; justify-content: space-between; align-items: flex-end; }
-        .handwritten-sig { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; color: var(--gold); line-height: 1; }
-        .official-stamp { border: 3px double #cc3333; color: #cc3333; padding: 10px; transform: rotate(-15deg); font-weight: 900; font-size: 0.7rem; text-align: center; width: 100px; opacity: 0.8; }
+        .official-seal { 
+            width: 130px; 
+            height: 130px; 
+            margin: 0 auto 20px; 
+            border: 2px dashed var(--kinetic-gold); 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: 900; 
+            color: var(--text-white); 
+            background: rgba(214, 175, 55, 0.05);
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            position: relative; 
+            box-shadow: 0 0 20px rgba(214, 175, 55, 0.1);
+        }
         
-        .support-fast-lane { background: var(--velvet); padding: 30px; border-radius: 15px; margin-top: 60px; text-align: center; }
+        .official-seal::after { 
+            content: 'GLOBAL ARCHIVE'; 
+            position: absolute; 
+            font-size: 0.55rem; 
+            bottom: 14px; 
+            letter-spacing: 1.5px; 
+            color: var(--kinetic-gold);
+            font-weight: 700;
+        }
+        
+        /* 3D Moving Perspective Card with Premium Gold Hover Glow */
+        .letter-content { 
+            background: var(--royal-slate); 
+            border: 1px solid var(--border-glass); 
+            padding: 60px; 
+            border-radius: 24px; 
+            position: relative; 
+            transform-style: preserve-3d;
+            transition: transform 0.6s var(--ease-3d), border-color 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .letter-content:hover {
+            transform: translateY(-5px) rotateX(2deg);
+            border-color: var(--kinetic-gold);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 40px var(--gold-glow);
+        }
+        
+        .letter-content h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.5rem; 
+            margin-bottom: 35px; 
+            border-bottom: 1px solid var(--border-glass); 
+            padding-bottom: 15px;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .letter-content p {
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+        
+        /* Wholesome & Balanced Playful Benefit Grid */
+        .benefit-section { 
+            margin: 40px 0; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 25px; 
+            transform: translateZ(25px); /* Forces grid to float outward in 3D space */
+        }
+        
+        .benefit-box { 
+            background: rgba(255, 255, 255, 0.02); 
+            padding: 30px; 
+            border-radius: 16px; 
+            border: 1px solid var(--border-glass); 
+            transition: all 0.3s ease;
+        }
+
+        .benefit-box:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 20px var(--sapphire-glow);
+        }
+        
+        .benefit-box h4 { 
+            color: var(--kinetic-gold); 
+            margin-bottom: 12px; 
+            text-transform: uppercase; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .signature-block { 
+            margin-top: 60px; 
+            padding-top: 40px; 
+            border-top: 1px solid var(--border-glass); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-end; 
+        }
+        
+        .handwritten-sig { 
+            font-family: 'Playfair Display', serif; 
+            font-style: italic; 
+            font-size: 2.8rem; 
+            color: var(--kinetic-gold); 
+            line-height: 1; 
+            letter-spacing: -1px;
+        }
+        
+        /* Playful Legal Official Stamp Accent */
+        .official-stamp { 
+            border: 3px double #ef4444; 
+            color: #ef4444; 
+            padding: 12px; 
+            transform: rotate(-12deg) translateZ(30px); 
+            font-weight: 900; 
+            font-size: 0.75rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center; 
+            width: 120px; 
+            opacity: 0.85; 
+            border-radius: 4px;
+            background: rgba(239, 68, 68, 0.05);
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.1);
+        }
+        
+        /* Wholesome Action Fast Lane */
+        .support-fast-lane { 
+            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1) 0%, rgba(15, 23, 42, 0) 70%);
+            border: 1px solid var(--border-glass);
+            padding: 40px; 
+            border-radius: 24px; 
+            margin-top: 50px; 
+            text-align: center; 
+        }
     </style>
 </head>
-<body class="dashboard-bg">
+<body>
 
-    <nav class="top-nav">
-        <div class="logo">SOLOMON <span class="gold-text">KIN</span></div>
-        <div class="nav-links">
-            <a href="index.html">Marketplace</a>
-            <a href="support.html" class="btn-gold-sm">Initialize Bond</a>
+    <!-- Fortified Application Header Navigation -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="identity-gateway">
+            <a href="index.html" class="btn-core btn-auth-outline">‹ Return Home</a>
+            <a href="wekinnected_form.html" class="btn-core btn-gold-glow">Initialize Bond Node ✨</a>
         </div>
     </nav>
-<div style="text-align: center; margin: 40px 0;">
-    <img src="bond-mockup.png" alt="Solomon Kin Unity Bond" style="max-width: 100%; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid var(--glass);">
-    <p style="color: var(--gold); font-size: 0.8rem; margin-top: 15px; letter-spacing: 2px;">AUTHENTIC SOLOMON KIN ARCHIVAL SPECIMEN</p>
-</div>
+
+    <!-- Certificate Mockup Visual Preview Section -->
+    <div style="text-align: center; margin: 160px 0 40px 0; padding: 0 20px;">
+        <img src="bond-mockup.png" alt="wekinnected Verification Certificate Presentation Specimen" style="max-width: 100%; width: 550px; border-radius: 20px; box-shadow: 0 30px 70px rgba(0,0,0,0.6); border: 1px solid var(--border-glass);">
+        <p style="color: var(--kinetic-gold); font-size: 0.8rem; margin-top: 20px; letter-spacing: 3px; font-weight: 700;">✨ GLOBAL CITIZEN JOE RECORD ARCHIVE SPECIMEN ✨</p>
+    </div>
+
+    <!-- Main Core Document Space -->
     <div class="proclamation-container">
         <div class="seal-header">
-            <div class="official-seal">SKR</div>
-            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.7rem; color: var(--text-gray);">From the Office of the Elected Envoy</p>
+            <div class="official-seal">WKND</div>
+            <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">From the Office of the Executive Infrastructure Directors</p>
         </div>
 
         <article class="letter-content">
-            <h2>The Covenant of <span class="gold-text-italic">Intent.</span></h2>
+            <h2>The Proclamation of <span style="color: var(--kinetic-gold); font-style: italic;">Intentional Alignment.</span></h2>
             
-            <p>In the digital age, a "status" is a fleeting data point, but a **Unity Bond** is a sovereign declaration. We believe that the connection between a man and a woman, or any two souls choosing togetherness, deserves more than a verbal agreement. It deserves an official, encrypted, and verifiable home.</p>
+            <p>In a rapid digital landscape, temporary statuses are easily lost in the shuffle. A <strong>wekinnected Bond</strong> stands separate—it is a conscious, joint proclamation of true alliance. We believe that whether you are stepping into an exclusive romantic partnership, confirming a spiritual godparent circle, or locking in a guidance pact, your dedication deserves an immutable, secure home.</p>
 
-            <p>The Solomon Kin Record is the foundation of your **Digital Evolution**. It is the first step in moving your relationship from the noise of social media into the security of a professional hierarchy. When you join your partner on this ledger, you aren't just buying a document; you are claiming a territory of commitment protected by our Records Department.</p>
+            <p>Our systemic ledger provides the framework for modern <strong>Social Governance</strong>. It marks the dynamic transition from fragmented online notifications to an orderly, respected record ecosystem. Registering your connection onto this node is an intentional action—it creates a verified shelter for your mutual promises, continuously defended by our verification network.</p>
 
+            <!-- 3D Layer Pop-Out Interactive Grid -->
             <div class="benefit-section">
                 <div class="benefit-box">
-                    <h4>Mutual Sovereignty</h4>
-                    <p style="font-size: 0.85rem; color: #888;">Go beyond "just being together." This document serves as an official anchor for your partnership, recognized within the Vexilla Hierarchy.</p>
+                    <h4><span>✨</span> Mutual Cohesion</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">Go beyond unspoken dynamics. Secure an official digital anchor for your partnership, fully cataloged across our inclusive identity network arrays.</p>
                 </div>
                 <div class="benefit-box">
-                    <h4>Verification Defense</h4>
-                    <p style="font-size: 0.85rem; color: #888;">When the world asks for proof, the Pulse Link provides immediate, real-time validation of your togetherness, backed by an elected official.</p>
+                    <h4><span>🔒</span> Verifiable Safety</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">When confirmation is requested, our Ledger Engine provides real-time, tamper-proof document status checks via secure metadata routing codes.</p>
                 </div>
             </div>
 
-            <p>Every certification that crosses my desk is handled with the gravity of a high-office appointment. As your elected Social Relationship Envoy, I personally oversee the integrity of the ledger, ensuring that your togetherness is recorded with the professionalism it deserves.</p>
+            <p>Every relationship application matching our intake protocols is handled with rigorous clarity. We maintain the systematic durability of this registry network, ensuring that your collaborative journey, shared responsibilities, and unique lifestyle choices are preserved with absolute clarity and global standing.</p>
 
+            <!-- Executed Authentication Signatures Panel -->
             <div class="signature-block">
                 <div>
                     <div class="handwritten-sig">Nehemiah Brown</div>
-                    <p style="margin-top: 10px; font-weight: bold;">Nehemiah Brown</p>
-                    <p style="font-size: 0.8rem; color: var(--gold); text-transform: uppercase;">Elected Social Relationship Envoy</p>
-                    <p style="font-size: 0.7rem; color: #444;">Solomon Kin Records LLC | Vexilla Enterprise Hierarchy</p>
+                    <p style="margin-top: 12px; font-weight: 700; font-size: 1.05rem; color: var(--text-white);">Nehemiah Brown</p>
+                    <p style="font-size: 0.8rem; color: var(--kinetic-gold); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Executive Infrastructure Director</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Global Citizen Joe, LLC | Identity Systems Branch</p>
                 </div>
                 <div class="official-stamp">
-                    CERTIFIED<br>2026 ARCHIVE<br>VAULT SECURE
+                    Ledger Verified<br>2026 Archive<br>Vault Secure
                 </div>
             </div>
         </article>
 
+        <!-- Wholesome Action Box -->
         <section class="support-fast-lane">
-            <h3>Ready to Evolve?</h3>
-            <p style="margin: 15px 0; font-size: 0.9rem; color: var(--text-gray);">For urgent emergencies, contact our secure file-on-record email. For all other inquiries or to begin your verification, use our primary Support Line.</p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 25px;">
-                <a href="support.html" class="btn-gold-sm">Start Quick Purchase</a>
-                <a href="contact.html" class="btn-outline-sm">Contact Support Line</a>
+            <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 8px;">Ready to Formalize Your Unity? 🤝</h3>
+            <p style="margin: 0 auto 24px auto; font-size: 0.95rem; color: var(--text-muted); max-width: 600px;">Begin processing your validation checks today. For file delivery assistance or operational ledger questions, engage our client care channels below.</p>
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <a href="wekinnected_form.html" class="btn-core btn-gold-glow" style="padding: 14px 28px;">Start Free Verification Layer</a>
+                <a href="support.html" class="btn-core btn-auth-outline" style="padding: 14px 28px;">Open System Support Desk</a>
             </div>
         </section>
         
-        <p style="text-align: center; margin-top: 40px; font-size: 0.7rem; color: #333;">
-            Solomon Kin Records adheres to the highest standards of digital ethics. By proceeding, you enter the sovereign record-keeping jurisdiction of the Vexilla Enterprise.
+        <p style="text-align: center; margin-top: 50px; font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
+            wekinnected.com operates in alignment with rigorous digital identity compliance codes. By submitting dual-authentication signatures, users enter an authenticated record contract protected under the Global Citizen Joe, LLC internal regulatory data shield.
         </p>
     </div>
 
