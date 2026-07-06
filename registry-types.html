@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registry Configurations Matrix | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
+        }
+
+        .registry-container {
+            max-width: 1100px;
+            margin: 140px auto 80px auto;
+            padding: 0 20px;
+            perspective: 1200px;
+        }
+
+        /* 3D Tiered Configuration Grid */
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .type-card {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transform-style: preserve-3d;
+            transition: transform 0.5s var(--ease-3d), border-color 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .type-card:hover {
+            transform: translateY(-5px) rotateX(2deg);
+            border-color: var(--electric-blue);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 25px var(--sapphire-glow);
+        }
+
+        .type-badge {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            align-self: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .type-card.premium .type-badge {
+            background: rgba(214, 175, 55, 0.1);
+            border-color: rgba(214, 175, 55, 0.3);
+            color: var(--kinetic-gold);
+        }
+
+        .type-card h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .type-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .bullet-spec-list {
+            margin: 0 0 30px 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .bullet-spec-list li {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bullet-spec-list li b {
+            color: var(--kinetic-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fortified Sticky Navbar Framework -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="nav-menu">
+            <li><a href="how-it-works.html" class="nav-link">🛠️ Process</a></li>
+            <li><a href="impact.html" class="nav-link">📊 Impact Metrics</a></li>
+            <li><a href="governance.html" class="nav-link">⚖️ System Rules</a></li>
+        </div>
+        <div class="identity-gateway">
+            <a href="wekinnected_form.html" class="btn-core btn-gold-glow" style="padding: 10px 20px;">Get Certified 📜</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Workspace Container -->
+    <div class="registry-container perspective-container">
+        
+        <header style="text-align: center; margin-bottom: 60px;">
+            <div class="emoji-badge">📊 Systematic Structural Classification Matrix</div>
+            <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1.2; margin-top: 10px; background: none; -webkit-text-fill-color: initial;">
+                Explore Authorized <br><span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Registry Classification Pathways</span>
+            </h1>
+            <p style="color: var(--text-muted); max-width: 800px; margin: 16px auto 0 auto; font-size: 1.1rem; line-height: 1.7;">
+                Select the structural configuration alignment that fits your goals. Every category enforces dual-authentication signature loops and maps directly into our isolated Private Tier security network.
+            </p>
+        </header>
+
+        <!-- 3D Card Selection Matrix Matrix -->
+        <div class="types-grid pop-3d">
+            
+            <!-- Category 1: Intimate Partnerships / Pre-Marriage -->
+            <div class="type-card">
+                <div>
+                    <div class="type-badge">Track 01 • Social</div>
+                    <h3>Intimate Partnership Validation</h3>
+                    <p>
+                        Engineered explicitly for dating, engaged, or cohabiting partners seeking an objective, verifiable declaration of mutual commitment. This sandbox module encourages couples to map operational expectations, coordinate consent baseline settings, and anchor their accountability trail before transitioning to marriage.
+                    </p>
+                    <ul class="bullet-spec-list">
+                        <li><b>✓</b> Standard Dual-Signature Ledger Code</li>
+                        <li><b>✓</b> Adaptive Fluid Pronoun Configuration</li>
+                        <li><b>✓</b> Shield Mode Visibility Control</li>
+                    </ul>
+                </div>
+                <button class="btn-core btn-auth-outline full-width" style="justify-content: center;" onclick="location.href='wekinnected_form.html?track=intimate'">Deploy Onboarding Node</button>
+            </div>
+
+            <!-- Category 2: Mentorship & Legacy Protections -->
+            <div class="type-card premium">
+                <div>
+                    <div class="type-badge">Track 02 • Community</div>
+                    <h3>Legacy Mentorship Security</h3>
+                    <p>
+                        Designed to safeguard formal guidance arrangements, community youth pairings, and professional advisor networks. Enforcing strict primary document cross-checks anchors structural compliance, validates organizational oversight trails, and reduces relational tracking isolation within regional intervention models.
+                    </p>
+                    <ul class="bullet-spec-list">
+                        <li><b>✓</b> Mandatory Government Identification Scan</li>
+                        <li><b>✓</b> Institutional Oversight Masking</li>
+                        <li><b>✓</b> Compliance Review Ticket System Access</li>
+                    </ul>
+                </div>
+                <button class="btn-core btn-gold-glow full-width" style="justify-content: center;" onclick="location.href='wekinnected_form.html?track=mentorship'">Deploy Onboarding Node</button>
+            </div>
+
+            <!-- Category 3: Co-Parenting & Custom Alliances -->
+            <div class="type-card">
+                <div>
+                    <div class="type-badge">Track 03 • Functional</div>
+                    <h3>Co-Parenting & Familial Alliances</h3>
+                    <p>
+                        A dedicated legal sandbox configuration mapping mutual coordination boundaries for non-traditional families, joint-custody guardians, and domestic support unions. This platform structure anchors operational milestones and records joint-entity status values without commercial advertising extraction leakage.
+                    </p>
+                    <ul class="bullet-spec-list">
+                        <li><b>✓</b> Non-Transferable Registry Pass Lock</li>
+                        <li><b>✓</b> Dedicated Vault Metadata Archive</li>
+                        <li><b>✓</b> Structural Amendment Ticket Pathways</li>
+                    </ul>
+                </div>
+                <button class="btn-core btn-auth-outline full-width" style="justify-content: center;" onclick="location.href='wekinnected_form.html?track=alliance'">Deploy Onboarding Node</button>
+            </div>
+
+        </div>
+
+        <!-- Strategic Compliance Notice Subtext Section -->
+        <section style="text-align: center; margin-top: 70px; border-top: 1px solid var(--border-glass); padding-top: 50px;">
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 12px;">Need Special Institutional Registrar Status? 🏛️</h3>
+            <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 25px auto; font-size: 0.95rem; line-height: 1.6;">
+                Are you a spiritual head, program coordinator, or community director seeking to issue and administer multiple relationship verification blocks simultaneously? Explore the specialized capacity privileges of our administrative pass.
+            </p>
+            <a href="buy-lifetime.html" class="btn-core btn-gold-glow" style="padding: 14px 28px;">Procure Infinite Ledger Pass</a>
+        </section>
+
+    </div>
+
+</body>
+</html>
