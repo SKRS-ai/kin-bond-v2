@@ -1,23 +1,221 @@
-<main class="intake-container">
-    <h2>Initiating: <span class="gold-text">The Unity Bond</span></h2>
-    <p class="step-indicator">Step 1 of 2: Intimate Partnership Details</p>
-    
-    <form class="intake-form" action="https://checkout.stripe.com/..." method="POST">
-        <section class="form-block">
-            <h3>Partner Identities</h3>
-            <input type="text" name="p1_legal" placeholder="Partner 1 Legal/Chosen Name" required>
-            <input type="text" name="p2_legal" placeholder="Partner 2 Legal/Chosen Name" required>
-            <textarea name="vows" placeholder="Optional: Custom Vow Addendum (Limited to 250 characters)"></textarea>
-        </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archival Print Procurement | wekinnected.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: var(--deep-sapphire);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 20px 60px 20px;
+        }
 
-        <section class="form-block">
-            <h3>Archival Signature</h3>
-            <label class="checkbox-container">
-                <input type="checkbox" required>
-                I certify that this bond represents an active, consensual intimate partnership.
-            </label>
-        </section>
-        
-        <button type="submit" class="btn-gold-lg">Proceed to Secure Payment ($29.99)</button>
-    </form>
-</main>
+        .checkout-container {
+            width: 100%;
+            max-width: 950px;
+            perspective: 1200px;
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            transform-style: preserve-3d;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-grid { grid-template-columns: 1fr; }
+        }
+
+        .checkout-card {
+            background: var(--royal-slate);
+            border: 1px solid var(--border-glass);
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-node {
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s var(--ease-3d);
+        }
+
+        .product-node:hover {
+            border-color: var(--electric-blue);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .product-node.selected {
+            border-color: var(--kinetic-gold);
+            background: rgba(214, 175, 55, 0.03);
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
+
+        .radio-halo {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-glass);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .product-node.selected .radio-halo {
+            border-color: var(--kinetic-gold);
+        }
+
+        .product-node.selected .radio-halo::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: var(--kinetic-gold);
+            border-radius: 50%;
+        }
+
+        .form-input-node {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: var(--text-white);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input-node:focus {
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 15px var(--sapphire-glow);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-glass);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fortified Navigation Header -->
+    <nav class="fortified-nav">
+        <a href="index.html" class="logo-block">
+            🤝 we<span>kinnected</span>
+        </a>
+        <div class="identity-gateway">
+            <a href="dashboard.html" class="btn-core btn-auth-outline">‹ Back to Vault</a>
+        </div>
+    </nav>
+
+    <!-- Main Checkout Spatial Interface -->
+    <div class="checkout-container perspective-container">
+        <div class="checkout-grid">
+            
+            <!-- Left Side: Product Selection Matrix -->
+            <div class="checkout-card card-3d">
+                <div class="emoji-badge pop-3d">📜 Luxury Fulfillment Options</div>
+                <h2 style="font-size: 1.8rem; font-weight: 800; color: #fff; margin: 10px 0 25px 0;">Select Your <span style="color: var(--kinetic-gold); font-family: 'Playfair Display', serif; font-style: italic;">Exhibition Asset</span></h2>
+                
+                <!-- Product 1 -->
+                <div class="product-node selected" onclick="selectProduct(this, 85.00, 'Kinetic Gold Exhibition Print')">
+                    <div style="max-width: 80%;">
+                        <h4 style="color: #fff; font-size: 1.05rem; margin-bottom: 4px;">Kinetic Gold Exhibition Print</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">Heavyweight textured matte sheet, premium metallic laser gold ink border trim, stored inside custom archival protective casing.</p>
+                    </div>
+                    <div style="text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+                        <span style="color: var(--kinetic-gold); font-weight: 700; font-size: 1.1rem;">$85.00</span>
+                        <div class="radio-halo"></div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-node" onclick="selectProduct(this, 175.00, 'The Grand Sovereign Case')">
+                    <div style="max-width: 80%;">
+                        <h4 style="color: #fff; font-size: 1.05rem; margin-bottom: 4px;">The Grand Sovereign Case</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">Premium museum exhibition print document bundle, set securely inside a custom obsidian-stained solid hardwood frame setup.</p>
+                    </div>
+                    <div style="text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+                        <span style="color: var(--kinetic-gold); font-weight: 700; font-size: 1.1rem;">$175.00</span>
+                        <div class="radio-halo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Shipping & Secure Checkout Processing Desk -->
+            <div class="checkout-card card-3d" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 20px; font-weight: 700;">Delivery Parameters</h3>
+                    
+                    <form id="checkout-form" onsubmit="event.preventDefault(); alert('Redirecting to Global Citizen Joe secure processing terminal...');">
+                        <input type="text" class="form-input-node" placeholder="Recipient Full Name" required>
+                        <input type="text" class="form-input-node" placeholder="Street Address" required>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <input type="text" class="form-input-node" placeholder="City" required>
+                            <input type="text" class="form-input-node" placeholder="Postal Code" required>
+                        </div>
+
+                        <!-- Price calculation panel block -->
+                        <div style="margin-top: 20px; border-top: 1px solid var(--border-glass); padding-top: 15px;">
+                            <div class="summary-row">
+                                <span>Selected Asset:</span>
+                                <strong id="summary-name" style="color: #fff; font-size: 0.85rem; text-align: right;">Kinetic Gold Exhibition Print</strong>
+                            </div>
+                            <div class="summary-row">
+                                <span>Courier Dispatch (Secure):</span>
+                                <strong style="color: #10b981;">FREE</strong>
+                            </div>
+                            <div class="summary-row" style="border-bottom: none; padding-top: 15px;">
+                                <span style="font-weight: 700; color: #fff;">Aggregate Total:</span>
+                                <strong id="summary-total" style="color: var(--kinetic-gold); font-size: 1.25rem; font-weight: 800;">$85.00</strong>
+                            </div>
+                        </div>
+                </div>
+
+                <button type="submit" class="btn-core btn-gold-glow full-width" style="justify-content: center; padding: 15px; font-size: 1rem; margin-top: 25px;">
+                    Proceed to Secure Terminal 🛡️
+                </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Active Selection Manipulation Controllers -->
+    <script>
+        function selectProduct(element, price, productName) {
+            // Remove previous active classes across matrix siblings
+            document.querySelectorAll('.product-node').forEach(node => {
+                node.classList.remove('selected');
+            });
+            
+            // Activate selected targeting values
+            element.classList.add('selected');
+            
+            // Sync parameters into values inside summary grid text nodes
+            document.getElementById('summary-name').innerText = productName;
+            document.getElementById('summary-total').innerText = "$" + price.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
